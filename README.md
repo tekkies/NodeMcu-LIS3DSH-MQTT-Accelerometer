@@ -13,7 +13,7 @@ Periodically polls LIS3DSH accelerometer ove SPI and pubishes to MQTT Broker
 - [ ] Sleep the LIS3DSH
 
 ## Design
-![Circuit Diagram](https://api.circuit-diagram.org/document/store/render/bc4837dfeb004d6ab27e804357bb4d59.svg?h=beae84)
+![Circuit Diagram](src/Circuit-Diagram-TinyCAD.png)
 
 [Source](https://www.circuit-diagram.org/circuits/bc4837dfeb004d6ab27e804357bb4d59)
 

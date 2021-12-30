@@ -9,7 +9,7 @@ MQTT_CLIENTID = "uk.co.tekkies." .. node.chipid()
 MQTT_TOPIC = "/tekkies.co.uk/LIS3DSH/" .. node.chipid() .. "-" .. node.flashid()
 SLEEP_SECONDS = 0
 USE_LED = false
-JSON_OUTPUT = false
+JSON_OUTPUT = true
 
 
 --State
