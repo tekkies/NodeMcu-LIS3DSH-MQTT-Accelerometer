@@ -13987,6 +13987,18 @@ M:A5@%G7!YD8S*V/6!7SE.S 7XNE4Q\T*D(UIF*LG&gt;7@;&amp;%0E=8X971?@\@^6
 			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
 			<FIELD type='2' description='$$SPICE_EPILOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
 			<FIELD type='1' description='Package' value='SIP12' show='0' pos='1.00000,-31.20000'/>
+			<HINT pin='1' net='137'/>
+			<HINT pin='10' net='146'/>
+			<HINT pin='11' net='147'/>
+			<HINT pin='12' net='148'/>
+			<HINT pin='2' net='138'/>
+			<HINT pin='3' net='139'/>
+			<HINT pin='4' net='140'/>
+			<HINT pin='5' net='141'/>
+			<HINT pin='6' net='142'/>
+			<HINT pin='7' net='143'/>
+			<HINT pin='8' net='144'/>
+			<HINT pin='9' net='145'/>
 		</SYMBOL>
 		<WIRE a='39.00000,42.00000' b='44.00000,42.00000'/>
 		<JUNCTION pos='22.00000,42.00000'/>
@@ -13998,5 +14010,17 @@ M:A5@%G7!YD8S*V/6!7SE.S 7XNE4Q\T*D(UIF*LG&gt;7@;&amp;%0E=8X971?@\@^6
 		<WIRE a='50.00000,61.00000' b='50.00000,68.00000'/>
 		<WIRE a='58.00000,22.00000' b='2.00000,22.00000'/>
 		<WIRE a='2.00000,22.00000' b='2.00000,56.00000'/>
+		<NOCONNECT pos='58.00000,19.00000'/>
+		<NOCONNECT pos='58.00000,25.00000'/>
+		<NOCONNECT pos='58.00000,28.00000'/>
+		<NOCONNECT pos='58.00000,31.00000'/>
+		<NOCONNECT pos='58.00000,34.00000'/>
+		<NOCONNECT pos='58.00000,37.00000'/>
+		<NOCONNECT pos='58.00000,40.00000'/>
+		<NOCONNECT pos='58.00000,43.00000'/>
+		<NOCONNECT pos='58.00000,46.00000'/>
+		<NOCONNECT pos='58.00000,49.00000'/>
+		<NOCONNECT pos='58.00000,52.00000'/>
+		<NOCONNECT pos='58.00000,55.00000'/>
 	</TinyCAD>
 </TinyCADSheets>
