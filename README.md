@@ -9,7 +9,7 @@ Periodically polls LIS3DSH accelerometer ove SPI and pubishes to MQTT Broker
 * Runs only once when battery disconnected (i.e. when debugging on USB)
 * LED Flash codes for PANIC situations
 
-##ToDo
+## ToDo
 - [ ] Sleep the LIS3DSH
 
 ## Design
