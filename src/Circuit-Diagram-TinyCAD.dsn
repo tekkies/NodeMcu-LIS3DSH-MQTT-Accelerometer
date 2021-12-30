@@ -7,15 +7,15 @@ download the executable.-->
 	<TinyCAD>
 		<NAME>Sheet 1</NAME>
 		<DETAILS>
-			<Size width='1485' height='1050'/>
+			<Size width='900' height='350'/>
 			<GUIDES horiz='7' vert='5'/>
-			<TITLE></TITLE>
+			<TITLE>NodeMCU CJMCU-LIS3DSH</TITLE>
 			<AUTHOR></AUTHOR>
 			<REVISION>1.0</REVISION>
 			<DOCNUMBER></DOCNUMBER>
 			<ORGANISATION></ORGANISATION>
 			<SHEETS>1 of 1</SHEETS>
-			<SHOWS>1</SHOWS>
+			<SHOWS>0</SHOWS>
 			<DATE></DATE>
 			<GRID spacing='100.00000' snap='1'/>
 		</DETAILS>
@@ -14049,41 +14049,41 @@ M:A5@%G7!YD8S*V/6!7SE.S 7XNE4Q\T*D(UIF*LG&gt;7@;&amp;%0E=8X971?@\@^6
 			<COLOR_NOTETEXT_LINE>FF0000</COLOR_NOTETEXT_LINE>
 			<COLOR_NOTETEXT_TEXT>FF0000</COLOR_NOTETEXT_TEXT>
 		</OPTIONS>
-		<SYMBOL id='1' pos='40.00000,64.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+		<SYMBOL id='1' pos='26.00000,40.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='B1' show='1' pos='1.00000,-5.60000'/>
 			<FIELD type='0' description='Name' value='4 x AA (6v)' show='1' pos='1.00000,-8.00000'/>
 			<HINT pin='1' net='3'/>
 			<HINT pin='2' net='1'/>
 		</SYMBOL>
-		<SYMBOL id='2' pos='22.00000,72.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+		<SYMBOL id='2' pos='8.00000,48.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='R2' show='1' pos='1.00000,-5.60000'/>
 			<FIELD type='0' description='Name' value='100K' show='1' pos='1.00000,-8.00000'/>
 			<HINT pin='1' net='2'/>
 			<HINT pin='2' net='1'/>
 		</SYMBOL>
-		<SYMBOL id='2' pos='22.00000,58.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+		<SYMBOL id='2' pos='8.00000,34.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='R1' show='1' pos='1.00000,-5.60000'/>
 			<FIELD type='0' description='Name' value='690k' show='1' pos='1.00000,-8.00000'/>
 			<HINT pin='1' net='3'/>
 			<HINT pin='2' net='2'/>
 		</SYMBOL>
-		<SYMBOL id='3' pos='58.00000,48.00000' part='0' rotate='3' can_scale='1' show_power='0' scale_x='0.50000' scale_y='0.75000'>
+		<SYMBOL id='3' pos='44.00000,24.00000' part='0' rotate='3' can_scale='1' show_power='0' scale_x='0.50000' scale_y='0.75000'>
 			<FIELD type='0' description='Ref' value='D1' show='1' pos='-16.00000,2.00000'/>
-			<FIELD type='0' description='Name' value='D' show='1' pos='-16.00000,-8.00000'/>
+			<FIELD type='0' description='Name' value='' show='1' pos='-16.00000,-8.00000'/>
 			<HINT pin='1' net='3'/>
 			<HINT pin='2' net='4'/>
 		</SYMBOL>
-		<WIRE a='20.00000,48.00000' b='20.00000,46.00000'/>
-		<WIRE a='36.00000,46.00000' b='46.00000,46.00000'/>
-		<WIRE a='36.00000,55.00000' b='36.00000,46.00000'/>
-		<JUNCTION pos='36.00000,46.00000'/>
-		<WIRE a='20.00000,46.00000' b='36.00000,46.00000'/>
-		<POWER pos='36.00000,84.00000' which='0' direction='1'></POWER>
-		<WIRE a='20.00000,60.00000' b='20.00000,56.00000'/>
-		<WIRE a='20.00000,70.00000' b='20.00000,84.00000'/>
-		<WIRE a='20.00000,84.00000' b='36.00000,84.00000'/>
-		<WIRE a='36.00000,84.00000' b='36.00000,64.00000'/>
-		<SYMBOL id='4' pos='130.00000,78.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+		<WIRE a='6.00000,24.00000' b='6.00000,22.00000'/>
+		<WIRE a='22.00000,22.00000' b='32.00000,22.00000'/>
+		<WIRE a='22.00000,31.00000' b='22.00000,22.00000'/>
+		<JUNCTION pos='22.00000,22.00000'/>
+		<WIRE a='6.00000,22.00000' b='22.00000,22.00000'/>
+		<POWER pos='22.00000,60.00000' which='0' direction='1'></POWER>
+		<WIRE a='6.00000,36.00000' b='6.00000,32.00000'/>
+		<WIRE a='6.00000,46.00000' b='6.00000,60.00000'/>
+		<WIRE a='6.00000,60.00000' b='22.00000,60.00000'/>
+		<WIRE a='22.00000,60.00000' b='22.00000,40.00000'/>
+		<SYMBOL id='4' pos='116.00000,54.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='U1' show='1' pos='1.00000,-39.60000'/>
 			<FIELD type='0' description='Name' value='NodeMCU' show='1' pos='1.00000,-42.00000'/>
 			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
@@ -14105,11 +14105,11 @@ M:A5@%G7!YD8S*V/6!7SE.S 7XNE4Q\T*D(UIF*LG&gt;7@;&amp;%0E=8X971?@\@^6
 			<HINT pin='D7' net='24'/>
 			<HINT pin='D8' net='23'/>
 			<HINT pin='EN' net='8'/>
-			<HINT pin='GNDa' net='52'/>
+			<HINT pin='GNDa' net='64'/>
 			<HINT pin='GNDb' net='1'/>
 			<HINT pin='GNDc' net='27'/>
 			<HINT pin='RST' net='7'/>
-			<HINT pin='RSV' net='53'/>
+			<HINT pin='RSV' net='65'/>
 			<HINT pin='RX' net='22'/>
 			<HINT pin='SD0' net='12'/>
 			<HINT pin='SD1' net='14'/>
@@ -14118,27 +14118,27 @@ M:A5@%G7!YD8S*V/6!7SE.S 7XNE4Q\T*D(UIF*LG&gt;7@;&amp;%0E=8X971?@\@^6
 			<HINT pin='TX' net='21'/>
 			<HINT pin='Vin' net='4'/>
 		</SYMBOL>
-		<JUNCTION pos='20.00000,60.00000'/>
-		<WIRE a='20.00000,60.00000' b='16.00000,60.00000'/>
-		<WIRE a='20.00000,62.00000' b='20.00000,60.00000'/>
-		<WIRE a='16.00000,60.00000' b='16.00000,42.00000'/>
-		<WIRE a='16.00000,42.00000' b='72.00000,42.00000'/>
-		<NOCONNECT pos='72.00000,44.00000'/>
-		<NOCONNECT pos='72.00000,46.00000'/>
-		<WIRE a='58.00000,46.00000' b='58.00000,70.00000'/>
-		<WIRE a='58.00000,70.00000' b='72.00000,70.00000'/>
-		<WIRE a='72.00000,66.00000' b='68.00000,66.00000'/>
-		<WIRE a='68.00000,66.00000' b='68.00000,26.00000'/>
-		<WIRE a='68.00000,26.00000' b='134.00000,26.00000'/>
-		<WIRE a='134.00000,26.00000' b='134.00000,42.00000'/>
-		<TEXT pos='96.00000,30.00000' direction='3' font='4' color='000000'>Wake</TEXT>
-		<JUNCTION pos='36.00000,84.00000'/>
-		<JUNCTION pos='36.00000,84.00000'/>
-		<WIRE a='134.00000,42.00000' b='130.00000,42.00000'/>
-		<WIRE a='134.00000,68.00000' b='134.00000,84.00000'/>
-		<WIRE a='134.00000,84.00000' b='36.00000,84.00000'/>
-		<WIRE a='134.00000,68.00000' b='130.00000,68.00000'/>
-		<SYMBOL id='6' pos='168.00000,68.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+		<JUNCTION pos='6.00000,36.00000'/>
+		<WIRE a='6.00000,36.00000' b='2.00000,36.00000'/>
+		<WIRE a='6.00000,38.00000' b='6.00000,36.00000'/>
+		<WIRE a='2.00000,36.00000' b='2.00000,18.00000'/>
+		<WIRE a='2.00000,18.00000' b='58.00000,18.00000'/>
+		<NOCONNECT pos='58.00000,20.00000'/>
+		<NOCONNECT pos='58.00000,22.00000'/>
+		<WIRE a='44.00000,22.00000' b='44.00000,46.00000'/>
+		<WIRE a='44.00000,46.00000' b='58.00000,46.00000'/>
+		<WIRE a='58.00000,42.00000' b='54.00000,42.00000'/>
+		<WIRE a='54.00000,42.00000' b='54.00000,2.00000'/>
+		<WIRE a='54.00000,2.00000' b='120.00000,2.00000'/>
+		<WIRE a='120.00000,2.00000' b='120.00000,18.00000'/>
+		<TEXT pos='82.00000,6.00000' direction='3' font='4' color='000000'>Wake</TEXT>
+		<JUNCTION pos='22.00000,60.00000'/>
+		<JUNCTION pos='22.00000,60.00000'/>
+		<WIRE a='120.00000,18.00000' b='116.00000,18.00000'/>
+		<WIRE a='120.00000,44.00000' b='120.00000,60.00000'/>
+		<WIRE a='120.00000,60.00000' b='22.00000,60.00000'/>
+		<WIRE a='120.00000,44.00000' b='116.00000,44.00000'/>
+		<SYMBOL id='6' pos='154.00000,44.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='U2' show='1' pos='1.00000,-19.60000'/>
 			<FIELD type='0' description='Name' value='CJMCU-LIS3DSH' show='1' pos='1.00000,-22.00000'/>
 			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
@@ -14156,44 +14156,44 @@ M:A5@%G7!YD8S*V/6!7SE.S 7XNE4Q\T*D(UIF*LG&gt;7@;&amp;%0E=8X971?@\@^6
 			<HINT pin='8' net='42'/>
 			<HINT pin='9' net='43'/>
 		</SYMBOL>
-		<WIRE a='130.00000,52.00000' b='138.00000,52.00000'/>
-		<WIRE a='138.00000,52.00000' b='138.00000,46.00000'/>
-		<WIRE a='138.00000,46.00000' b='150.00000,46.00000'/>
-		<WIRE a='130.00000,54.00000' b='140.00000,54.00000'/>
-		<WIRE a='140.00000,54.00000' b='140.00000,48.00000'/>
-		<WIRE a='140.00000,48.00000' b='150.00000,48.00000'/>
-		<WIRE a='130.00000,56.00000' b='142.00000,56.00000'/>
-		<WIRE a='142.00000,56.00000' b='142.00000,50.00000'/>
-		<WIRE a='142.00000,50.00000' b='150.00000,50.00000'/>
-		<WIRE a='130.00000,58.00000' b='144.00000,58.00000'/>
-		<WIRE a='144.00000,58.00000' b='144.00000,54.00000'/>
-		<WIRE a='144.00000,54.00000' b='150.00000,54.00000'/>
-		<WIRE a='130.00000,60.00000' b='146.00000,60.00000'/>
-		<WIRE a='146.00000,60.00000' b='146.00000,52.00000'/>
-		<WIRE a='146.00000,52.00000' b='150.00000,52.00000'/>
-		<NOCONNECT pos='72.00000,48.00000'/>
-		<NOCONNECT pos='72.00000,50.00000'/>
-		<NOCONNECT pos='72.00000,52.00000'/>
-		<NOCONNECT pos='72.00000,54.00000'/>
-		<NOCONNECT pos='72.00000,56.00000'/>
-		<NOCONNECT pos='72.00000,58.00000'/>
-		<NOCONNECT pos='72.00000,60.00000'/>
-		<NOCONNECT pos='72.00000,62.00000'/>
-		<NOCONNECT pos='72.00000,64.00000'/>
-		<NOCONNECT pos='72.00000,68.00000'/>
-		<NOCONNECT pos='130.00000,44.00000'/>
-		<NOCONNECT pos='130.00000,46.00000'/>
-		<NOCONNECT pos='130.00000,48.00000'/>
-		<NOCONNECT pos='130.00000,50.00000'/>
-		<NOCONNECT pos='130.00000,62.00000'/>
-		<NOCONNECT pos='130.00000,64.00000'/>
-		<NOCONNECT pos='130.00000,66.00000'/>
-		<NOCONNECT pos='130.00000,70.00000'/>
-		<NOCONNECT pos='150.00000,56.00000'/>
-		<NOCONNECT pos='150.00000,58.00000'/>
-		<NOCONNECT pos='150.00000,60.00000'/>
-		<NOCONNECT pos='150.00000,62.00000'/>
-		<NOCONNECT pos='150.00000,64.00000'/>
-		<NOCONNECT pos='150.00000,66.00000'/>
+		<WIRE a='116.00000,28.00000' b='124.00000,28.00000'/>
+		<WIRE a='124.00000,28.00000' b='124.00000,22.00000'/>
+		<WIRE a='124.00000,22.00000' b='136.00000,22.00000'/>
+		<WIRE a='116.00000,30.00000' b='126.00000,30.00000'/>
+		<WIRE a='126.00000,30.00000' b='126.00000,24.00000'/>
+		<WIRE a='126.00000,24.00000' b='136.00000,24.00000'/>
+		<WIRE a='116.00000,32.00000' b='128.00000,32.00000'/>
+		<WIRE a='128.00000,32.00000' b='128.00000,26.00000'/>
+		<WIRE a='128.00000,26.00000' b='136.00000,26.00000'/>
+		<WIRE a='116.00000,34.00000' b='130.00000,34.00000'/>
+		<WIRE a='130.00000,34.00000' b='130.00000,30.00000'/>
+		<WIRE a='130.00000,30.00000' b='136.00000,30.00000'/>
+		<WIRE a='116.00000,36.00000' b='132.00000,36.00000'/>
+		<WIRE a='132.00000,36.00000' b='132.00000,28.00000'/>
+		<WIRE a='132.00000,28.00000' b='136.00000,28.00000'/>
+		<NOCONNECT pos='58.00000,24.00000'/>
+		<NOCONNECT pos='58.00000,26.00000'/>
+		<NOCONNECT pos='58.00000,28.00000'/>
+		<NOCONNECT pos='58.00000,30.00000'/>
+		<NOCONNECT pos='58.00000,32.00000'/>
+		<NOCONNECT pos='58.00000,34.00000'/>
+		<NOCONNECT pos='58.00000,36.00000'/>
+		<NOCONNECT pos='58.00000,38.00000'/>
+		<NOCONNECT pos='58.00000,40.00000'/>
+		<NOCONNECT pos='58.00000,44.00000'/>
+		<NOCONNECT pos='116.00000,20.00000'/>
+		<NOCONNECT pos='116.00000,22.00000'/>
+		<NOCONNECT pos='116.00000,24.00000'/>
+		<NOCONNECT pos='116.00000,26.00000'/>
+		<NOCONNECT pos='116.00000,38.00000'/>
+		<NOCONNECT pos='116.00000,40.00000'/>
+		<NOCONNECT pos='116.00000,42.00000'/>
+		<NOCONNECT pos='116.00000,46.00000'/>
+		<NOCONNECT pos='136.00000,32.00000'/>
+		<NOCONNECT pos='136.00000,34.00000'/>
+		<NOCONNECT pos='136.00000,36.00000'/>
+		<NOCONNECT pos='136.00000,38.00000'/>
+		<NOCONNECT pos='136.00000,40.00000'/>
+		<NOCONNECT pos='136.00000,42.00000'/>
 	</TinyCAD>
 </TinyCADSheets>
