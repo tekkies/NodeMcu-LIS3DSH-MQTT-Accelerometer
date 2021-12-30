@@ -69,8 +69,9 @@ function uptimeSeconds()
     return tmr.now()/1000000
 end
 
+epochStartTime = tmr.now()
 function epochSeconds()
-    return (tmr.now()-epochStartTime)-1000000
+    return (tmr.now() - epochStartTime)/1000000
 end
 
 function setLed(ledState)
