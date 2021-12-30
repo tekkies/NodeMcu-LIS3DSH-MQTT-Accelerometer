@@ -138,6 +138,53 @@ download the executable.-->
 				<PIN pos='118.00000,54.00000' which='0' elec='4' direction='0' part='0' number='1' show='0' length='30' number_pos='0' centre_name='0'>A</PIN>
 			</TinyCAD>
 		</SYMBOLDEF>
+		<SYMBOLDEF id='5'>
+			<NAME type='0'>NodeMCU</NAME>
+			<REF type='0'>U?</REF>
+			<DESCRIPTION>NodeMCU</DESCRIPTION>
+			<PPP>1</PPP>
+			<GUID></GUID>
+			<FIELD>
+				<NAME>$$SPICE_PROLOG_PRIORITY</NAME>
+				<DEFAULT>5</DEFAULT>
+				<FT>000002</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>$$SPICE_EPILOG_PRIORITY</NAME>
+				<DEFAULT>5</DEFAULT>
+				<FT>000002</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Package</NAME>
+				<DEFAULT>package name for PCB layout</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<REF_POINT power='0' part='0' pos='54.00000,106.00000'/>
+			<TinyCAD>
+				<PIN pos='20.00000,104.00000' which='0' elec='0' direction='3' part='0' number='1' show='3' length='30' number_pos='0' centre_name='0'>Vin</PIN>
+				<PIN pos='20.00000,102.00000' which='0' elec='0' direction='3' part='0' number='2' show='3' length='30' number_pos='0' centre_name='0'>GND</PIN>
+				<PIN pos='20.00000,100.00000' which='0' elec='0' direction='3' part='0' number='3' show='3' length='30' number_pos='0' centre_name='0'>RST</PIN>
+				<PIN pos='20.00000,98.00000' which='0' elec='0' direction='3' part='0' number='4' show='3' length='30' number_pos='0' centre_name='0'>EN</PIN>
+				<PIN pos='20.00000,96.00000' which='0' elec='0' direction='3' part='0' number='5' show='3' length='30' number_pos='0' centre_name='0'>3V3</PIN>
+				<PIN pos='20.00000,94.00000' which='0' elec='0' direction='3' part='0' number='6' show='3' length='30' number_pos='0' centre_name='0'>GND</PIN>
+				<RECTANGLE a='54.00000,106.00000' b='26.00000,74.00000' style='2' fill='0'/>
+				<PIN pos='20.00000,92.00000' which='0' elec='0' direction='3' part='0' number='7' show='3' length='30' number_pos='0' centre_name='0'>CLK/SCLK/SDCLK</PIN>
+				<PIN pos='20.00000,90.00000' which='0' elec='0' direction='3' part='0' number='8' show='3' length='30' number_pos='0' centre_name='0'>SD0/SDDO/MISO</PIN>
+				<PIN pos='20.00000,88.00000' which='0' elec='0' direction='3' part='0' number='9' show='3' length='30' number_pos='0' centre_name='0'>CMD/SDCMD/CS</PIN>
+				<PIN pos='20.00000,86.00000' which='0' elec='0' direction='3' part='0' number='10' show='3' length='30' number_pos='0' centre_name='0'>SD1/SDD1/MOSI</PIN>
+				<PIN pos='20.00000,84.00000' which='0' elec='0' direction='3' part='0' number='11' show='3' length='30' number_pos='0' centre_name='0'>SD2/SDD2/GPIO9</PIN>
+				<PIN pos='20.00000,82.00000' which='0' elec='0' direction='3' part='0' number='12' show='3' length='30' number_pos='0' centre_name='0'>SD3/SDD3/GPIO10</PIN>
+				<PIN pos='20.00000,80.00000' which='0' elec='0' direction='3' part='0' number='13' show='3' length='30' number_pos='0' centre_name='0'>RSV</PIN>
+				<PIN pos='20.00000,78.00000' which='0' elec='0' direction='3' part='0' number='14' show='3' length='30' number_pos='0' centre_name='0'>RSV</PIN>
+				<PIN pos='20.00000,76.00000' which='0' elec='0' direction='3' part='0' number='15' show='3' length='30' number_pos='0' centre_name='0'>A0/TOUT/ADC0</PIN>
+			</TinyCAD>
+		</SYMBOLDEF>
 		<OPTIONS>
 			<GRID>0</GRID>
 			<UNITS>0</UNITS>
@@ -176,10 +223,22 @@ download the executable.-->
 		<JUNCTION pos='36.00000,46.00000'/>
 		<WIRE a='20.00000,46.00000' b='36.00000,46.00000'/>
 		<POWER pos='36.00000,74.00000' which='0' direction='1'></POWER>
-		<WIRE a='20.00000,62.00000' b='20.00000,56.00000'/>
+		<WIRE a='20.00000,60.00000' b='20.00000,56.00000'/>
 		<WIRE a='20.00000,70.00000' b='20.00000,74.00000'/>
 		<WIRE a='20.00000,74.00000' b='36.00000,74.00000'/>
 		<JUNCTION pos='36.00000,74.00000'/>
 		<WIRE a='36.00000,74.00000' b='36.00000,64.00000'/>
+		<SYMBOL id='5' pos='106.00000,72.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+			<FIELD type='0' description='Ref' value='U1' show='1' pos='1.00000,-27.60000'/>
+			<FIELD type='0' description='Name' value='NodeMCU' show='1' pos='1.00000,-30.00000'/>
+			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
+			<FIELD type='2' description='$$SPICE_EPILOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
+			<FIELD type='1' description='Package' value='package name for PCB layout' show='0' pos='0.00000,0.00000'/>
+		</SYMBOL>
+		<JUNCTION pos='20.00000,60.00000'/>
+		<WIRE a='20.00000,60.00000' b='16.00000,60.00000'/>
+		<WIRE a='20.00000,62.00000' b='20.00000,60.00000'/>
+		<WIRE a='16.00000,60.00000' b='16.00000,42.00000'/>
+		<WIRE a='16.00000,42.00000' b='72.00000,42.00000'/>
 	</TinyCAD>
 </TinyCADSheets>
