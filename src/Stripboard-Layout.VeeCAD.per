@@ -1,0 +1,146 @@
+[Version]
+Product,2
+File,19
+{
+"Config" : {
+  "NetImportFormat" : "Protel"
+},
+"Board" : {
+  "Width" : 57,
+  "Height" : 32,
+  "Pattern" : "Strip"
+},
+"CelledOutlines" : [
+  { "Name" : "NewOutline", "Locked" : true,
+    "Rows" : [
+    ["Free"],
+    ["Body"]
+    ]
+  },
+  { "Name" : "This part has no 'Package' attribute", "Locked" : false,
+    "Rows" : [
+    ["Body","Free","Body"],
+    ["Body","Body","Body"]
+    ]
+  },
+  { "Name" : "package name for PCB layout", "Locked" : false,
+    "Rows" : [
+    ["Body","Free","Body"],
+    ["Body","Body","Body"]
+    ]
+  },
+  { "Name" : "SIP2", "Locked" : false,
+    "Rows" : [
+    [{"Pin" : "1"}],
+    [{"Pin" : "2"}]
+    ]
+  }
+],
+"LeadedOutlines" : [
+  { "Name" : "AX3_1N", "Locked" : false,
+    "BodyLength" : 3, "BodyWidth" : 1,
+    "Pin0Name" : "1", "Pin1Name" : "2", "ShowReference" : false
+  }
+],
+"RadialOutlines" : [
+],
+"CustomOutlines" : [
+],
+"SmdOutlines" : [
+],
+"Components" : [
+  { "Designator" : "D1", "Value" : "", "Outline" : "This part has no 'Package' attribute",
+  "X1000" : 47000, "Y1000" : 29000, "EndDeltaX" : 0, "EndDeltaY" : 1,
+  "Text" : { "X" : 0, "Y" : -1, "Angle" : 0, "Visible" : true },
+  "Group" : 0
+  },
+  { "Designator" : "U1", "Value" : "NodeMCU", "Outline" : "package name for PCB layout",
+  "X1000" : 53000, "Y1000" : 29000, "EndDeltaX" : 0, "EndDeltaY" : 1,
+  "Text" : { "X" : 0, "Y" : -1, "Angle" : 0, "Visible" : true },
+  "Group" : 0
+  },
+  { "Designator" : "U2", "Value" : "CJMCU-LIS3DSH", "Outline" : "package name for PCB layout",
+  "X1000" : 50000, "Y1000" : 29000, "EndDeltaX" : 0, "EndDeltaY" : 1,
+  "Text" : { "X" : 0, "Y" : -1, "Angle" : 0, "Visible" : true },
+  "Group" : 0
+  },
+  { "Designator" : "R2", "Value" : "100k", "Outline" : "AX3_1N",
+  "X1000" : 45000, "Y1000" : 25000, "EndDeltaX" : 0, "EndDeltaY" : 5,
+  "Text" : { "X" : 0, "Y" : -1, "Angle" : 0, "Visible" : true },
+  "Group" : 0
+  },
+  { "Designator" : "R1", "Value" : "690k", "Outline" : "AX3_1N",
+  "X1000" : 46000, "Y1000" : 25000, "EndDeltaX" : 0, "EndDeltaY" : 5,
+  "Text" : { "X" : 0, "Y" : -1, "Angle" : 0, "Visible" : true },
+  "Group" : 0
+  },
+  { "Designator" : "J1", "Value" : "Battery", "Outline" : "SIP2",
+  "X1000" : 56000, "Y1000" : 29000, "EndDeltaX" : 0, "EndDeltaY" : 1,
+  "Text" : { "X" : 0, "Y" : -1, "Angle" : 0, "Visible" : true },
+  "Group" : 0
+  }
+],
+"Links" : [
+],
+"Breaks" : [
+],
+"Wires" : [
+],
+"Text" : [
+],
+"Nets" : [
+    { "Node" : "N000002", "Components" : [
+    { "Name" : "R1", "Pins" : ["2"] },
+    { "Name" : "R2", "Pins" : ["1"] },
+    { "Name" : "U1", "Pins" : ["A0"] }
+    ] },
+    { "Node" : "N000003", "Components" : [
+    { "Name" : "D1", "Pins" : ["1"] },
+    { "Name" : "J1", "Pins" : ["1"] },
+    { "Name" : "R1", "Pins" : ["1"] }
+    ] },
+    { "Node" : "N000004", "Components" : [
+    { "Name" : "D1", "Pins" : ["2"] },
+    { "Name" : "U1", "Pins" : ["Vin"] }
+    ] },
+    { "Node" : "N000007", "Components" : [
+    { "Name" : "U1", "Pins" : ["D0", "RST"] }
+    ] },
+    { "Node" : "N000024", "Components" : [
+    { "Name" : "U1", "Pins" : ["D7"] },
+    { "Name" : "U2", "Pins" : ["4"] }
+    ] },
+    { "Node" : "N000025", "Components" : [
+    { "Name" : "U1", "Pins" : ["D6"] },
+    { "Name" : "U2", "Pins" : ["5"] }
+    ] },
+    { "Node" : "N000026", "Components" : [
+    { "Name" : "U1", "Pins" : ["D5"] },
+    { "Name" : "U2", "Pins" : ["3"] }
+    ] },
+    { "Node" : "N000027", "Components" : [
+    { "Name" : "U1", "Pins" : ["GNDc"] },
+    { "Name" : "U2", "Pins" : ["2"] }
+    ] },
+    { "Node" : "N000028", "Components" : [
+    { "Name" : "U1", "Pins" : ["3V3c"] },
+    { "Name" : "U2", "Pins" : ["1"] }
+    ] },
+    { "Node" : "TCPOWERBAR", "Components" : [
+    { "Name" : "J1", "Pins" : ["2"] },
+    { "Name" : "R2", "Pins" : ["2"] },
+    { "Name" : "U1", "Pins" : ["GNDb"] }
+    ] }
+],
+"NetColors" : [
+    { "Node" : "" },
+    { "Node" : "" },
+    { "Node" : "" },
+    { "Node" : "" },
+    { "Node" : "" },
+    { "Node" : "" }
+],
+"Notes" : {
+  "Lines" : ""
+}
+}
