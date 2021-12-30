@@ -1,12 +1,4 @@
 [
-D1
-This part has no 'Package' attribute
-
-
-
-
-]
-[
 U1
 package name for PCB layout
 NodeMCU
@@ -46,6 +38,19 @@ Battery
 
 
 ]
+[
+D1
+AX3_1
+1N400x
+
+
+
+]
+(
+Wake
+U1-RST
+U1-D0
+)
 (
 TCPOWERBAR
 U1-GNDb
@@ -53,20 +58,10 @@ R2-2
 J1-2
 )
 (
-N000004
-D1-2
-U1-Vin
-)
-(
 N000003
-D1-1
 R1-1
 J1-1
-)
-(
-N000007
-U1-RST
-U1-D0
+D1-2
 )
 (
 N000024
@@ -98,4 +93,9 @@ N000002
 U1-A0
 R2-1
 R1-2
+)
+(
+N000004
+U1-Vin
+D1-1
 )
