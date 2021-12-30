@@ -7,8 +7,9 @@
 MQTT_BROKER = "test.mosquitto.org"
 MQTT_CLIENTID = "uk.co.tekkies." .. node.chipid()
 MQTT_TOPIC = "/tekkies.co.uk/LIS3DSH/" .. node.chipid() .. "-" .. node.flashid()
-SLEEP_SECONDS = 5
+SLEEP_SECONDS = 0
 USE_LED = false
+JSON_OUTPUT = false
 
 
 --State
@@ -68,6 +69,10 @@ function uptimeSeconds()
     return tmr.now()/1000000
 end
 
+function epochSeconds()
+    return (tmr.now()-epochStartTime)-1000000
+end
+
 function setLed(ledState)
     if(ledState) then
         gpio.write(4, gpio.LOW)
@@ -120,6 +125,7 @@ function queueNextState()
 end
 
 function init()
+    epochStartTime = tmr.now()
     if(USE_LED) then
         setLed(true)
     end
@@ -170,7 +176,7 @@ function getAccel()
 end
 
 function waitForWiFi()
-    if(uptimeSeconds() > 20) then
+    if(epochSeconds() > 20) then
         panic(PANIC_NO_WIFI)
         return
     end
@@ -184,8 +190,11 @@ end
 function postMqtt()
     mqttClient:connect(MQTT_BROKER, 1883, false, function(client)
       print2("connected")
-      topicValue = '{"batt":"'.. string.format("%.2f", batt) .. '","accel":"' .. string.format("%.2f", accel) .. '"}'
-      --topicValue = string.format("%.2f", accel)
+      if(JSON_OUTPUT) then
+        topicValue = '{"batt":"'.. string.format("%.2f", batt) .. '","accel":"' .. string.format("%.2f", accel) .. '"}'
+      else
+        topicValue = string.format("%.2f", accel)
+      end
       print2(topicValue)
       client:publish(MQTT_TOPIC, topicValue, 0, 0, function(client) 
         print2("sent")
@@ -205,9 +214,13 @@ end
 function sleepNow()
     setLed(false)
     if(isOnBatteryPower()) then
-        print2("Battery detected, going to sleep...")
-        local us = SLEEP_SECONDS*1000*1000
-        node.dsleep(us, 1, nil)
+        if(SLEEP_SECONDS==0) then
+            queueState(init)
+        else
+            print2("Battery detected, going to sleep...")
+            local us = SLEEP_SECONDS*1000*1000
+            node.dsleep(us, 1, nil)
+        end
     else
         print2("No battery detected, do not sleep")
     end
