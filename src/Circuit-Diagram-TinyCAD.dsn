@@ -39,6 +39,16 @@ download the executable.-->
 			<CHARSET>0</CHARSET>
 			<FACENAME>Arial</FACENAME>
 		</FONT>
+		<FONT id='5'>
+			<HEIGHT>-13</HEIGHT>
+			<WIDTH>6</WIDTH>
+			<WEIGHT>400</WEIGHT>
+			<ITALIC>0</ITALIC>
+			<UNDERLINE>0</UNDERLINE>
+			<STRIKEOUT>0</STRIKEOUT>
+			<CHARSET>0</CHARSET>
+			<FACENAME>Arial</FACENAME>
+		</FONT>
 		<STYLE id='2'>
 			<STYLE>0</STYLE>
 			<COLOR>000000</COLOR>
@@ -1890,12 +1900,11 @@ IBH+F^7B:XSEHGH]SC^&gt;@&gt;3[./?X_.0,T8XFA:[T     245.1*Y&quot;8((
 		<WIRE a='36.00000,55.00000' b='36.00000,46.00000'/>
 		<JUNCTION pos='36.00000,46.00000'/>
 		<WIRE a='20.00000,46.00000' b='36.00000,46.00000'/>
-		<POWER pos='36.00000,74.00000' which='0' direction='1'></POWER>
+		<POWER pos='36.00000,84.00000' which='0' direction='1'></POWER>
 		<WIRE a='20.00000,60.00000' b='20.00000,56.00000'/>
-		<WIRE a='20.00000,70.00000' b='20.00000,74.00000'/>
-		<WIRE a='20.00000,74.00000' b='36.00000,74.00000'/>
-		<JUNCTION pos='36.00000,74.00000'/>
-		<WIRE a='36.00000,74.00000' b='36.00000,64.00000'/>
+		<WIRE a='20.00000,70.00000' b='20.00000,84.00000'/>
+		<WIRE a='20.00000,84.00000' b='36.00000,84.00000'/>
+		<WIRE a='36.00000,84.00000' b='36.00000,64.00000'/>
 		<SYMBOL id='8' pos='130.00000,78.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='U1' show='1' pos='1.00000,-27.60000'/>
 			<FIELD type='0' description='Name' value='NodeMCU' show='1' pos='1.00000,-30.00000'/>
@@ -1908,7 +1917,7 @@ IBH+F^7B:XSEHGH]SC^&gt;@&gt;3[./?X_.0,T8XFA:[T     245.1*Y&quot;8((
 			<HINT pin='A0' net='2'/>
 			<HINT pin='CLK' net='11'/>
 			<HINT pin='CMD' net='13'/>
-			<HINT pin='D0' net='33'/>
+			<HINT pin='D0' net='7'/>
 			<HINT pin='D1' net='32'/>
 			<HINT pin='D2' net='31'/>
 			<HINT pin='D3' net='30'/>
@@ -1918,18 +1927,18 @@ IBH+F^7B:XSEHGH]SC^&gt;@&gt;3[./?X_.0,T8XFA:[T     245.1*Y&quot;8((
 			<HINT pin='D7' net='24'/>
 			<HINT pin='D8' net='23'/>
 			<HINT pin='EN' net='8'/>
-			<HINT pin='GNDa' net='34'/>
+			<HINT pin='GNDa' net='36'/>
 			<HINT pin='GNDb' net='20'/>
 			<HINT pin='GNDc' net='27'/>
 			<HINT pin='RST' net='7'/>
-			<HINT pin='RSV' net='35'/>
+			<HINT pin='RSV' net='37'/>
 			<HINT pin='RX' net='22'/>
 			<HINT pin='SD0' net='12'/>
 			<HINT pin='SD1' net='14'/>
 			<HINT pin='SD2' net='15'/>
 			<HINT pin='SD3' net='16'/>
 			<HINT pin='TX' net='21'/>
-			<HINT pin='Vin' net='5'/>
+			<HINT pin='Vin' net='4'/>
 		</SYMBOL>
 		<JUNCTION pos='20.00000,60.00000'/>
 		<WIRE a='20.00000,60.00000' b='16.00000,60.00000'/>
@@ -1938,5 +1947,18 @@ IBH+F^7B:XSEHGH]SC^&gt;@&gt;3[./?X_.0,T8XFA:[T     245.1*Y&quot;8((
 		<WIRE a='16.00000,42.00000' b='72.00000,42.00000'/>
 		<NOCONNECT pos='72.00000,44.00000'/>
 		<NOCONNECT pos='72.00000,46.00000'/>
+		<WIRE a='58.00000,46.00000' b='58.00000,70.00000'/>
+		<WIRE a='58.00000,70.00000' b='72.00000,70.00000'/>
+		<WIRE a='72.00000,66.00000' b='68.00000,66.00000'/>
+		<WIRE a='68.00000,66.00000' b='68.00000,26.00000'/>
+		<WIRE a='68.00000,26.00000' b='134.00000,26.00000'/>
+		<WIRE a='134.00000,26.00000' b='134.00000,42.00000'/>
+		<TEXT pos='96.00000,30.00000' direction='3' font='5' color='000000'>Wake</TEXT>
+		<JUNCTION pos='36.00000,84.00000'/>
+		<JUNCTION pos='36.00000,84.00000'/>
+		<WIRE a='134.00000,42.00000' b='130.00000,42.00000'/>
+		<WIRE a='134.00000,68.00000' b='134.00000,84.00000'/>
+		<WIRE a='134.00000,84.00000' b='36.00000,84.00000'/>
+		<WIRE a='134.00000,68.00000' b='130.00000,68.00000'/>
 	</TinyCAD>
 </TinyCADSheets>
