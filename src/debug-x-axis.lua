@@ -1,4 +1,5 @@
 ACC_REG_OUT_T = 0x0c
+ACC_REG_CTRL_REG3 = 0x23
 ACC_REG_CTRL_REG4 = 0x20
 ACC_REG_CTRL_REG5 = 0x24
 ACC_REG_STATUS = 0x27
@@ -37,6 +38,15 @@ function initAccel()
         panic(PANIC_NO_LIS3DH)
         return
     end
+
+    --reset
+    local ctrlReg3 = readAcc(ACC_REG_CTRL_REG3)
+    print("ACC_REG_CTRL_REG3 " .. string.format("%x", readAcc(ctrlReg3)))
+    writeAcc(ACC_REG_CTRL_REG3, bit.bor(ctrlReg3 + 0x01))
+    ctrlReg3 = readAcc(ACC_REG_CTRL_REG3)
+    print("ACC_REG_CTRL_REG3 " .. string.format("%x", readAcc(ctrlReg3)))
+
+    
     --Enable accelerometer
     writeAcc(ACC_REG_CTRL_REG4, 0x10+0x08+0x07)
     print("ACC_REG_CTRL_REG4 " .. string.format("%x", readAcc(ACC_REG_CTRL_REG4)))
