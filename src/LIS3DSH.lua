@@ -192,7 +192,7 @@ function postMqtt()
     mqttClient:connect(MQTT_BROKER, 1883, false, function(client)
       print2("connected")
       if(JSON_OUTPUT) then
-        topicValue = '{"batt":"'.. string.format("%.2f", batt) .. '","accel":"' .. string.format("%.2f", accel) .. '"}'
+        topicValue = '{"batt":"'.. string.format("%.2f", batt) .. '","accel":"' .. string.format("%.2f", accel) .. '","heap":"' .. node.heap() .. '"}'
       else
         topicValue = string.format("%.2f", accel)
       end
