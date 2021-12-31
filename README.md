@@ -9,13 +9,26 @@ Periodically polls LIS3DSH accelerometer ove SPI and pubishes to MQTT Broker
 * Runs only once when battery disconnected (i.e. when debugging on USB)
 * LED Flash codes for PANIC situations
 
+![MQTT Explorer Chart](doc/MQTT-Explorer-Chart.png)
+
+
 ## ToDo
 - [ ] Sleep the LIS3DSH
+- [_] Fix the memory leak
 
 ## Design
+
+### Circuit
 ![Circuit Diagram](src/Circuit-Diagram-TinyCAD.png)
 
-[Source](https://www.circuit-diagram.org/circuits/bc4837dfeb004d6ab27e804357bb4d59)
+### Layout
 
-![MQTT Explorer Chart](doc/MQTT-Explorer-Chart.png)
+![Stripboard Layout](doc/Assembled-Board.jpg)
+
+Stripboard Design
+
+![Stripboard Layout](src/Stripboard-Layout.VeeCAD.png)
+
+Connect 4x AA batteries to J1, + to the top, - to the bottom.
+
 
