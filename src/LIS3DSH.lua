@@ -130,8 +130,6 @@ function init()
     if(USE_LED) then
         setLed(true)
     end
-    mqttClient = mqtt.Client(MQTT_CLIENTID, 120)
-    mqttClient:on("offline", mqttOffline)
     tmr.create():alarm(60 * 1000, tmr.ALARM_SINGLE, sleepNow)
     queueState(initAdc)
 end
@@ -169,7 +167,7 @@ end
 function getAccel()
     readBatt()
     if(bit.isset(readAcc(ACC_REG_STATUS), ACC_REG_STATUS_YDA)) then
-        accel = twosToSigned((readAcc(ACC_REG_OUT_Y_H) * 256)+readAcc(ACC_REG_OUT_Y_L))/16350.0
+        accel = twosToSigned((readAcc(ACC_REG_OUT_X_H) * 256)+readAcc(ACC_REG_OUT_X_L))/16350.0
         print2(string.format("%x", accel))
         state=waitForWiFi        
     end
@@ -192,7 +190,7 @@ function postMqtt()
     mqttClient:connect(MQTT_BROKER, 1883, false, function(client)
       print2("connected")
       if(JSON_OUTPUT) then
-        topicValue = '{"batt":"'.. string.format("%.2f", batt) .. '","accel":"' .. string.format("%.2f", accel) .. '","heap":"' .. node.heap() .. '"}'
+        topicValue = '{"batt":"'.. string.format("%.2f", batt) .. '","accel":"' .. string.format("%.2f", accel) .. '","heap":"' .. node.heap() .. '","uptime":"' .. uptimeSeconds() .. '"}'
       else
         topicValue = string.format("%.2f", accel)
       end
@@ -214,6 +212,7 @@ end
 
 function sleepNow()
     setLed(false)
+    mqttClient:close()
     if(isOnBatteryPower()) then
         if(SLEEP_SECONDS==0) then
             queueState(init)
@@ -228,4 +227,6 @@ function sleepNow()
 end
 
 ----------------------------------------
+mqttClient = mqtt.Client(MQTT_CLIENTID, 120)
+mqttClient:on("offline", mqttOffline)
 queueState(init)
