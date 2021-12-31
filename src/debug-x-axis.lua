@@ -50,9 +50,9 @@ function initAccel()
     
     --Enable accelerometer
     writeAcc(ACC_REG_CTRL_REG4, 0x10+0x08+0x07)
-    print("ACC_REG_CTRL_REG4 " .. string.format("%x", readAcc(ACC_REG_CTRL_REG4)))
-    print("ACC_REG_CTRL_REG5 " .. string.format("%x", readAcc(ACC_REG_CTRL_REG5)))
-    print("ACC_REG_CTRL_REG6 " .. string.format("%x", readAcc(ACC_REG_CTRL_REG6)))  --ox10 = Address Increment
+    print("ACC_REG_CTRL_REG4 " .. string.format("0x%02x", readAcc(ACC_REG_CTRL_REG4)))
+    print("ACC_REG_CTRL_REG5 " .. string.format("0x%02x", readAcc(ACC_REG_CTRL_REG5)))
+    print("ACC_REG_CTRL_REG6 " .. string.format("0x%02x", readAcc(ACC_REG_CTRL_REG6)))  --ox10 = Address Increment
     
 
 end
@@ -65,6 +65,15 @@ do
     print(".")
 end
 
+
 print("X:" .. twosToSigned((readAcc(ACC_REG_OUT_X_H) * 256)+readAcc(ACC_REG_OUT_X_L))/16350.0)
 print("Y:" .. twosToSigned((readAcc(ACC_REG_OUT_Y_H) * 256)+readAcc(ACC_REG_OUT_Y_L))/16350.0)
 print("Z:" .. twosToSigned((readAcc(ACC_REG_OUT_Z_H) * 256)+readAcc(ACC_REG_OUT_Z_L))/16350.0)
+
+
+--List all registers
+
+for reg=0x0c, 0x77, 1
+do
+    print(string.format("0x%02x",reg) .. " " .. string.format("0x%02x",readAcc(reg)) )
+end
