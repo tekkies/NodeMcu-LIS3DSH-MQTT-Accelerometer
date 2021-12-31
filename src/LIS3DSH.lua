@@ -15,7 +15,6 @@ USE_LED = false
 
 --State
 state = nil
-accel = 0
 epochStartTime = tmr.now()
 panicCounter = 0
 panicReason = 0
@@ -121,7 +120,7 @@ end
 
 
 function isOnBatteryPower()
-    return getBatteryVolts() > 3.0;
+    return getBatteryVolts() > 1.4;
 end
 
 function queueState(newState)
@@ -135,8 +134,9 @@ function queueNextState()
 end
 
 function init()
-    appendJsonValue("battery", getBatteryVolts())
     epochStartTime = tmr.now()
+    appendJsonValue("battery", getBatteryVolts())
+    
     if(USE_LED) then
         setLed(true)
     end
@@ -163,16 +163,14 @@ function initAccel()
         return
     end
     --Enable Y accelerometer
-    writeAcc(ACC_REG_CTRL_REG4, 0x1a) --0x10+0x08+0x02
+    writeAcc(ACC_REG_CTRL_REG4, 0x10+0x08+0x02)
     --print2("ACC_REG_CTRL_REG4 " .. string.format("%x", readAcc(ACC_REG_CTRL_REG4)))
     queueState(getAccel)
 end
 
 function getAccel()
     if(bit.isset(readAcc(ACC_REG_STATUS), ACC_REG_STATUS_YDA)) then
-        accel = twosToSigned((readAcc(ACC_REG_OUT_Y_H) * 256)+readAcc(ACC_REG_OUT_Y_L))/16350.0
-		appendJsonValue("y", accel)
-        print2(string.format("%x", accel))
+		appendJsonValue("y", twosToSigned((readAcc(ACC_REG_OUT_Y_H) * 256)+readAcc(ACC_REG_OUT_Y_L))/16350.0)
         state=waitForWiFi        
     end
     queueNextState()
@@ -193,6 +191,7 @@ end
 function postMqtt()
     mqttClient:connect(MQTT_BROKER, 1883, false, function(client)
       print2("connected")
+      appendJsonValue("heap", node.heap())
       jsonData = jsonData .. '}'
       print2(jsonData)
       client:publish(MQTT_TOPIC, jsonData, 0, 0, function(client) 
@@ -229,7 +228,6 @@ function sleepNow()
 end
 
 ----------------------------------------
-appendJsonValue("heap01", node.heap())
 mqttClient = mqtt.Client(MQTT_CLIENTID, 120)
 mqttClient:on("offline", mqttOffline)
 queueState(init)
