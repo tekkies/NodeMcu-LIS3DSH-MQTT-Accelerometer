@@ -145,7 +145,6 @@ function initAdc()
 end
 
 function initAccel()
-    --Init the bus
     spi.setup(1, spi.MASTER, spi.CPOL_HIGH, spi.CPHA_HIGH, 8, 255)
     --Check Accelerometer is present
     whoAmI = readAcc(0x0f)
@@ -154,13 +153,9 @@ function initAccel()
         panic(PANIC_NO_LIS3DH)
         return
     end
-    print2("ACC_REG_OUT_T " .. string.format("%x", readAcc(ACC_REG_OUT_T)))
-    print2("ACC_REG_CTRL_REG4 " .. string.format("%x", readAcc(ACC_REG_CTRL_REG4)))
-    print2("Set sensor frequency...")
-    writeAcc(ACC_REG_CTRL_REG4, 0x17)
-    print2("ACC_REG_CTRL_REG4 " .. string.format("%x", readAcc(ACC_REG_CTRL_REG4)))
-    --Sensitivity
-    print2("ACC_CTRL_REG5 " .. string.format("%x", readAcc(ACC_REG_CTRL_REG5)))
+    --Enable Y accelerometer
+    writeAcc(ACC_REG_CTRL_REG4, 0x1a) --0x10+0x08+0x02
+    --print2("ACC_REG_CTRL_REG4 " .. string.format("%x", readAcc(ACC_REG_CTRL_REG4)))
     queueState(getAccel)
 end
 
@@ -212,6 +207,8 @@ end
 
 function sleepNow()
     setLed(false)
+    --Sleep Accelerometer
+    writeAcc(ACC_REG_CTRL_REG4, 0x00)
     if(isOnBatteryPower()) then
         if(SLEEP_SECONDS==0) then
             queueState(init)
