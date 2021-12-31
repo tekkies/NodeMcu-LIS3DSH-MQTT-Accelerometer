@@ -2,6 +2,7 @@ ACC_REG_OUT_T = 0x0c
 ACC_REG_CTRL_REG3 = 0x23
 ACC_REG_CTRL_REG4 = 0x20
 ACC_REG_CTRL_REG5 = 0x24
+ACC_REG_CTRL_REG6 = 0x25
 ACC_REG_STATUS = 0x27
     ACC_REG_STATUS_YDA =  1
 ACC_REG_OUT_X_L = 0x28
@@ -31,6 +32,8 @@ end
 
 function initAccel()
     spi.setup(1, spi.MASTER, spi.CPOL_HIGH, spi.CPHA_HIGH, 8, 255)
+
+
     --Check Accelerometer is present
     whoAmI = readAcc(0x0f)
     print("Who_AM_I register (expect 3f): " .. string.format("%x", whoAmI))
@@ -39,17 +42,19 @@ function initAccel()
         return
     end
 
-    --reset
-    local ctrlReg3 = readAcc(ACC_REG_CTRL_REG3)
-    print("ACC_REG_CTRL_REG3 " .. string.format("%x", readAcc(ctrlReg3)))
-    writeAcc(ACC_REG_CTRL_REG3, bit.bor(ctrlReg3 + 0x01))
-    ctrlReg3 = readAcc(ACC_REG_CTRL_REG3)
-    print("ACC_REG_CTRL_REG3 " .. string.format("%x", readAcc(ctrlReg3)))
 
+    --reset
+    --local ctrlReg3 = readAcc(ACC_REG_CTRL_REG3)
+    --print("ACC_REG_CTRL_REG3 " .. string.format("%x", readAcc(ctrlReg3)))
+    --writeAcc(ACC_REG_CTRL_REG3, bit.bor(ctrlReg3 + 0x01))
     
     --Enable accelerometer
     writeAcc(ACC_REG_CTRL_REG4, 0x10+0x08+0x07)
     print("ACC_REG_CTRL_REG4 " .. string.format("%x", readAcc(ACC_REG_CTRL_REG4)))
+    print("ACC_REG_CTRL_REG5 " .. string.format("%x", readAcc(ACC_REG_CTRL_REG5)))
+    print("ACC_REG_CTRL_REG6 " .. string.format("%x", readAcc(ACC_REG_CTRL_REG6)))  --ox10 = Address Increment
+    
+
 end
 
 
