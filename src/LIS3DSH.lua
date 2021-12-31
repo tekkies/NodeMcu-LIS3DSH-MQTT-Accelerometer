@@ -7,9 +7,8 @@
 MQTT_BROKER = "test.mosquitto.org"
 MQTT_CLIENTID = "uk.co.tekkies." .. node.chipid()
 MQTT_TOPIC = "/tekkies.co.uk/LIS3DSH/" .. node.chipid() .. "-" .. node.flashid()
-SLEEP_SECONDS = 0
+SLEEP_SECONDS = 1
 USE_LED = false
-JSON_OUTPUT = true
 
 
 --State
@@ -112,7 +111,7 @@ end
 
 
 function isOnBatteryPower()
-    return batt > 1.0;
+    return batt > 3.0;
 end
 
 function queueState(newState)
@@ -184,11 +183,7 @@ end
 function postMqtt()
     mqttClient:connect(MQTT_BROKER, 1883, false, function(client)
       print2("connected")
-      if(JSON_OUTPUT) then
-        topicValue = '{"batt":"'.. string.format("%.2f", batt) .. '","accel":"' .. string.format("%.2f", accel) .. '","heap":"' .. node.heap() .. '","uptime":"' .. uptimeSeconds() .. '"}'
-      else
-        topicValue = string.format("%.2f", accel)
-      end
+      topicValue = '{"batt":"'.. string.format("%.2f", batt) .. '","accel":"' .. string.format("%.2f", accel) .. '","heap":"' .. node.heap() .. '","uptime":"' .. uptimeSeconds() .. '"}'
       print2(topicValue)
       client:publish(MQTT_TOPIC, topicValue, 0, 0, function(client) 
         print2("sent")
