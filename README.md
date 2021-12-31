@@ -23,6 +23,10 @@ Periodically polls LIS3DSH accelerometer ove SPI and pubishes to MQTT Broker
 
 ### Layout
 
+![Stripboard Layout](doc/Assembled-Board.jpg)
+
+Stripboard Design
+
 ![Stripboard Layout](src/Stripboard-Layout.VeeCAD.png)
 
 Connect 4x AA batteries to J1, + to the top, - to the bottom.
