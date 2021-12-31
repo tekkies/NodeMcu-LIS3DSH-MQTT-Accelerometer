@@ -4,7 +4,7 @@
 -- 2021-12-28 adc, bit, file, gpio, mqtt, net, node, rtctime, spi, tmr, uart, wifi, tls
 
 --Config
-BATTERY_CALIBRATION = 0.009645
+BATTERY_CALIBRATION = 0.02951871658
 MQTT_BROKER = "test.mosquitto.org"
 MQTT_CLIENTID = "uk.co.tekkies." .. node.chipid()
 MQTT_TOPIC = "/tekkies.co.uk/LIS3DSH/" .. node.chipid() .. "-" .. node.flashid()
@@ -107,7 +107,9 @@ function panicCallback()
 end
 
 function getBatteryVolts()
-    return adc.read(0) * BATTERY_CALIBRATION
+    local rawBattery = adc.read(0)
+    print2("Battery raw=" .. rawBattery)
+    return rawBattery * BATTERY_CALIBRATION
 end
 
 function appendJsonValue(key, value)
@@ -120,7 +122,7 @@ end
 
 
 function isOnBatteryPower()
-    return getBatteryVolts() > 1.4;
+    return getBatteryVolts() > 1.0;
 end
 
 function queueState(newState)
