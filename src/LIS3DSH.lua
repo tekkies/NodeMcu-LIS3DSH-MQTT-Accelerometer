@@ -4,18 +4,22 @@
 -- 2021-12-28 adc, bit, file, gpio, mqtt, net, node, rtctime, spi, tmr, uart, wifi, tls
 
 --Config
+BATTERY_CALIBRATION = 0.009645
 MQTT_BROKER = "test.mosquitto.org"
 MQTT_CLIENTID = "uk.co.tekkies." .. node.chipid()
 MQTT_TOPIC = "/tekkies.co.uk/LIS3DSH/" .. node.chipid() .. "-" .. node.flashid()
-SLEEP_SECONDS = 0
+SLEEP_SECONDS = 1
 USE_LED = false
-JSON_OUTPUT = true
+
 
 
 --State
 state = nil
-accel = 0
-batt = 0.0
+epochStartTime = tmr.now()
+panicCounter = 0
+panicReason = 0
+jsonData = '{'
+
 
 --Constants
 
@@ -69,7 +73,6 @@ function uptimeSeconds()
     return tmr.now()/1000000
 end
 
-epochStartTime = tmr.now()
 function epochSeconds()
     return (tmr.now() - epochStartTime)/1000000
 end
@@ -84,8 +87,6 @@ function setLed(ledState)
     end
 end
 
-panicCounter = 0
-panicReason = 0
 function panic(newPanicReason)
     panicReason = newPanicReason
     panicCallback()
@@ -105,14 +106,21 @@ function panicCallback()
     tmr.create():alarm(300, tmr.ALARM_SINGLE, panicCallback)
 end
 
-function readBatt()
-    batt = adc.read(0) * 0.009645
-    return batt
+function getBatteryVolts()
+    return adc.read(0) * BATTERY_CALIBRATION
+end
+
+function appendJsonValue(key, value)
+    --jsonData = jsonData .. "a"
+    if(#jsonData ~= 1) then
+        jsonData = jsonData .. ','
+    end
+    jsonData = jsonData .. '"'  .. key .. '":"' .. value .. '"' 
 end
 
 
 function isOnBatteryPower()
-    return batt > 1.0;
+    return getBatteryVolts() > 1.4;
 end
 
 function queueState(newState)
@@ -127,11 +135,11 @@ end
 
 function init()
     epochStartTime = tmr.now()
+    appendJsonValue("battery", getBatteryVolts())
+    
     if(USE_LED) then
         setLed(true)
     end
-    mqttClient = mqtt.Client(MQTT_CLIENTID, 120)
-    mqttClient:on("offline", mqttOffline)
     tmr.create():alarm(60 * 1000, tmr.ALARM_SINGLE, sleepNow)
     queueState(initAdc)
 end
@@ -142,12 +150,10 @@ function initAdc()
       node.restart()
       return -- don't bother continuing, the restart is scheduled
     end
-    readBatt()
     queueState(initAccel)
 end
 
 function initAccel()
-    --Init the bus
     spi.setup(1, spi.MASTER, spi.CPOL_HIGH, spi.CPHA_HIGH, 8, 255)
     --Check Accelerometer is present
     whoAmI = readAcc(0x0f)
@@ -156,21 +162,15 @@ function initAccel()
         panic(PANIC_NO_LIS3DH)
         return
     end
-    print2("ACC_REG_OUT_T " .. string.format("%x", readAcc(ACC_REG_OUT_T)))
-    print2("ACC_REG_CTRL_REG4 " .. string.format("%x", readAcc(ACC_REG_CTRL_REG4)))
-    print2("Set sensor frequency...")
-    writeAcc(ACC_REG_CTRL_REG4, 0x17)
-    print2("ACC_REG_CTRL_REG4 " .. string.format("%x", readAcc(ACC_REG_CTRL_REG4)))
-    --Sensitivity
-    print2("ACC_CTRL_REG5 " .. string.format("%x", readAcc(ACC_REG_CTRL_REG5)))
+    --Enable Y accelerometer
+    writeAcc(ACC_REG_CTRL_REG4, 0x10+0x08+0x02)
+    --print2("ACC_REG_CTRL_REG4 " .. string.format("%x", readAcc(ACC_REG_CTRL_REG4)))
     queueState(getAccel)
 end
 
 function getAccel()
-    readBatt()
     if(bit.isset(readAcc(ACC_REG_STATUS), ACC_REG_STATUS_YDA)) then
-        accel = twosToSigned((readAcc(ACC_REG_OUT_Y_H) * 256)+readAcc(ACC_REG_OUT_Y_L))/16350.0
-        print2(string.format("%x", accel))
+		appendJsonValue("y", twosToSigned((readAcc(ACC_REG_OUT_Y_H) * 256)+readAcc(ACC_REG_OUT_Y_L))/16350.0)
         state=waitForWiFi        
     end
     queueNextState()
@@ -191,13 +191,10 @@ end
 function postMqtt()
     mqttClient:connect(MQTT_BROKER, 1883, false, function(client)
       print2("connected")
-      if(JSON_OUTPUT) then
-        topicValue = '{"batt":"'.. string.format("%.2f", batt) .. '","accel":"' .. string.format("%.2f", accel) .. '"}'
-      else
-        topicValue = string.format("%.2f", accel)
-      end
-      print2(topicValue)
-      client:publish(MQTT_TOPIC, topicValue, 0, 0, function(client) 
+      appendJsonValue("heap", node.heap())
+      jsonData = jsonData .. '}'
+      print2(jsonData)
+      client:publish(MQTT_TOPIC, jsonData, 0, 0, function(client) 
         print2("sent")
         mqttClient:close()
       end)
@@ -213,7 +210,10 @@ function mqttOffline(client)
 end
 
 function sleepNow()
+    jsonData = "{"
     setLed(false)
+    --Sleep Accelerometer
+    writeAcc(ACC_REG_CTRL_REG4, 0x00)
     if(isOnBatteryPower()) then
         if(SLEEP_SECONDS==0) then
             queueState(init)
@@ -228,4 +228,6 @@ function sleepNow()
 end
 
 ----------------------------------------
+mqttClient = mqtt.Client(MQTT_CLIENTID, 120)
+mqttClient:on("offline", mqttOffline)
 queueState(init)

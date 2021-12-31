@@ -14,6 +14,7 @@ Periodically polls LIS3DSH accelerometer ove SPI and pubishes to MQTT Broker
 
 ## ToDo
 - [ ] Sleep the LIS3DSH
+- [_] Fix the memory leak
 
 ## Design
 
