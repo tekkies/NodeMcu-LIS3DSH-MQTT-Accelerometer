@@ -71,8 +71,7 @@ print("Y:" .. twosToSigned((readAcc(ACC_REG_OUT_Y_H) * 256)+readAcc(ACC_REG_OUT_
 print("Z:" .. twosToSigned((readAcc(ACC_REG_OUT_Z_H) * 256)+readAcc(ACC_REG_OUT_Z_L))/16350.0)
 
 
---List all registers
-
+--List all registers again
 for reg=0x0c, 0x77, 1
 do
     print(string.format("0x%02x",reg) .. " " .. string.format("0x%02x",readAcc(reg)) )
