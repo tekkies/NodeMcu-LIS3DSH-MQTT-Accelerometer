@@ -167,7 +167,7 @@ end
 function getAccel()
     readBatt()
     if(bit.isset(readAcc(ACC_REG_STATUS), ACC_REG_STATUS_YDA)) then
-        accel = twosToSigned((readAcc(ACC_REG_OUT_X_H) * 256)+readAcc(ACC_REG_OUT_X_L))/16350.0
+        accel = twosToSigned((readAcc(ACC_REG_OUT_Y_H) * 256)+readAcc(ACC_REG_OUT_Y_L))/16350.0
         print2(string.format("%x", accel))
         state=waitForWiFi        
     end
@@ -212,7 +212,6 @@ end
 
 function sleepNow()
     setLed(false)
-    mqttClient:close()
     if(isOnBatteryPower()) then
         if(SLEEP_SECONDS==0) then
             queueState(init)
