@@ -63,9 +63,10 @@ initAccel()
 
 
 function waitForData()
-    print("Wait...")
+    --print("Wait...")
     while(not bit.isset(readAcc(ACC_REG_STATUS), ACC_REG_STATUS_XYZDA))
     do
+        tmr.wdclr()
     end
 end
 
@@ -82,27 +83,20 @@ function printAll()
     --print("Status ".. string.format("0x%02x", readAcc(ACC_REG_STATUS)))
     waitForData()
     readAll()    
-    print("X " .. string.format("%3d", xPercent) .. "%")
-    print("y " .. string.format("%3d", yPercent) .. "%")
-    print("z " .. string.format("%3d", zPercent) .. "%")
+    print("X=" .. string.format("%3d", xPercent) .. "% y=" .. string.format("%3d", yPercent) .. "% z=" .. string.format("%3d", zPercent) .. "%")
 end
 
 
 writeAcc(ACC_REG_CTRL_REG5, 0x00)
-readAll()
-readAll()
-readAll()
 printAll()
-readAll()
-readAll()
-readAll()
+printAll()
+printAll()
 printAll()
 
 writeAcc(ACC_REG_CTRL_REG5, 0x20)
 printAll()
-readAll()
-readAll()
-readAll()
+printAll()
+printAll()
 printAll()
 
 
