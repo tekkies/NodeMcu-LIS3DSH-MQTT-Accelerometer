@@ -71,13 +71,18 @@ File,19
 "SmdOutlines" : [
 ],
 "Components" : [
-  { "Designator" : "R2", "Value" : "100k", "Outline" : "AX3_1N",
-  "X1000" : 1000, "Y1000" : 10000, "EndDeltaX" : 0, "EndDeltaY" : 5,
+  { "Designator" : "D1", "Value" : "1N400x", "Outline" : "AX3_1",
+  "X1000" : 3000, "Y1000" : 9000, "EndDeltaX" : 0, "EndDeltaY" : 5,
   "Text" : { "X" : 0, "Y" : -1, "Angle" : 0, "Visible" : true },
   "Group" : 0
   },
-  { "Designator" : "R1", "Value" : "690k", "Outline" : "AX3_1N",
-  "X1000" : 0, "Y1000" : 5000, "EndDeltaX" : 0, "EndDeltaY" : 5,
+  { "Designator" : "D2", "Value" : "1N400x", "Outline" : "AX3_1",
+  "X1000" : 14000, "Y1000" : 8000, "EndDeltaX" : 0, "EndDeltaY" : 5,
+  "Text" : { "X" : 0, "Y" : -1, "Angle" : 0, "Visible" : true },
+  "Group" : 0
+  },
+  { "Designator" : "D3", "Value" : "1N400x", "Outline" : "AX3_1",
+  "X1000" : 13000, "Y1000" : 17000, "EndDeltaX" : 0, "EndDeltaY" : -4,
   "Text" : { "X" : 0, "Y" : -1, "Angle" : 0, "Visible" : true },
   "Group" : 0
   },
@@ -86,78 +91,89 @@ File,19
   "Text" : { "X" : 0, "Y" : -1, "Angle" : 0, "Visible" : true },
   "Group" : 0
   },
-  { "Designator" : "D1", "Value" : "1N400x", "Outline" : "AX3_1",
-  "X1000" : 3000, "Y1000" : 9000, "EndDeltaX" : 0, "EndDeltaY" : 5,
-  "Text" : { "X" : 0, "Y" : -1, "Angle" : 0, "Visible" : true },
-  "Group" : 0
-  },
   { "Designator" : "J2", "Value" : "Conn_16", "Outline" : "SIP16",
   "X1000" : 10000, "Y1000" : 15000, "EndDeltaX" : 0, "EndDeltaY" : -1,
-  "Text" : { "X" : 0, "Y" : 0, "Angle" : 0, "Visible" : true },
+  "Text" : { "X" : 0, "Y" : -1, "Angle" : 0, "Visible" : true },
   "Group" : 0
   },
   { "Designator" : "J3", "Value" : "Conn_16", "Outline" : "SIP16",
   "X1000" : 19000, "Y1000" : 15000, "EndDeltaX" : 0, "EndDeltaY" : -1,
-  "Text" : { "X" : 0, "Y" : 0, "Angle" : 0, "Visible" : true },
+  "Text" : { "X" : 0, "Y" : -1, "Angle" : 0, "Visible" : true },
   "Group" : 0
   },
   { "Designator" : "J4", "Value" : "CJMCU- LIS3DSH", "Outline" : "SIP12",
-  "X1000" : 23000, "Y1000" : 6000, "EndDeltaX" : 0, "EndDeltaY" : 1,
+  "X1000" : 25000, "Y1000" : 6000, "EndDeltaX" : 0, "EndDeltaY" : 1,
+  "Text" : { "X" : 0, "Y" : -1, "Angle" : 0, "Visible" : true },
+  "Group" : 0
+  },
+  { "Designator" : "R1", "Value" : "690k", "Outline" : "AX3_1N",
+  "X1000" : 0, "Y1000" : 5000, "EndDeltaX" : 0, "EndDeltaY" : 5,
+  "Text" : { "X" : 0, "Y" : -1, "Angle" : 0, "Visible" : true },
+  "Group" : 0
+  },
+  { "Designator" : "R2", "Value" : "100k", "Outline" : "AX3_1N",
+  "X1000" : 1000, "Y1000" : 10000, "EndDeltaX" : 0, "EndDeltaY" : 5,
   "Text" : { "X" : 0, "Y" : -1, "Angle" : 0, "Visible" : true },
   "Group" : 0
   }
 ],
 "Links" : [
-  { "X" : 5, "Y" : 14, "EndDeltaX" : 0, "EndDeltaY" : 1, "Group" : 0 },
-  { "X" : 15, "Y" : 1, "EndDeltaX" : 0, "EndDeltaY" : 12, "Group" : 0 },
   { "X" : 4, "Y" : 1, "EndDeltaX" : 0, "EndDeltaY" : 9, "Group" : 0 },
+  { "X" : 7, "Y" : 9, "EndDeltaX" : 0, "EndDeltaY" : 6, "Group" : 0 },
+  { "X" : 5, "Y" : 14, "EndDeltaX" : 0, "EndDeltaY" : 1, "Group" : 0 },
   { "X" : 2, "Y" : 5, "EndDeltaX" : 0, "EndDeltaY" : 9, "Group" : 0 },
-  { "X" : 7, "Y" : 9, "EndDeltaX" : 0, "EndDeltaY" : 6, "Group" : 0 }
+  { "X" : 15, "Y" : 1, "EndDeltaX" : 0, "EndDeltaY" : 7, "Group" : 0 }
 ],
 "Breaks" : [
   { "X" : 4, "Y" : 14, "Shift" : "none", "Group" : 0 },
+  { "X" : 13, "Y" : 1, "Shift" : "none", "Group" : 0 },
+  { "X" : 8, "Y" : 10, "Shift" : "none", "Group" : 0 },
   { "X" : 6, "Y" : 15, "Shift" : "none", "Group" : 0 },
   { "X" : 16, "Y" : 13, "Shift" : "none", "Group" : 0 },
-  { "X" : 14, "Y" : 1, "Shift" : "none", "Group" : 0 },
-  { "X" : 8, "Y" : 10, "Shift" : "none", "Group" : 0 },
-  { "X" : 8, "Y" : 9, "Shift" : "none", "Group" : 0 },
   { "X" : 3, "Y" : 5, "Shift" : "none", "Group" : 0 },
-  { "X" : 14, "Y" : 3, "Shift" : "none", "Group" : 0 },
-  { "X" : 14, "Y" : 2, "Shift" : "none", "Group" : 0 },
-  { "X" : 14, "Y" : 4, "Shift" : "none", "Group" : 0 },
-  { "X" : 14, "Y" : 5, "Shift" : "none", "Group" : 0 },
-  { "X" : 14, "Y" : 6, "Shift" : "none", "Group" : 0 },
+  { "X" : 13, "Y" : 3, "Shift" : "none", "Group" : 0 },
+  { "X" : 13, "Y" : 4, "Shift" : "none", "Group" : 0 },
+  { "X" : 13, "Y" : 0, "Shift" : "none", "Group" : 0 },
+  { "X" : 13, "Y" : 2, "Shift" : "none", "Group" : 0 },
+  { "X" : 13, "Y" : 5, "Shift" : "none", "Group" : 0 },
   { "X" : 14, "Y" : 7, "Shift" : "none", "Group" : 0 },
-  { "X" : 14, "Y" : 8, "Shift" : "none", "Group" : 0 },
-  { "X" : 14, "Y" : 9, "Shift" : "none", "Group" : 0 },
-  { "X" : 14, "Y" : 10, "Shift" : "none", "Group" : 0 },
-  { "X" : 14, "Y" : 11, "Shift" : "none", "Group" : 0 },
-  { "X" : 14, "Y" : 12, "Shift" : "none", "Group" : 0 },
+  { "X" : 8, "Y" : 9, "Shift" : "none", "Group" : 0 },
+  { "X" : 13, "Y" : 6, "Shift" : "none", "Group" : 0 },
+  { "X" : 13, "Y" : 9, "Shift" : "none", "Group" : 0 },
+  { "X" : 13, "Y" : 10, "Shift" : "none", "Group" : 0 },
   { "X" : 14, "Y" : 14, "Shift" : "none", "Group" : 0 },
+  { "X" : 22, "Y" : 12, "Shift" : "none", "Group" : 0 },
+  { "X" : 13, "Y" : 12, "Shift" : "none", "Group" : 0 },
+  { "X" : 22, "Y" : 10, "Shift" : "none", "Group" : 0 },
+  { "X" : 13, "Y" : 11, "Shift" : "none", "Group" : 0 },
+  { "X" : 22, "Y" : 14, "Shift" : "none", "Group" : 0 },
+  { "X" : 22, "Y" : 15, "Shift" : "none", "Group" : 0 },
+  { "X" : 22, "Y" : 13, "Shift" : "none", "Group" : 0 },
+  { "X" : 22, "Y" : 9, "Shift" : "none", "Group" : 0 },
+  { "X" : 16, "Y" : 8, "Shift" : "none", "Group" : 0 },
   { "X" : 14, "Y" : 15, "Shift" : "none", "Group" : 0 },
-  { "X" : 21, "Y" : 9, "Shift" : "none", "Group" : 0 },
-  { "X" : 21, "Y" : 10, "Shift" : "none", "Group" : 0 },
-  { "X" : 21, "Y" : 12, "Shift" : "none", "Group" : 0 },
-  { "X" : 21, "Y" : 13, "Shift" : "none", "Group" : 0 },
-  { "X" : 21, "Y" : 14, "Shift" : "none", "Group" : 0 },
-  { "X" : 21, "Y" : 15, "Shift" : "none", "Group" : 0 }
+  { "X" : 13, "Y" : 8, "Shift" : "none", "Group" : 0 },
+  { "X" : 24, "Y" : 17, "Shift" : "none", "Group" : 0 }
 ],
 "Wires" : [
-    { "Value" : "A", "X" : 22, "Y" : 10, "Group" : 0 },
-    { "Value" : "A", "X" : 20, "Y" : 9, "Group" : 0 },
-    { "Value" : "B", "X" : 20, "Y" : 10, "Group" : 0 },
-    { "Value" : "B", "X" : 22, "Y" : 9, "Group" : 0 }
+    { "Value" : "A", "X" : 23, "Y" : 10, "Group" : 0 },
+    { "Value" : "A", "X" : 21, "Y" : 9, "Group" : 0 },
+    { "Value" : "B", "X" : 21, "Y" : 10, "Group" : 0 },
+    { "Value" : "B", "X" : 23, "Y" : 9, "Group" : 0 },
+    { "Value" : "C", "X" : 22, "Y" : 17, "Group" : 0 },
+    { "Value" : "C", "X" : 23, "Y" : 12, "Group" : 0 }
 ],
 "Text" : [
-    { "Value" : "A0", "X" : 9, "Y" : 1, "Angle" : 0, "Size" : "Small", "Group" : 0 },
-    { "Value" : "Vin", "X" : 9, "Y" : 15, "Angle" : 0, "Size" : "Small", "Group" : 0 },
+    { "Value" : "ADC3", "X" : 22, "Y" : 16, "Angle" : 0, "Size" : "Small", "Group" : 0 },
+    { "Value" : "VCC", "X" : 23, "Y" : 6, "Angle" : 0, "Size" : "Small", "Group" : 0 },
     { "Value" : "D0", "X" : 20, "Y" : 1, "Angle" : 0, "Size" : "Small", "Group" : 0 },
-    { "Value" : "ADC3", "X" : 21, "Y" : 16, "Angle" : 0, "Size" : "Small", "Group" : 0 },
-    { "Value" : "VCC", "X" : 22, "Y" : 6, "Angle" : 0, "Size" : "Small", "Group" : 0 },
     { "Value" : "*****************************************************", "X" : 13, "Y" : 0, "Angle" : 0, "Size" : "Small", "Group" : 0 },
+    { "Value" : "Vin", "X" : 9, "Y" : 15, "Angle" : 0, "Size" : "Small", "Group" : 0 },
+    { "Value" : "A0", "X" : 9, "Y" : 1, "Angle" : 0, "Size" : "Small", "Group" : 0 },
+    { "Value" : "3v3", "X" : 18, "Y" : 15, "Angle" : 0, "Size" : "Small", "Group" : 0 },
     { "Value" : "USB", "X" : 14, "Y" : 16, "Angle" : 0, "Size" : "Small", "Group" : 0 },
-    { "Value" : "*****************************************************", "X" : 13, "Y" : 17, "Angle" : 0, "Size" : "Small", "Group" : 0 },
-    { "Value" : "3v3", "X" : 18, "Y" : 15, "Angle" : 0, "Size" : "Small", "Group" : 0 }
+    { "Value" : "v2.0", "X" : 1, "Y" : 1, "Angle" : 0, "Size" : "Small", "Group" : 0 },
+    { "Value" : "https:\/\/github.com\/tekkies\/NodeMcu-LIS3DSH-MQTT-Accelerometer", "X" : 15, "Y" : 19, "Angle" : 0, "Size" : "Small", "Group" : 0 }
 ],
 "Nets" : [
     { "Node" : "N000003", "Components" : [
@@ -175,8 +191,9 @@ File,19
     { "Name" : "J2", "Pins" : ["1"] }
     ] },
     { "Node" : "N000099", "Components" : [
-    { "Name" : "J2", "Pins" : ["3"] },
-    { "Name" : "J3", "Pins" : ["15"] }
+    { "Name" : "D2", "Pins" : ["2"] },
+    { "Name" : "D3", "Pins" : ["2"] },
+    { "Name" : "J2", "Pins" : ["3"] }
     ] },
     { "Node" : "N000117", "Components" : [
     { "Name" : "J3", "Pins" : ["5"] },
@@ -201,6 +218,14 @@ File,19
     { "Node" : "N000122", "Components" : [
     { "Name" : "J3", "Pins" : ["10"] },
     { "Name" : "J4", "Pins" : ["1"] }
+    ] },
+    { "Node" : "N000143", "Components" : [
+    { "Name" : "D3", "Pins" : ["1"] },
+    { "Name" : "J4", "Pins" : ["7"] }
+    ] },
+    { "Node" : "N000153", "Components" : [
+    { "Name" : "D2", "Pins" : ["1"] },
+    { "Name" : "J3", "Pins" : ["15"] }
     ] },
     { "Node" : "TCPOWERBAR", "Components" : [
     { "Name" : "J1", "Pins" : ["2"] },
