@@ -38,8 +38,14 @@ function twosToSigned(twos)
     end    
 end
 
+function print1(message)
+	if(ENABLE_PRINT) then
+		print(message)
+	end
+end
+
 function print2(message)
-    print("    "..message)
+    print1("    "..message)
 end
 
 function uptimeSeconds()
@@ -66,7 +72,7 @@ function panic(newPanicReason)
 end
 
 function panicCallback()
-    print("PANIC " .. panicReason .. " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+    print1("PANIC " .. panicReason .. " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
     if (((panicCounter % 2) == 0) and (panicCounter < panicReason * 2)) then
         setLed(true)
     else
@@ -104,7 +110,7 @@ function queueState(newState)
 end
 
 function queueNextState()
-    print(costlyGetStateName())
+    print1(costlyGetStateName())
     node.task.post(state)
 end
 

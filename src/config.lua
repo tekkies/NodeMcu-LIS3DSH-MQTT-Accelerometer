@@ -5,3 +5,4 @@ MQTT_TOPIC = "/tekkies.co.uk/LIS3DSH/" .. node.chipid() .. "-" .. node.flashid()
 USE_LED = false
 SLEEP_SECONDS = 5
 WAKE_SENSITIVITY = 64 --0-127
+ENABLE_PRINT = true
