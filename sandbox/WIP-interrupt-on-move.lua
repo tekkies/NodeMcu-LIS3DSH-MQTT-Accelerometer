@@ -13,16 +13,17 @@ ACC_REG_OUT_Y_H = 0x2B
 ACC_REG_OUT_Z_L = 0x2C
 ACC_REG_OUT_Z_H = 0x2D
 
-LIS3DSH_CTRL_REG1 = 0x01
-LIS3DSH_CTRL_REG3 = 0x48        
-LIS3DSH_CTRL_REG4 = 0x67        
-LIS3DSH_CTRL_REG5 = 0x00        
-LIS3DSH_THRS1_1 = 0x55      
-LIS3DSH_ST1_1 = 0x05        
-LIS3DSH_ST1_2 = 0x11        
-LIS3DSH_MASK1_B = 0xFC      
-LIS3DSH_MASK1_A = 0xFC      
-LIS3DSH_SETT1 = 0x01        
+LIS3DSH_CTRL_REG1 = 0x21        
+LIS3DSH_CTRL_REG3 = 0x23        
+LIS3DSH_CTRL_REG4 = 0x20        
+LIS3DSH_CTRL_REG5 = 0x24        
+LIS3DSH_THRS1_1 = 0x57      
+LIS3DSH_ST1_1 = 0x40        
+LIS3DSH_ST1_2 = 0x41        
+LIS3DSH_MASK1_B = 0x59      
+LIS3DSH_MASK1_A = 0x5A      
+LIS3DSH_SETT1 = 0x5B        
+
 
 function twosToSigned(twos)
     if(twos > 0x7fff) then
@@ -56,10 +57,10 @@ function initAccel()
     
     --"Wake-Up" - 9.2 in Application Note
     writeAcc(LIS3DSH_CTRL_REG1, 0x01) --hysteresis: 0, Interrupt Pin: INT1, State-Machin1: Enable
-    writeAcc(LIS3DSH_CTRL_REG3, 0x48) Interrupt polarity High, 
-    writeAcc(LIS3DSH_CTRL_REG4, 0x67)
-    writeAcc(LIS3DSH_CTRL_REG5, 0x00)
-    writeAcc(LIS3DSH_THRS1_1, 0x55)
+    writeAcc(LIS3DSH_CTRL_REG3, 0x48) --data ready signal not connected, interrupt signals active HIGH, interrupt signal latched, INT1/DRDY signal enabled, vector filter disabled, no soft reset
+    writeAcc(LIS3DSH_CTRL_REG4, 0x67) --data rate: 100Hz, Block data update: continuous, enable xyz
+    writeAcc(LIS3DSH_CTRL_REG5, 0x00) 
+    writeAcc(LIS3DSH_THRS1_1, 0x55) --Threshold value for SM1 operation.
     writeAcc(LIS3DSH_ST1_1, 0x05)
     writeAcc(LIS3DSH_ST1_2, 0x11)
     writeAcc(LIS3DSH_MASK1_B, 0xFC)
