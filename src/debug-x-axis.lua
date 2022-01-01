@@ -50,7 +50,7 @@ function initAccel()
     --writeAcc(ACC_REG_CTRL_REG3, bit.bor(ctrlReg3 + 0x01))
     
     --Enable accelerometer
-    writeAcc(ACC_REG_CTRL_REG4, 0x90+0x08+0x07)
+    writeAcc(ACC_REG_CTRL_REG4, 0x10+0x08+0x07)
     print("ACC_REG_CTRL_REG4 " .. string.format("0x%02x", readAcc(ACC_REG_CTRL_REG4)))
     print("ACC_REG_CTRL_REG5 " .. string.format("0x%02x", readAcc(ACC_REG_CTRL_REG5)))
     print("ACC_REG_CTRL_REG6 " .. string.format("0x%02x", readAcc(ACC_REG_CTRL_REG6)))
@@ -79,30 +79,32 @@ end
 
 
 function printAll()
-    print("Status ".. string.format("0x%02x", readAcc(ACC_REG_STATUS)))
+    --print("Status ".. string.format("0x%02x", readAcc(ACC_REG_STATUS)))
     waitForData()
     readAll()    
-    print("X " .. string.format("%d", xPercent) .. "%")
-    print("y " .. string.format("%d", yPercent) .. "%")
-    print("z " .. string.format("%d", zPercent) .. "%")
+    print("X " .. string.format("%3d", xPercent) .. "%")
+    print("y " .. string.format("%3d", yPercent) .. "%")
+    print("z " .. string.format("%3d", zPercent) .. "%")
 end
 
 
 writeAcc(ACC_REG_CTRL_REG5, 0x00)
 readAll()
+readAll()
+readAll()
 printAll()
-
-writeAcc(ACC_REG_CTRL_REG5, 0x00)
+readAll()
+readAll()
 readAll()
 printAll()
 
-writeAcc(ACC_REG_CTRL_REG5, 0x04)
+writeAcc(ACC_REG_CTRL_REG5, 0x20)
+printAll()
+readAll()
+readAll()
 readAll()
 printAll()
 
-writeAcc(ACC_REG_CTRL_REG5, 0x04)
-readAll()
-printAll()
 
 
 --List all registers again
