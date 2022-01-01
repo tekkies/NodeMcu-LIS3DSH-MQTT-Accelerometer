@@ -167,22 +167,10 @@ end
 
 function readLis3dshXyz()
     if(bit.isset(readLis3dsh(ACC_REG_STATUS), ACC_REG_STATUS_YDA)) then
-        --Read 6 bytes
         spi.transaction(1, 0, 0, 8, 0x80 + ACC_REG_OUT_X_L, 0,0,48)
-        print(string.format("0x%04x", spi.get_miso(1,0*8,8,1)+spi.get_miso(1,1*8,8,1)*256))
-        print(string.format("0x%04x", spi.get_miso(1,2*8,8,1)+spi.get_miso(1,3*8,8,1)*256))
-        print(string.format("0x%04x", spi.get_miso(1,4*8,8,1)+spi.get_miso(1,5*8,8,1)*256))
-
         appendJsonValue("x", twosToSigned((spi.get_miso(1,0*8,8,1)+spi.get_miso(1,1*8,8,1)*256))/16350.0)
         appendJsonValue("y", twosToSigned((spi.get_miso(1,2*8,8,1)+spi.get_miso(1,3*8,8,1)*256))/16350.0)
         appendJsonValue("z", twosToSigned((spi.get_miso(1,4*8,8,1)+spi.get_miso(1,5*8,8,1)*256))/16350.0)
-
-
-
-
-
-        
-		appendJsonValue("ySlow", twosToSigned((readLis3dsh(ACC_REG_OUT_Y_H) * 256)+readLis3dsh(ACC_REG_OUT_Y_L))/16350.0)
         state=waitForWiFi        
     end
     queueNextState()
