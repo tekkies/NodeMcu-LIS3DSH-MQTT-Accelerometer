@@ -13,6 +13,17 @@ ACC_REG_OUT_Y_H = 0x2B
 ACC_REG_OUT_Z_L = 0x2C
 ACC_REG_OUT_Z_H = 0x2D
 
+LIS3DSH_CTRL_REG1 = 0x01
+LIS3DSH_CTRL_REG3 = 0x48        
+LIS3DSH_CTRL_REG4 = 0x67        
+LIS3DSH_CTRL_REG5 = 0x00        
+LIS3DSH_THRS1_1 = 0x55      
+LIS3DSH_ST1_1 = 0x05        
+LIS3DSH_ST1_2 = 0x11        
+LIS3DSH_MASK1_B = 0xFC      
+LIS3DSH_MASK1_A = 0xFC      
+LIS3DSH_SETT1 = 0x01        
+
 function twosToSigned(twos)
     if(twos > 0x7fff) then
         return twos - 0x10000
@@ -39,16 +50,21 @@ function initAccel()
     whoAmI = readAcc(0x0f)
     print("Who_AM_I register (expect 3f): " .. string.format("%x", whoAmI))
     if (whoAmI ~= 0x3f) then
-        panic(PANIC_NO_LIS3DH)
+        print("No LIS3DSH detected")
         return
     end
     
-    --Enable accelerometer
-    writeAcc(ACC_REG_CTRL_REG4, 0x10+0x08+0x07)
-    --print("ACC_REG_CTRL_REG4 " .. string.format("0x%02x", readAcc(ACC_REG_CTRL_REG4)))
-    --print("ACC_REG_CTRL_REG5 " .. string.format("0x%02x", readAcc(ACC_REG_CTRL_REG5)))
-    --print("ACC_REG_CTRL_REG6 " .. string.format("0x%02x", readAcc(ACC_REG_CTRL_REG6)))
-    
+    --"Wake-Up" - 9.2 in Application Note
+    writeAcc(LIS3DSH_CTRL_REG1, 0x01) --hysteresis: 0, Interrupt Pin: INT1, State-Machin1: Enable
+    writeAcc(LIS3DSH_CTRL_REG3, 0x48) Interrupt polarity High, 
+    writeAcc(LIS3DSH_CTRL_REG4, 0x67)
+    writeAcc(LIS3DSH_CTRL_REG5, 0x00)
+    writeAcc(LIS3DSH_THRS1_1, 0x55)
+    writeAcc(LIS3DSH_ST1_1, 0x05)
+    writeAcc(LIS3DSH_ST1_2, 0x11)
+    writeAcc(LIS3DSH_MASK1_B, 0xFC)
+    writeAcc(LIS3DSH_MASK1_A, 0xFC)
+    writeAcc(LIS3DSH_SETT1, 0x01)    
 
 end
 
