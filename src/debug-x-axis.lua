@@ -70,42 +70,40 @@ function waitForData()
 end
 
 
-writeAcc(ACC_REG_CTRL_REG5, 0x00)
-print("Status ".. string.format("0x%02x", readAcc(ACC_REG_STATUS)))
-waitForData()
-print("Status ".. string.format("0x%02x", readAcc(ACC_REG_STATUS)))
-print("X " .. string.format("0x%04x", (readAcc(ACC_REG_OUT_X_H) * 256)+readAcc(ACC_REG_OUT_X_L)))
-print("X " .. twosToSigned((readAcc(ACC_REG_OUT_X_H) * 256)+readAcc(ACC_REG_OUT_X_L))/163.500)
-print("Y " .. twosToSigned((readAcc(ACC_REG_OUT_Y_H) * 256)+readAcc(ACC_REG_OUT_Y_L))/163.500)
-print("Z " .. twosToSigned((readAcc(ACC_REG_OUT_Z_H) * 256)+readAcc(ACC_REG_OUT_Z_L))/163.500)
+function readAll()
+    xPercent = twosToSigned(((readAcc(ACC_REG_OUT_X_H) * 256)+readAcc(ACC_REG_OUT_X_L)))/163.500
+    yPercent = twosToSigned(((readAcc(ACC_REG_OUT_Y_H) * 256)+readAcc(ACC_REG_OUT_Y_L)))/163.500
+    zPercent = twosToSigned(((readAcc(ACC_REG_OUT_Z_H) * 256)+readAcc(ACC_REG_OUT_Z_L)))/163.500
+
+end
+
+
+function printAll()
+    print("Status ".. string.format("0x%02x", readAcc(ACC_REG_STATUS)))
+    waitForData()
+    readAll()    
+    print("X " .. string.format("%d", xPercent) .. "%")
+    print("y " .. string.format("%d", yPercent) .. "%")
+    print("z " .. string.format("%d", zPercent) .. "%")
+end
+
 
 writeAcc(ACC_REG_CTRL_REG5, 0x00)
-print("Status ".. string.format("0x%02x", readAcc(ACC_REG_STATUS)))
-waitForData()
-print("Status ".. string.format("0x%02x", readAcc(ACC_REG_STATUS)))
-print("X " .. string.format("0x%04x", (readAcc(ACC_REG_OUT_X_H) * 256)+readAcc(ACC_REG_OUT_X_L)))
-print("X " .. twosToSigned((readAcc(ACC_REG_OUT_X_H) * 256)+readAcc(ACC_REG_OUT_X_L))/163.500)
-print("Y " .. twosToSigned((readAcc(ACC_REG_OUT_Y_H) * 256)+readAcc(ACC_REG_OUT_Y_L))/163.500)
-print("Z " .. twosToSigned((readAcc(ACC_REG_OUT_Z_H) * 256)+readAcc(ACC_REG_OUT_Z_L))/163.500)
+readAll()
+printAll()
 
+writeAcc(ACC_REG_CTRL_REG5, 0x00)
+readAll()
+printAll()
 
 writeAcc(ACC_REG_CTRL_REG5, 0x04)
-print("Status ".. string.format("0x%02x", readAcc(ACC_REG_STATUS)))
-waitForData()
-print("Status ".. string.format("0x%02x", readAcc(ACC_REG_STATUS)))
-print("X " .. string.format("0x%04x", (readAcc(ACC_REG_OUT_X_H) * 256)+readAcc(ACC_REG_OUT_X_L)))
-print("X " .. twosToSigned((readAcc(ACC_REG_OUT_X_H) * 256)+readAcc(ACC_REG_OUT_X_L))/163.500)
-print("Y " .. twosToSigned((readAcc(ACC_REG_OUT_Y_H) * 256)+readAcc(ACC_REG_OUT_Y_L))/163.500)
-print("Z " .. twosToSigned((readAcc(ACC_REG_OUT_Z_H) * 256)+readAcc(ACC_REG_OUT_Z_L))/163.500)
+readAll()
+printAll()
 
 writeAcc(ACC_REG_CTRL_REG5, 0x04)
-print("Status ".. string.format("0x%02x", readAcc(ACC_REG_STATUS)))
-waitForData()
-print("Status ".. string.format("0x%02x", readAcc(ACC_REG_STATUS)))
-print("X " .. string.format("0x%04x", (readAcc(ACC_REG_OUT_X_H) * 256)+readAcc(ACC_REG_OUT_X_L)))
-print("X " .. twosToSigned((readAcc(ACC_REG_OUT_X_H) * 256)+readAcc(ACC_REG_OUT_X_L))/163.500)
-print("Y " .. twosToSigned((readAcc(ACC_REG_OUT_Y_H) * 256)+readAcc(ACC_REG_OUT_Y_L))/163.500)
-print("Z " .. twosToSigned((readAcc(ACC_REG_OUT_Z_H) * 256)+readAcc(ACC_REG_OUT_Z_L))/163.500)
+readAll()
+printAll()
+
 
 --List all registers again
 --[[for reg=0x0c, 0x77, 1
