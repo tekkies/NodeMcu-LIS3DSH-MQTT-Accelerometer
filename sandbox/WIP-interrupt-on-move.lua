@@ -24,6 +24,7 @@ LIS3DSH_ST1_2 = 0x41
 LIS3DSH_MASK1_B = 0x59      
 LIS3DSH_MASK1_A = 0x5A      
 LIS3DSH_SETT1 = 0x5B        
+LIS3DSH_OUTS1 = 0x5F
 
 
 function twosToSigned(twos)
@@ -58,9 +59,8 @@ function initAccel()
 end
 
 function setupStateMachine()
-    --"Wake-Up" - 9.2 in Application Note
-    writeAcc(LIS3DSH_CTRL_REG1, 0x01) --hysteresis: 0, Interrupt Pin: INT1, State-Machin1: Enable
-    writeAcc(LIS3DSH_CTRL_REG3, 0x28) --data ready signal not connected, interrupt signals active LOW, interrupt signal pulsed, INT1/DRDY signal enabled, vector filter disabled, no soft reset
+    --"Wake-Up" - Based on 9.2 in Application Note
+    writeAcc(LIS3DSH_CTRL_REG3, 0x28) --data ready signal not connected, interrupt signals active LOW, interrupt signal pulsed (50us), INT1/DRDY signal enabled, vector filter disabled, no soft reset
     writeAcc(LIS3DSH_CTRL_REG4, 0x60 + 0x06) --data rate: 100Hz, Block data update: continuous, enable yz, disable x
     writeAcc(LIS3DSH_CTRL_REG5, 0x00) 
     writeAcc(LIS3DSH_THRS1_1, 0x40) --SENSITIVITY: Threshold value for SM1 operation.
@@ -69,6 +69,7 @@ function setupStateMachine()
     writeAcc(LIS3DSH_MASK1_B, 0x3C) --Axis and sign mask (disable x)
     writeAcc(LIS3DSH_MASK1_A, 0x3C) --Axis and sign mask (disable x)
     writeAcc(LIS3DSH_SETT1, 0x01) --Setting of threshold, peak detection and flags for SM1 motion-detection operation.
+    writeAcc(LIS3DSH_CTRL_REG1, 0x01) --hysteresis: 0, Interrupt Pin: INT1, State-Machin1: Enable
 end
 
 
@@ -96,7 +97,6 @@ function printAll()
     readAll()    
     print("X=" .. string.format("%3d", xPercent) .. "% y=" .. string.format("%3d", yPercent) .. "% z=" .. string.format("%3d", zPercent) .. "%")
 end
-
 
 
 initAccel()
