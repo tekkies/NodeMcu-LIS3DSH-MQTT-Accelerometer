@@ -4,7 +4,7 @@ ACC_REG_CTRL_REG4 = 0x20
 ACC_REG_CTRL_REG5 = 0x24
 ACC_REG_CTRL_REG6 = 0x25
 ACC_REG_STATUS = 0x27
-    ACC_REG_STATUS_YDA =  1
+    ACC_REG_STATUS_YDA =  0x02
     ACC_REG_STATUS_XYZDA = 0x80
 ACC_REG_OUT_X_L = 0x28
 ACC_REG_OUT_X_H = 0x29
@@ -55,28 +55,28 @@ function initAccel()
         print("No LIS3DSH detected")
         return
     end
-    
+end
+
+function setupStateMachine()
     --"Wake-Up" - 9.2 in Application Note
     writeAcc(LIS3DSH_CTRL_REG1, 0x01) --hysteresis: 0, Interrupt Pin: INT1, State-Machin1: Enable
     writeAcc(LIS3DSH_CTRL_REG3, 0x48) --data ready signal not connected, interrupt signals active HIGH, interrupt signal latched, INT1/DRDY signal enabled, vector filter disabled, no soft reset
-    writeAcc(LIS3DSH_CTRL_REG4, 0x67) --data rate: 100Hz, Block data update: continuous, enable xyz
+    writeAcc(LIS3DSH_CTRL_REG4, 0x60 + 0x06) --data rate: 100Hz, Block data update: continuous, enable yz, not X
     writeAcc(LIS3DSH_CTRL_REG5, 0x00) 
     writeAcc(LIS3DSH_THRS1_1, 0x55) --Threshold value for SM1 operation.
-    writeAcc(LIS3DSH_ST1_1, 0x05) --State machine 1 code register
-    writeAcc(LIS3DSH_ST1_2, 0x11) --State machine 1 code register
-    writeAcc(LIS3DSH_MASK1_B, 0xFC) --Axis and sign mask
-    writeAcc(LIS3DSH_MASK1_A, 0xFC) --Axis and sign mask
+    writeAcc(LIS3DSH_ST1_1, 0x05) --NOP | Any/triggered axis greater than THRS1
+    writeAcc(LIS3DSH_ST1_2, 0x11) --Timer 1 | Timer 1
+    writeAcc(LIS3DSH_MASK1_B, 0x3C) --Axis and sign mask
+    writeAcc(LIS3DSH_MASK1_A, 0x3C) --Axis and sign mask
     writeAcc(LIS3DSH_SETT1, 0x01) --Setting of threshold, peak detection and flags for SM1 motion-detection operation.
-
 end
 
 
 
-initAccel()
 
 function waitForData()
     --print("Wait...")
-    while(not bit.isset(readAcc(ACC_REG_STATUS), ACC_REG_STATUS_XYZDA))
+    while(not bit.isset(readAcc(ACC_REG_STATUS), ACC_REG_STATUS_YDA))
     do
         tmr.wdclr()
     end
@@ -97,15 +97,11 @@ function printAll()
     print("X=" .. string.format("%3d", xPercent) .. "% y=" .. string.format("%3d", yPercent) .. "% z=" .. string.format("%3d", zPercent) .. "%")
 end
 
-print("Normal")
+
+
+initAccel()
+setupStateMachine()
 printAll()
-
-
-
-
---Sleep Accelerometer
-writeAcc(ACC_REG_CTRL_REG4, 0x00)
-
 
 
 
