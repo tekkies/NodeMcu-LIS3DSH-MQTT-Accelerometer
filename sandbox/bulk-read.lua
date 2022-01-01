@@ -82,24 +82,7 @@ function readLis3dshXyz()
     print(string.format("0x%04x", spi.get_miso(1,0*8,8,1)+spi.get_miso(1,1*8,8,1)*256))
     print(string.format("0x%04x", spi.get_miso(1,2*8,8,1)+spi.get_miso(1,3*8,8,1)*256))
     print(string.format("0x%04x", spi.get_miso(1,4*8,8,1)+spi.get_miso(1,5*8,8,1)*256))
-    
-
---    yPercent = twosToSigned(((readAcc(ACC_REG_OUT_Y_H) * 256)+readAcc(spi.get_miso(1,0,8,1))))/163.500
- --   print("X=" .. string.format("%3d", xPercent) .. "% y=" .. string.format("%3d", yPercent) .. "% z=" .. string.format("%3d", zPercent) .. "%")
-
-    --xPercent = twosToSigned(((readAcc(ACC_REG_OUT_X_H) * 256)+readAcc(ACC_REG_OUT_X_L)))/163.500
---    yPercent = twosToSigned(((readAcc(ACC_REG_OUT_Y_H) * 256)+readAcc(ACC_REG_OUT_Y_L)))/163.500
---    print("X=" .. string.format("%3d", xPercent) .. "% y=" .. string.format("%3d", yPercent) .. "% z=" .. string.format("%3d", zPercent) .. "%")    --zPercent = twosToSigned(((readAcc(ACC_REG_OUT_Z_H) * 256)+readAcc(ACC_REG_OUT_Z_L)))/163.500
 end
-
-
-function printAll()
-    --print("Status ".. string.format("0x%02x", readAcc(ACC_REG_STATUS)))
-    waitForData()
-    readAll()    
-    print("X=" .. string.format("%3d", xPercent) .. "% y=" .. string.format("%3d", yPercent) .. "% z=" .. string.format("%3d", zPercent) .. "%")
-end
-
 
 initAccel()
 waitForData()
