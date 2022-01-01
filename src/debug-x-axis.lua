@@ -42,18 +42,12 @@ function initAccel()
         panic(PANIC_NO_LIS3DH)
         return
     end
-
-
-    --reset
-    --local ctrlReg3 = readAcc(ACC_REG_CTRL_REG3)
-    --print("ACC_REG_CTRL_REG3 " .. string.format("%x", readAcc(ctrlReg3)))
-    --writeAcc(ACC_REG_CTRL_REG3, bit.bor(ctrlReg3 + 0x01))
     
     --Enable accelerometer
     writeAcc(ACC_REG_CTRL_REG4, 0x10+0x08+0x07)
-    print("ACC_REG_CTRL_REG4 " .. string.format("0x%02x", readAcc(ACC_REG_CTRL_REG4)))
-    print("ACC_REG_CTRL_REG5 " .. string.format("0x%02x", readAcc(ACC_REG_CTRL_REG5)))
-    print("ACC_REG_CTRL_REG6 " .. string.format("0x%02x", readAcc(ACC_REG_CTRL_REG6)))
+    --print("ACC_REG_CTRL_REG4 " .. string.format("0x%02x", readAcc(ACC_REG_CTRL_REG4)))
+    --print("ACC_REG_CTRL_REG5 " .. string.format("0x%02x", readAcc(ACC_REG_CTRL_REG5)))
+    --print("ACC_REG_CTRL_REG6 " .. string.format("0x%02x", readAcc(ACC_REG_CTRL_REG6)))
     
 
 end
@@ -86,20 +80,49 @@ function printAll()
     print("X=" .. string.format("%3d", xPercent) .. "% y=" .. string.format("%3d", yPercent) .. "% z=" .. string.format("%3d", zPercent) .. "%")
 end
 
-
+print("Normal")
 writeAcc(ACC_REG_CTRL_REG5, 0x00)
 printAll()
 printAll()
 printAll()
 printAll()
+printAll()
+printAll()
+printAll()
+printAll()
 
+print("Posiitve Test")
 writeAcc(ACC_REG_CTRL_REG5, 0x20)
 printAll()
 printAll()
 printAll()
 printAll()
+printAll()
+printAll()
+printAll()
+printAll()
 
+print("Negative Test")
+writeAcc(ACC_REG_CTRL_REG5, 0x40)
+printAll()
+printAll()
+printAll()
+printAll()
+printAll()
+printAll()
+printAll()
+printAll()
 
+print("Normal")
+writeAcc(ACC_REG_CTRL_REG5, 0x00)
+printAll()
+printAll()
+printAll()
+printAll()
+printAll()
+printAll()
+printAll()
+printAll()
 
 --List all registers again
 --[[for reg=0x0c, 0x77, 1
