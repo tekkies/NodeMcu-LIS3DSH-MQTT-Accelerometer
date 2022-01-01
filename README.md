@@ -2,7 +2,8 @@
 
 Periodically polls LIS3DSH accelerometer ove SPI and pubishes to MQTT Broker
 
-* Deep sleep between samples
+* Deep sleep between timed samples
+* Wake on motion by interrupt
 * Battery level sensor
 * Written in LUA
 * Event-based so kind to WiFi processes
