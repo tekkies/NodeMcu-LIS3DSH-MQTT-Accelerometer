@@ -15,8 +15,8 @@ Periodically polls LIS3DSH accelerometer ove SPI and pubishes to MQTT Broker
 
 
 ## ToDo
-- [_] Sleep 5 minutes after panic
 - [_] Fix the memory leak when running with 0 sleep (workaround: sleep for 1 second)
+- [_] Light sensor on LIS3DH ADC
 
 ## Design
 
