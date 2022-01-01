@@ -2,7 +2,9 @@
 
 Periodically polls LIS3DSH accelerometer ove SPI and pubishes to MQTT Broker
 
-* Deep sleep between samples
+* **Currently only Y and Z Axis** (My X-axis sensor is not working - replacement LIS3DSH on order)
+* Deep sleep between timed samples
+* Wake on motion by interrupt
 * Battery level sensor
 * Written in LUA
 * Event-based so kind to WiFi processes
@@ -13,8 +15,8 @@ Periodically polls LIS3DSH accelerometer ove SPI and pubishes to MQTT Broker
 
 
 ## ToDo
-- [ ] Sleep the LIS3DSH
-- [_] Fix the memory leak
+- [_] Sleep 5 minutes after panic
+- [_] Fix the memory leak when running with 0 sleep (workaround: sleep for 1 second)
 
 ## Design
 

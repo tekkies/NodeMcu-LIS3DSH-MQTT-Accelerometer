@@ -63,7 +63,7 @@ function setupStateMachine()
     writeAcc(LIS3DSH_CTRL_REG3, 0x28) --data ready signal not connected, interrupt signals active LOW, interrupt signal pulsed (50us), INT1/DRDY signal enabled, vector filter disabled, no soft reset
     writeAcc(LIS3DSH_CTRL_REG4, 0x60 + 0x06) --data rate: 100Hz, Block data update: continuous, enable yz, disable x
     writeAcc(LIS3DSH_CTRL_REG5, 0x00) 
-    writeAcc(LIS3DSH_THRS1_1, 0x40) --SENSITIVITY: Threshold value for SM1 operation.
+    writeAcc(LIS3DSH_THRS1_1, 64) --SENSITIVITY: Threshold value for SM1 operation.
     writeAcc(LIS3DSH_ST1_1, 0x05) --NOP | Any/triggered axis greater than THRS1
     writeAcc(LIS3DSH_ST1_2, 0x11) --Timer 1 | Timer 1
     writeAcc(LIS3DSH_MASK1_B, 0x3C) --Axis and sign mask (disable x)
