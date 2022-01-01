@@ -2,7 +2,6 @@
 --Firmware: https://drive.google.com/file/d/1bj2EzizW73LsHUNW7XQAOsKIsnVfJMvn/view?usp=sharing
   --adc, bit, file, gpio, mqtt, net, node, rtctime, spi, tmr, uart, wifi, tls, float
 
-dofile("config.lua");
 dofile("constants.lua");
 
 --State
@@ -81,6 +80,9 @@ function panicCallback()
     panicCounter = panicCounter + 1
     if(panicCounter > 20) then
         panicCounter = 0
+        SLEEP_SECONDS = 5*60
+        queueState(sleepNow)
+        return
     end
     tmr.create():alarm(300, tmr.ALARM_SINGLE, panicCallback)
 end
@@ -116,6 +118,7 @@ end
 
 function init()
     epochStartTime = tmr.now()
+    dofile("config.lua");
     appendJsonValue("battery", getBatteryVolts())
     
     if(USE_LED) then
