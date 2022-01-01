@@ -140,7 +140,7 @@ function initAccel()
 
     writeLis3dsh(LIS3DSH_CTRL_REG1, 0x01) --hysteresis: 0, Interrupt Pin: INT1, State-Machin1: Enable
     writeLis3dsh(LIS3DSH_CTRL_REG3, 0x28) --data ready signal not connected, interrupt signals active LOW, interrupt signal pulsed, INT1/DRDY signal enabled, vector filter disabled, no soft reset
-    writeLis3dsh(LIS3DSH_CTRL_REG4, 0x60 + 0x06) --data rate: 100Hz, Block data update: continuous, enable yz, disable x
+    writeLis3dsh(LIS3DSH_CTRL_REG4, 0x10 + 0x06) --data rate: 3Hz, Block data update: continuous, enable yz, disable x
     writeLis3dsh(LIS3DSH_CTRL_REG5, 0x00) 
     writeLis3dsh(LIS3DSH_THRS1_1, 0x40) --SENSITIVITY: Threshold value for SM1 operation.
     writeLis3dsh(LIS3DSH_ST1_1, 0x05) --NOP | Any/triggered axis greater than THRS1
