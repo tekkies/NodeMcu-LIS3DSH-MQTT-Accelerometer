@@ -23,6 +23,7 @@ Periodically polls LIS3DSH accelerometer ove SPI and pubishes to MQTT Broker
 
 ### Layout
 
+v1.0 Stripboard
 ![Stripboard Layout](doc/Assembled-Board.jpg)
 
 Stripboard Design
