@@ -13,6 +13,7 @@ ACC_REG_OUT_Y_H = 0x2B
 ACC_REG_OUT_Z_L = 0x2C
 ACC_REG_OUT_Z_H = 0x2D
 
+LIS3DSH_STAT = 0x18
 LIS3DSH_CTRL_REG1 = 0x21        
 LIS3DSH_CTRL_REG3 = 0x23        
 LIS3DSH_CTRL_REG4 = 0x20        
@@ -61,13 +62,14 @@ function initAccel()
     writeAcc(LIS3DSH_CTRL_REG4, 0x67) --data rate: 100Hz, Block data update: continuous, enable xyz
     writeAcc(LIS3DSH_CTRL_REG5, 0x00) 
     writeAcc(LIS3DSH_THRS1_1, 0x55) --Threshold value for SM1 operation.
-    writeAcc(LIS3DSH_ST1_1, 0x05)
-    writeAcc(LIS3DSH_ST1_2, 0x11)
-    writeAcc(LIS3DSH_MASK1_B, 0xFC)
-    writeAcc(LIS3DSH_MASK1_A, 0xFC)
-    writeAcc(LIS3DSH_SETT1, 0x01)    
+    writeAcc(LIS3DSH_ST1_1, 0x05) --State machine 1 code register
+    writeAcc(LIS3DSH_ST1_2, 0x11) --State machine 1 code register
+    writeAcc(LIS3DSH_MASK1_B, 0xFC) --Axis and sign mask
+    writeAcc(LIS3DSH_MASK1_A, 0xFC) --Axis and sign mask
+    writeAcc(LIS3DSH_SETT1, 0x01) --Setting of threshold, peak detection and flags for SM1 motion-detection operation.
 
 end
+
 
 
 initAccel()
