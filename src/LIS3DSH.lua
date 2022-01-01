@@ -12,12 +12,12 @@ panicCounter = 0
 panicReason = 0
 jsonData = '{'
 
-function readAcc(address)
+function readLis3dsh(address)
     spi.transaction(1, 0, 0, 8, 0x80 + address, 0,0,8)
     return spi.get_miso(1,0,8,1)
 end
 
-function writeAcc(address, value)
+function writeLis3dsh(address, value)
     spi.set_mosi(1, 0, 8, value)
     spi.transaction(1, 0, 0, 8, address, 8,0,0)
 end
@@ -131,32 +131,32 @@ end
 function initAccel()
     spi.setup(1, spi.MASTER, spi.CPOL_HIGH, spi.CPHA_HIGH, 8, 255)
     --Check Accelerometer is present
-    whoAmI = readAcc(0x0f)
+    whoAmI = readLis3dsh(0x0f)
     print2("Who_AM_I register (expect 3f): " .. string.format("%x", whoAmI))
     if (whoAmI ~= 0x3f) then
         panic(PANIC_NO_LIS3DH)
         return
     end
 
-    writeAcc(LIS3DSH_CTRL_REG1, 0x01) --hysteresis: 0, Interrupt Pin: INT1, State-Machin1: Enable
-    writeAcc(LIS3DSH_CTRL_REG3, 0x28) --data ready signal not connected, interrupt signals active LOW, interrupt signal pulsed, INT1/DRDY signal enabled, vector filter disabled, no soft reset
-    writeAcc(LIS3DSH_CTRL_REG4, 0x60 + 0x06) --data rate: 100Hz, Block data update: continuous, enable yz, disable x
-    writeAcc(LIS3DSH_CTRL_REG5, 0x00) 
-    writeAcc(LIS3DSH_THRS1_1, 0x40) --SENSITIVITY: Threshold value for SM1 operation.
-    writeAcc(LIS3DSH_ST1_1, 0x05) --NOP | Any/triggered axis greater than THRS1
-    writeAcc(LIS3DSH_ST1_2, 0x11) --Timer 1 | Timer 1
-    writeAcc(LIS3DSH_MASK1_B, 0x3C) --Axis and sign mask (disable x)
-    writeAcc(LIS3DSH_MASK1_A, 0x3C) --Axis and sign mask (disable x)
-    writeAcc(LIS3DSH_SETT1, 0x01) --Setting of threshold, peak detection and flags for SM1 motion-detection operation.
+    writeLis3dsh(LIS3DSH_CTRL_REG1, 0x01) --hysteresis: 0, Interrupt Pin: INT1, State-Machin1: Enable
+    writeLis3dsh(LIS3DSH_CTRL_REG3, 0x28) --data ready signal not connected, interrupt signals active LOW, interrupt signal pulsed, INT1/DRDY signal enabled, vector filter disabled, no soft reset
+    writeLis3dsh(LIS3DSH_CTRL_REG4, 0x60 + 0x06) --data rate: 100Hz, Block data update: continuous, enable yz, disable x
+    writeLis3dsh(LIS3DSH_CTRL_REG5, 0x00) 
+    writeLis3dsh(LIS3DSH_THRS1_1, 0x40) --SENSITIVITY: Threshold value for SM1 operation.
+    writeLis3dsh(LIS3DSH_ST1_1, 0x05) --NOP | Any/triggered axis greater than THRS1
+    writeLis3dsh(LIS3DSH_ST1_2, 0x11) --Timer 1 | Timer 1
+    writeLis3dsh(LIS3DSH_MASK1_B, 0x3C) --Axis and sign mask (disable x)
+    writeLis3dsh(LIS3DSH_MASK1_A, 0x3C) --Axis and sign mask (disable x)
+    writeLis3dsh(LIS3DSH_SETT1, 0x01) --Setting of threshold, peak detection and flags for SM1 motion-detection operation.
 
     
-    --print2("ACC_REG_CTRL_REG4 " .. string.format("%x", readAcc(ACC_REG_CTRL_REG4)))
+    --print2("ACC_REG_CTRL_REG4 " .. string.format("%x", readLis3dsh(ACC_REG_CTRL_REG4)))
     queueState(getAccel)
 end
 
 function getAccel()
-    if(bit.isset(readAcc(ACC_REG_STATUS), ACC_REG_STATUS_YDA)) then
-		appendJsonValue("y", twosToSigned((readAcc(ACC_REG_OUT_Y_H) * 256)+readAcc(ACC_REG_OUT_Y_L))/16350.0)
+    if(bit.isset(readLis3dsh(ACC_REG_STATUS), ACC_REG_STATUS_YDA)) then
+		appendJsonValue("y", twosToSigned((readLis3dsh(ACC_REG_OUT_Y_H) * 256)+readLis3dsh(ACC_REG_OUT_Y_L))/16350.0)
         state=waitForWiFi        
     end
     queueNextState()
