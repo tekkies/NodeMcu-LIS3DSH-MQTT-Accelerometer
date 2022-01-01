@@ -74,9 +74,11 @@ function waitForData()
 end
 
 
-function readAll()
+function readLis3dshXyz()
+    print(string.format("0x%04x", readAcc(ACC_REG_OUT_X_H)*256+readAcc(ACC_REG_OUT_X_L)))
     print(string.format("0x%04x", readAcc(ACC_REG_OUT_Y_H)*256+readAcc(ACC_REG_OUT_Y_L)))
-    spi.transaction(1, 0, 0, 8, 0x80 + ACC_REG_OUT_X_L, 0,0,32)
+    spi.transaction(1, 0, 0, 8, 0x80 + ACC_REG_OUT_X_L, 0,0,48)
+    print(string.format("0x%04x", spi.get_miso(1,0*8,8,1)+spi.get_miso(1,1*8,8,1)*256))
     print(string.format("0x%04x", spi.get_miso(1,2*8,8,1)+spi.get_miso(1,3*8,8,1)*256))
     
 
@@ -99,7 +101,7 @@ end
 
 initAccel()
 waitForData()
-readAll()
+readLis3dshXyz()
 
 
 
