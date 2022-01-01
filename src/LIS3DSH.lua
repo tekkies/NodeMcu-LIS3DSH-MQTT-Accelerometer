@@ -204,7 +204,7 @@ function postMqtt()
     end,
     function(client, reason)
       print2("Connection failed reason: " .. reason)
-      queueState(sleepNow)
+      panic(PANIC_MQTT_FAIL)
     end)
 end
 
