@@ -61,13 +61,13 @@ function setupStateMachine()
     --"Wake-Up" - 9.2 in Application Note
     writeAcc(LIS3DSH_CTRL_REG1, 0x01) --hysteresis: 0, Interrupt Pin: INT1, State-Machin1: Enable
     writeAcc(LIS3DSH_CTRL_REG3, 0x48) --data ready signal not connected, interrupt signals active HIGH, interrupt signal latched, INT1/DRDY signal enabled, vector filter disabled, no soft reset
-    writeAcc(LIS3DSH_CTRL_REG4, 0x60 + 0x06) --data rate: 100Hz, Block data update: continuous, enable yz, not X
+    writeAcc(LIS3DSH_CTRL_REG4, 0x60 + 0x06) --data rate: 100Hz, Block data update: continuous, enable yz, disable x
     writeAcc(LIS3DSH_CTRL_REG5, 0x00) 
     writeAcc(LIS3DSH_THRS1_1, 0x55) --Threshold value for SM1 operation.
     writeAcc(LIS3DSH_ST1_1, 0x05) --NOP | Any/triggered axis greater than THRS1
     writeAcc(LIS3DSH_ST1_2, 0x11) --Timer 1 | Timer 1
-    writeAcc(LIS3DSH_MASK1_B, 0x3C) --Axis and sign mask
-    writeAcc(LIS3DSH_MASK1_A, 0x3C) --Axis and sign mask
+    writeAcc(LIS3DSH_MASK1_B, 0x3C) --Axis and sign mask (disable x)
+    writeAcc(LIS3DSH_MASK1_A, 0x3C) --Axis and sign mask (disable x)
     writeAcc(LIS3DSH_SETT1, 0x01) --Setting of threshold, peak detection and flags for SM1 motion-detection operation.
 end
 
