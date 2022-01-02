@@ -14069,6 +14069,6 @@ M:A5@%G7!YD8S*V/6!7SE.S 7XNE4Q\T*D(UIF*LG&gt;7@;&amp;%0E=8X971?@\@^6
 		<WIRE a='52.00000,6.00000' b='116.00000,6.00000'/>
 		<JUNCTION pos='116.00000,6.00000'/>
 		<TEXT pos='6.00000,80.00000' direction='3' font='3' color='000000'>https://github.com/tekkies/NodeMcu-LIS3DSH-MQTT-Accelerometer</TEXT>
-		<TEXT pos='4.00000,6.00000' direction='3' font='3' color='000000'>OEMNodeMCU v2.0</TEXT>
+		<TEXT pos='4.00000,6.00000' direction='3' font='3' color='000000'>v2.0 for OEM NodeMCU</TEXT>
 	</TinyCAD>
 </TinyCADSheets>
