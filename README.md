@@ -21,7 +21,7 @@ Periodically polls LIS3DSH accelerometer ove SPI and pubishes to MQTT Broker
 ## Design
 
 ### Circuit
-![Circuit Diagram](hardware/Circuit-Diagram-TinyCAD.png)
+![Circuit Diagram](hardware/OEM-NodeMCU-V2.0/Circuit-Diagram-TinyCAD.png)
 
 ### Layout
 
@@ -30,7 +30,7 @@ v1.0 Stripboard
 
 Stripboard Design
 
-![Stripboard Layout](hardware/Stripboard-Layout.VeeCAD.png)
+![Stripboard Layout](hardware/OEM-NodeMCU-V2.0/Stripboard-Layout.VeeCAD.png)
 
 Connect 4x AA batteries to J1, + to the top, - to the bottom.
 
