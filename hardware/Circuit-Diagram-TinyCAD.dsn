@@ -7,7 +7,7 @@ download the executable.-->
 	<TinyCAD>
 		<NAME>Sheet 1</NAME>
 		<DETAILS>
-			<Size width='1485' height='1050'/>
+			<Size width='850' height='400'/>
 			<GUIDES horiz='7' vert='5'/>
 			<TITLE>NodeMCU CJMCU-LIS3DSH</TITLE>
 			<AUTHOR></AUTHOR>
@@ -19,9 +19,9 @@ download the executable.-->
 			<DATE></DATE>
 			<GRID spacing='100.00000' snap='1'/>
 		</DETAILS>
-		<FONT id='0'>
-			<HEIGHT>-13</HEIGHT>
-			<WIDTH>6</WIDTH>
+		<FONT id='1'>
+			<HEIGHT>-10</HEIGHT>
+			<WIDTH>0</WIDTH>
 			<WEIGHT>400</WEIGHT>
 			<ITALIC>0</ITALIC>
 			<UNDERLINE>0</UNDERLINE>
@@ -29,9 +29,9 @@ download the executable.-->
 			<CHARSET>0</CHARSET>
 			<FACENAME>Arial</FACENAME>
 		</FONT>
-		<FONT id='1'>
-			<HEIGHT>-10</HEIGHT>
-			<WIDTH>0</WIDTH>
+		<FONT id='3'>
+			<HEIGHT>-13</HEIGHT>
+			<WIDTH>6</WIDTH>
 			<WEIGHT>400</WEIGHT>
 			<ITALIC>0</ITALIC>
 			<UNDERLINE>0</UNDERLINE>
@@ -14068,7 +14068,7 @@ M:A5@%G7!YD8S*V/6!7SE.S 7XNE4Q\T*D(UIF*LG&gt;7@;&amp;%0E=8X971?@\@^6
 		<WIRE a='116.00000,12.00000' b='116.00000,6.00000'/>
 		<WIRE a='52.00000,6.00000' b='116.00000,6.00000'/>
 		<JUNCTION pos='116.00000,6.00000'/>
-		<TEXT pos='6.00000,80.00000' direction='3' font='0' color='000000'>https://github.com/tekkies/NodeMcu-LIS3DSH-MQTT-Accelerometer</TEXT>
-		<TEXT pos='4.00000,6.00000' direction='3' font='0' color='000000'>v2.0</TEXT>
+		<TEXT pos='6.00000,80.00000' direction='3' font='3' color='000000'>https://github.com/tekkies/NodeMcu-LIS3DSH-MQTT-Accelerometer</TEXT>
+		<TEXT pos='4.00000,6.00000' direction='3' font='3' color='000000'>v2.0</TEXT>
 	</TinyCAD>
 </TinyCADSheets>
