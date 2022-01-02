@@ -1,6 +1,14 @@
+--[[
 --https://github.com/tekkies/NodeMcu-LIS3DSH-MQTT-Accelerometer
 --Firmware: https://drive.google.com/file/d/1bj2EzizW73LsHUNW7XQAOsKIsnVfJMvn/view?usp=sharing
   --adc, bit, file, gpio, mqtt, net, node, rtctime, spi, tmr, uart, wifi, tls, float
+
+1. Post to MQTT
+2. Flash twice
+3. Sleep
+
+--]]
+  
 
 dofile("device-info.lua");
 dofile("constants.lua");
@@ -179,7 +187,6 @@ function sleepNow()
     end
 end
 
-
 function init()
     epochStartTime = tmr.now()
     dofile("config.lua");
@@ -192,10 +199,8 @@ function init()
     tmr.create():alarm(60 * 1000, tmr.ALARM_SINGLE, sleepNow)
     queueState(initAdc)
 end
+
 ----------------------------------------
-
-
-
 mqttClient = mqtt.Client(MQTT_CLIENTID, 120)
 mqttClient:on("offline", mqttOffline)
 queueState(init)
