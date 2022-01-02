@@ -5,7 +5,7 @@
 
 1. Post to MQTT
 2. Flash twice
-3. Sleep after a few seconds
+3. Sleep
 
 --]]
   
