@@ -36,18 +36,23 @@ Connect 4x AA batteries to J1, + to the top, - to the bottom.
 
 **WARNING - Disconnect Battery when using external USB** (otherise power could feed back through the battery)
 
-By modifying the NodeMCU v2.0 PCB (removing the regulator and disconnecting U2 power), the NodeMCY only draws about 20μA at 3.3v.  A lead can also be attached to allow programming via USB, if the lead is connected to 3.3v.
+By modifying the NodeMCU v2.0 PCB (removing the regulator and disconnecting U2 power), the NodeMCY only draws about 20μA at 3.3v.  A flying lead can also be attached to allow programming via USB, if the lead is connected to 3.3v.
 
 ### Modifying NodeMCU V2.0
 
 1. Remove the regulator marked YELLOW
 2. Cut the 3.3v supply track to the USB IC on the front of of the PCB - marked RED
-3. Solder a wire to the bottom left of the capacitor - marked BLUE
+3. Solder a flying lead to the bottom left of the capacitor - marked BLUE
 
-![Modifcations](hardware/Modified-NodeMCU-v2.0/PCB-Modifications-Gerber.png
-)
+![Modifcations](hardware/Modified-NodeMCU-v2.0/PCB-Modifications-Gerber.png)
 
 ![Modifcations](hardware/Modified-NodeMCU-v2.0/PCB-Modifications-Photo.png)
 
-### Programming Operating Mode
+It should look something like this
+![Modifcations](hardware/Modified-NodeMCU-v2.0/PCB-Modifications-After.png)
 
+### Programming Mode
+
+In order to program the modified NodeMCU, **disconnect the battery**, connect the flying lead to a 3.3v pin, provide 3.3v power to the NodeMCU and plug in the USB connector.
+
+An easy way to achieve this is using another NodeMCU v2.0
