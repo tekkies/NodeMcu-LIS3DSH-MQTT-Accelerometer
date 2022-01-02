@@ -18,20 +18,36 @@ Periodically polls LIS3DSH accelerometer ove SPI and pubishes to MQTT Broker
 - [_] Fix the memory leak when running with 0 sleep (workaround: sleep for 1 second)
 - [_] Light sensor on LIS3DH ADC
 
-## Design
+![Stripboard Layout (v1.0)](doc/Assembled-Board.jpg)
+
+## OEM NodeMCU v2.0 
 
 ### Circuit
 ![Circuit Diagram](hardware/OEM-NodeMCU-V2.0/Circuit-Diagram-TinyCAD.png)
 
-### Layout
-
-v1.0 Stripboard
-![Stripboard Layout](doc/Assembled-Board.jpg)
-
-Stripboard Design
+### Stripboard Design
 
 ![Stripboard Layout](hardware/OEM-NodeMCU-V2.0/Stripboard-Layout.VeeCAD.png)
 
 Connect 4x AA batteries to J1, + to the top, - to the bottom.
 
+
+## Modified NodeMCU V2.0 - Ultra Low Power
+
+**WARNING - Disconnect Battery when using external USB** (otherise power could feed back through the battery)
+
+By modifying the NodeMCU v2.0 PCB (removing the regulator and disconnecting U2 power), the NodeMCY only draws about 20μA at 3.3v.  A lead can also be attached to allow programming via USB, if the lead is connected to 3.3v.
+
+### Modifying NodeMCU V2.0
+
+1. Remove the regulator marked YELLOW
+2. Cut the 3.3v supply track to the USB IC on the front of of the PCB - marked RED
+3. Solder a wire to the bottom left of the capacitor - marked BLUE
+
+![Modifcations](hardware/Modified-NodeMCU-v2.0/PCB-Modifications-Gerber.png
+)
+
+![Modifcations](hardware/Modified-NodeMCU-v2.0/PCB-Modifications-Photo.png)
+
+### Programming Operating Mode
 
