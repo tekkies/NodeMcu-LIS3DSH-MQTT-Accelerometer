@@ -3,12 +3,14 @@
   --adc, bit, file, gpio, mqtt, net, node, rtctime, spi, tmr, uart, wifi, tls, float
 
 dofile("constants.lua");
+dofile("DEVICE-INFO.lua");
+
 
 --State
 state = nil
 epochStartTime = tmr.now()
-panicCounter = 0
-panicReason = 0
+flashCounter = 0
+flashReason = 0
 jsonData = '{'
 
 function readLis3dsh(address)
@@ -65,26 +67,26 @@ function setLed(ledState)
     end
 end
 
-function panic(newPanicReason)
-    panicReason = newPanicReason
-    panicCallback()
+function flash(newFlashReason)
+    flashReason = newFlashReason
+    flashCallback()
 end
 
-function panicCallback()
-    print1("PANIC " .. panicReason .. " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-    if (((panicCounter % 2) == 0) and (panicCounter < panicReason * 2)) then
-        setLed(true)
-    else
+function flashCallback()
+    print1("FLASH " .. flashReason)
+    if (((flashCounter % 2) == 0) and (flashCounter < flashReason * 2)) then
         setLed(false)
+    else
+        setLed(true)
     end
-    panicCounter = panicCounter + 1
-    if(panicCounter > 20) then
-        panicCounter = 0
+    flashCounter = flashCounter + 1
+    if(flashCounter >= (flashReason * 2)+1) then
+        flashCounter = 0
         SLEEP_SECONDS = 5*60
         queueState(sleepNow)
         return
     end
-    tmr.create():alarm(300, tmr.ALARM_SINGLE, panicCallback)
+    tmr.create():alarm(300, tmr.ALARM_SINGLE, flashCallback)
 end
 
 function getBatteryVolts()
@@ -157,7 +159,7 @@ function initAccel()
     whoAmI = readLis3dsh(0x0f)
     print2("Who_AM_I register (expect 3f): " .. string.format("%x", whoAmI))
     if (whoAmI ~= 0x3f) then
-        panic(PANIC_NO_LIS3DH)
+        flash(PANIC_NO_LIS3DH)
         return
     end
     if(SLEEP_SECONDS>0) then
@@ -181,7 +183,7 @@ end
 
 function waitForWiFi()
     if(epochSeconds() > 20) then
-        panic(PANIC_NO_WIFI)
+        flash(PANIC_NO_WIFI)
         return
     end
     if(wifi.sta.status() == wifi.STA_GOTIP) then
@@ -197,14 +199,14 @@ function postMqtt()
       appendJsonValue("heap", node.heap())
       jsonData = jsonData .. '}'
       print2(jsonData)
-      client:publish(MQTT_TOPIC, jsonData, 0, 0, function(client) 
+      client:publish("/tekkies.co.uk/NodeMCU/"..DEVICE_NAME, jsonData, 0, 0, function(client) 
         print2("sent")
         mqttClient:close()
       end)
     end,
     function(client, reason)
       print2("Connection failed reason: " .. reason)
-      panic(PANIC_MQTT_FAIL)
+      flash(PANIC_MQTT_FAIL)
     end)
 end
 
