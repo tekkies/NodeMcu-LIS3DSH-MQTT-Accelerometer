@@ -5,7 +5,7 @@
 
 1. Post to MQTT
 2. Flash twice
-3. Sleep
+3. Sleep after a few seconds
 
 --]]
   
@@ -48,26 +48,26 @@ function setLed(ledState)
     end
 end
 
-function panic(newPanicReason)
-    panicReason = newPanicReason
-    panicCallback()
+function flash(newFlashReason)
+    flashReason = newFlashReason
+    flashCallback()
 end
 
-function panicCallback()
-    print1("FLASH " .. panicReason)
-    if (((panicCounter % 2) == 0) and (panicCounter < panicReason * 2)) then
+function flashCallback()
+    print1("FLASH " .. flashReason)
+    if (((flashCounter % 2) == 0) and (flashCounter < flashReason * 2)) then
         setLed(true)
     else
         setLed(false)
     end
-    panicCounter = panicCounter + 1
-    if(panicCounter > 20) then
-        panicCounter = 0
+    flashCounter = flashCounter + 1
+    if(flashCounter > 20) then
+        flashCounter = 0
         SLEEP_SECONDS = 5*60
         queueState(sleepNow)
         return
     end
-    tmr.create():alarm(300, tmr.ALARM_SINGLE, panicCallback)
+    tmr.create():alarm(300, tmr.ALARM_SINGLE, flashCallback)
 end
 
 function appendJsonValue(key, value)
@@ -99,7 +99,7 @@ end
 
 function waitForWiFi()
     if(epochSeconds() > 20) then
-        panic(PANIC_NO_WIFI)
+        flash(PANIC_NO_WIFI)
         return
     end
     if(wifi.sta.status() == wifi.STA_GOTIP) then
@@ -122,12 +122,12 @@ function postMqtt()
     end,
     function(client, reason)
       print2("Connection failed reason: " .. reason)
-      panic(PANIC_MQTT_FAIL)
+      flash(PANIC_MQTT_FAIL)
     end)
 end
 
 function mqttOffline(client)
-    panic(2)
+    flash(2)
 end
 
 function sleepNow()
@@ -153,8 +153,8 @@ end
 
 state = nil
 epochStartTime = tmr.now()
-panicCounter = 0
-panicReason = 0
+flashCounter = 0
+flashReason = 0
 jsonData = '{'
 
 mqttClient = mqtt.Client(MQTT_CLIENTID, 120)
