@@ -10,7 +10,7 @@
 --]]
   
 
-dofile("device-info.lua");
+dofile("DEVICE-INFO.lua");
 dofile("constants.lua");
 
 
