@@ -56,12 +56,12 @@ end
 function flashCallback()
     print1("FLASH " .. flashReason)
     if (((flashCounter % 2) == 0) and (flashCounter < flashReason * 2)) then
-        setLed(true)
-    else
         setLed(false)
+    else
+        setLed(true)
     end
     flashCounter = flashCounter + 1
-    if(flashCounter > 20) then
+    if(flashCounter >= (flashReason * 2)+1) then
         flashCounter = 0
         SLEEP_SECONDS = 5*60
         queueState(sleepNow)
