@@ -21,30 +21,12 @@ panicCounter = 0
 panicReason = 0
 jsonData = '{'
 
-function readLis3dsh(address)
-    spi.transaction(1, 0, 0, 8, 0x80 + address, 0,0,8)
-    return spi.get_miso(1,0,8,1)
-end
-
-function writeLis3dsh(address, value)
-    spi.set_mosi(1, 0, 8, value)
-    spi.transaction(1, 0, 0, 8, address, 8,0,0)
-end
-
 function costlyGetStateName()
     for key,value in pairs(_G) do
         if(state == value and key ~= "state") then
             return key
         end
     end
-end
-
-function twosToSigned(twos)
-    if(twos > 0x7fff) then
-        return twos - 0x10000
-    else
-        return twos
-    end    
 end
 
 function print1(message)
@@ -111,11 +93,6 @@ function appendJsonValue(key, value)
     jsonData = jsonData .. '"'  .. key .. '":"' .. value .. '"' 
 end
 
-
-function isOnBatteryPower()
-    return getBatteryVolts() > 1.0;
-end
-
 function queueState(newState)
     state = newState
     queueNextState()
@@ -173,18 +150,9 @@ end
 function sleepNow()
     jsonData = "{"
     setLed(false)
-    --if(isOnBatteryPower()) then
-    if(true) then
-        if(SLEEP_SECONDS==0) then
-            queueState(init)
-        else
-            print2("Battery detected, going to sleep...")
-            local us = SLEEP_SECONDS*1000*1000
-            node.dsleep(us, 1, nil)
-        end
-    else
-        print2("No battery detected, do not sleep")
-    end
+    print2("Going to sleep...")
+    local us = SLEEP_SECONDS*1000*1000
+    node.dsleep(us, 1, nil)
 end
 
 function init()
