@@ -14,12 +14,7 @@ dofile("device-info.lua");
 dofile("constants.lua");
 
 
---State
-state = nil
-epochStartTime = tmr.now()
-panicCounter = 0
-panicReason = 0
-jsonData = '{'
+
 
 function costlyGetStateName()
     for key,value in pairs(_G) do
@@ -37,10 +32,6 @@ end
 
 function print2(message)
     print1("    "..message)
-end
-
-function uptimeSeconds()
-    return tmr.now()/1000000
 end
 
 function epochSeconds()
@@ -63,7 +54,7 @@ function panic(newPanicReason)
 end
 
 function panicCallback()
-    print1("PANIC " .. panicReason .. " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+    print1("FLASH " .. panicReason)
     if (((panicCounter % 2) == 0) and (panicCounter < panicReason * 2)) then
         setLed(true)
     else
@@ -77,12 +68,6 @@ function panicCallback()
         return
     end
     tmr.create():alarm(300, tmr.ALARM_SINGLE, panicCallback)
-end
-
-function getBatteryVolts()
-    local rawBattery = adc.read(0)
-    print2("Battery raw=" .. rawBattery)
-    return rawBattery * BATTERY_CALIBRATION
 end
 
 function appendJsonValue(key, value)
@@ -102,8 +87,6 @@ function queueNextState()
     print1(costlyGetStateName())
     node.task.post(state)
 end
-
-
 
 function initAdc()
     if adc.force_init_mode(adc.INIT_VDD33)
@@ -159,7 +142,7 @@ function init()
     epochStartTime = tmr.now()
     dofile("config.lua");
     appendJsonValue("program", "low-power-test")
-    appendJsonValue("battery", getBatteryVolts())
+    appendJsonValue("battery", adc.readvdd33(0)/1000)
     
     if(USE_LED) then
         setLed(true)
@@ -168,7 +151,12 @@ function init()
     queueState(initAdc)
 end
 
-----------------------------------------
+state = nil
+epochStartTime = tmr.now()
+panicCounter = 0
+panicReason = 0
+jsonData = '{'
+
 mqttClient = mqtt.Client(MQTT_CLIENTID, 120)
 mqttClient:on("offline", mqttOffline)
 queueState(init)
