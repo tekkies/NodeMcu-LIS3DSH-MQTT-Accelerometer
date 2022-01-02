@@ -115,7 +115,7 @@ function postMqtt()
       appendJsonValue("heap", node.heap())
       jsonData = jsonData .. '}'
       print2(jsonData)
-      client:publish("/tekkies.co.uk/NodeMCU/"..DEVICE_NAME, jsonData, 0, 0, function(client) 
+      client:publish("/tekkies.co.uk/NodeMCU/".. DEVICE_NAME .. "/low-power-test.lua", jsonData, 0, 0, function(client) 
         print2("sent")
         mqttClient:close()
       end)
@@ -141,7 +141,6 @@ end
 function init()
     epochStartTime = tmr.now()
     dofile("config.lua");
-    appendJsonValue("program", "low-power-test")
     appendJsonValue("battery", adc.readvdd33(0)/1000)
     
     if(USE_LED) then

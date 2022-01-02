@@ -1,1 +1,1 @@
-dofile("LIS3DSH.lua")
+dofile("lis3dsh.lua")
