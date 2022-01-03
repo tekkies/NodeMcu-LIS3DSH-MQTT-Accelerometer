@@ -3,11 +3,11 @@
 Periodically polls LIS3DSH accelerometer ove SPI and pubishes to MQTT Broker
 
 * **Currently only Y and Z Axis** (My X-axis sensor is not working - replacement LIS3DSH on order)
-* Deep sleep between timed samples
-* Wake on motion by interrupt
+* **Deep sleep** between timed samples
+* **Wake** on motion by **interrupt**
 * Battery level sensor
 * Written in LUA
-* Event-based so kind to WiFi processes
+* Event-based so **kind to WiFi processes**
 * Runs only once when battery disconnected (i.e. when debugging on USB)
 * LED Flash codes for PANIC situations (See [src/constants.lua](src/constants.lua))
 
