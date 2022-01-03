@@ -19,16 +19,6 @@ download the executable.-->
 			<DATE></DATE>
 			<GRID spacing='100.00000' snap='1'/>
 		</DETAILS>
-		<FONT id='0'>
-			<HEIGHT>-13</HEIGHT>
-			<WIDTH>6</WIDTH>
-			<WEIGHT>400</WEIGHT>
-			<ITALIC>0</ITALIC>
-			<UNDERLINE>0</UNDERLINE>
-			<STRIKEOUT>0</STRIKEOUT>
-			<CHARSET>0</CHARSET>
-			<FACENAME>Arial</FACENAME>
-		</FONT>
 		<FONT id='1'>
 			<HEIGHT>-10</HEIGHT>
 			<WIDTH>0</WIDTH>
@@ -49,41 +39,56 @@ download the executable.-->
 			<CHARSET>0</CHARSET>
 			<FACENAME>Arial</FACENAME>
 		</FONT>
-		<STYLE id='2'>
+		<FONT id='4'>
+			<HEIGHT>-13</HEIGHT>
+			<WIDTH>6</WIDTH>
+			<WEIGHT>400</WEIGHT>
+			<ITALIC>0</ITALIC>
+			<UNDERLINE>0</UNDERLINE>
+			<STRIKEOUT>0</STRIKEOUT>
+			<CHARSET>0</CHARSET>
+			<FACENAME>Arial</FACENAME>
+		</FONT>
+		<STYLE id='0'>
 			<STYLE>0</STYLE>
 			<COLOR>000000</COLOR>
 			<THICKNESS>1</THICKNESS>
 		</STYLE>
-		<STYLE id='3'>
+		<STYLE id='2'>
 			<STYLE>0</STYLE>
 			<COLOR>0000FF</COLOR>
 			<THICKNESS>1</THICKNESS>
 		</STYLE>
-		<STYLE id='5'>
+		<STYLE id='3'>
 			<STYLE>0</STYLE>
 			<COLOR>008000</COLOR>
 			<THICKNESS>1</THICKNESS>
 		</STYLE>
-		<STYLE id='6'>
+		<STYLE id='4'>
 			<STYLE>0</STYLE>
 			<COLOR>00BFBF</COLOR>
 			<THICKNESS>1</THICKNESS>
 		</STYLE>
-		<STYLE id='7'>
+		<STYLE id='5'>
 			<STYLE>0</STYLE>
 			<COLOR>FF0080</COLOR>
 			<THICKNESS>1</THICKNESS>
 		</STYLE>
-		<STYLE id='8'>
+		<STYLE id='6'>
 			<STYLE>0</STYLE>
 			<COLOR>326987</COLOR>
+			<THICKNESS>1</THICKNESS>
+		</STYLE>
+		<STYLE id='7'>
+			<STYLE>0</STYLE>
+			<COLOR>000000</COLOR>
 			<THICKNESS>1</THICKNESS>
 		</STYLE>
 		<FILL id='0'>
 			<INDEX>-1</INDEX>
 			<COLOR>000000</COLOR>
 		</FILL>
-		<IMAGE id='9' type='PNG'>
+		<IMAGE id='1' type='PNG'>
 			<UUENCODE size='9584'>
 MB5!.1PT*&amp;@H    -24A$4@   2P   (*&quot; ,   &quot;NOH+Q   # %!,5$4/  # 
 M0$    #@L+#?CX\/#P&quot;PL+&quot;OKZ^@H*&quot;/8 # H%^_D  ?&#039;Q^P@ &quot;?GY^_D%^_
@@ -300,7 +305,7 @@ M.]!_W-G=W_[%=IC?U@3Z#SN!_M-.H/^[$Z??_F&gt;)XW9+6&lt;!A@&quot;P)0)8$($N&quot;
 L&lt;JJ&quot;!EZ^:EZOE:N54Q4T$ ^;]]7*U?X_\[9^NHN;J1X     245.1*Y&quot;8(( 
 </UUENCODE>
 		</IMAGE>
-		<IMAGE id='17' type='PNG'>
+		<IMAGE id='2' type='PNG'>
 			<UUENCODE size='47382'>
 MB5!.1PT*&amp;@H    -24A$4@   NP   0*&quot; ,    L,]]K   # %!,5$4    /
 M#P_ 4%!@CU\/+T&quot;PL+# ?Z _@,&quot;_O[\_?[]%&#039;Q_PL&amp;^@@&amp;!0@+&quot;P?T^P;Y&quot;/
@@ -1388,10 +1393,10 @@ J&#039;8NDC,AV+)**&amp;-NQ&quot;&amp;YY;5ZL+?__ 02@$UTC2K^+     $E%3D2N0F&quot;&
 			<TinyCAD>
 				<PIN pos='21.00000,21.00000' which='0' elec='4' direction='1' part='0' number='1' show='0' length='15' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='21.00000,31.00000' which='0' elec='4' direction='0' part='0' number='2' show='0' length='15' number_pos='0' centre_name='0'></PIN>
-				<RECTANGLE a='20.00000,24.00000' b='22.00000,28.00000' style='2' fill='0'/>
+				<RECTANGLE a='20.00000,24.00000' b='22.00000,28.00000' style='7' fill='0'/>
 			</TinyCAD>
 		</SYMBOLDEF>
-		<SYMBOLDEF id='4'>
+		<SYMBOLDEF id='2'>
 			<NAME type='0'>Conn_16</NAME>
 			<REF type='0'>J?</REF>
 			<DESCRIPTION>Connector 16 pin</DESCRIPTION>
@@ -1421,7 +1426,7 @@ J&#039;8NDC,AV+)**&amp;-NQ&quot;&amp;YY;5ZL+?__ 02@$UTC2K^+     $E%3D2N0F&quot;&
 			<REF_POINT power='0' part='0' pos='28.00000,70.00000'/>
 			<REF_POINT power='1' part='0' pos='28.00000,70.00000'/>
 			<TinyCAD>
-				<RECTANGLE a='24.00000,20.00000' b='28.00000,69.00000' style='2' fill='0'/>
+				<RECTANGLE a='24.00000,20.00000' b='28.00000,69.00000' style='7' fill='0'/>
 				<PIN pos='20.00000,22.00000' which='0' elec='0' direction='3' part='0' number='1' show='3' length='30' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='20.00000,25.00000' which='0' elec='0' direction='3' part='0' number='2' show='3' length='30' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='20.00000,28.00000' which='0' elec='0' direction='3' part='0' number='3' show='3' length='30' number_pos='0' centre_name='0'></PIN>
@@ -1440,7 +1445,7 @@ J&#039;8NDC,AV+)**&amp;-NQ&quot;&amp;YY;5ZL+?__ 02@$UTC2K^+     $E%3D2N0F&quot;&
 				<PIN pos='20.00000,67.00000' which='0' elec='0' direction='3' part='0' number='16' show='3' length='30' number_pos='0' centre_name='0'></PIN>
 			</TinyCAD>
 		</SYMBOLDEF>
-		<SYMBOLDEF id='6'>
+		<SYMBOLDEF id='3'>
 			<NAME type='0'>Conn_8</NAME>
 			<REF type='0'>J?</REF>
 			<DESCRIPTION>Connector 8 pin</DESCRIPTION>
@@ -1469,7 +1474,7 @@ J&#039;8NDC,AV+)**&amp;-NQ&quot;&amp;YY;5ZL+?__ 02@$UTC2K^+     $E%3D2N0F&quot;&
 			</FIELD>
 			<REF_POINT power='0' part='0' pos='28.00000,46.00000'/>
 			<TinyCAD>
-				<RECTANGLE a='24.00000,20.00000' b='28.00000,45.00000' style='2' fill='0'/>
+				<RECTANGLE a='24.00000,20.00000' b='28.00000,45.00000' style='7' fill='0'/>
 				<PIN pos='20.00000,22.00000' which='0' elec='0' direction='3' part='0' number='1' show='3' length='30' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='20.00000,25.00000' which='0' elec='0' direction='3' part='0' number='2' show='3' length='30' number_pos='0' centre_name='0'></PIN>
 				<PIN pos='20.00000,28.00000' which='0' elec='0' direction='3' part='0' number='3' show='3' length='30' number_pos='0' centre_name='0'></PIN>
@@ -1497,9 +1502,9 @@ J&#039;8NDC,AV+)**&amp;-NQ&quot;&amp;YY;5ZL+?__ 02@$UTC2K^+     $E%3D2N0F&quot;&
 			<COLOR_NOTETEXT_TEXT>FF0000</COLOR_NOTETEXT_TEXT>
 		</OPTIONS>
 		<WIRE a='134.08830,35.94536' b='134.08830,36.00000'/>
-		<SYMBOL id='4' pos='88.00000,64.00000' part='0' rotate='1' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+		<SYMBOL id='2' pos='88.00000,64.00000' part='0' rotate='1' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='J3' show='1' pos='-5.14005,3.38036'/>
-			<FIELD type='0' description='Name' value='' show='1' pos='-5.00000,-52.00000'/>
+			<FIELD type='0' description='Name' value='Remove header pin 16' show='1' pos='-7.00000,-52.00000'/>
 			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
 			<FIELD type='2' description='$$SPICE_EPILOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
 			<FIELD type='1' description='Package' value='SIP16' show='0' pos='1.00000,-43.20000'/>
@@ -1520,9 +1525,9 @@ J&#039;8NDC,AV+)**&amp;-NQ&quot;&amp;YY;5ZL+?__ 02@$UTC2K^+     $E%3D2N0F&quot;&
 			<HINT pin='8' net='104'/>
 			<HINT pin='9' net='105'/>
 		</SYMBOL>
-		<SYMBOL id='4' pos='134.00000,64.00000' part='0' rotate='5' can_scale='0' show_power='1' scale_x='1.00000' scale_y='1.00000'>
+		<SYMBOL id='2' pos='134.00000,64.00000' part='0' rotate='5' can_scale='0' show_power='1' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='J4' show='1' pos='-5.07003,3.73049'/>
-			<FIELD type='0' description='Name' value='' show='1' pos='-9.00000,-52.00000'/>
+			<FIELD type='0' description='Name' value='Remove header pin 16' show='1' pos='-21.00000,-52.00000'/>
 			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
 			<FIELD type='2' description='$$SPICE_EPILOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
 			<FIELD type='1' description='Package' value='SIP16' show='0' pos='1.00000,-43.20000'/>
@@ -1544,7 +1549,7 @@ J&#039;8NDC,AV+)**&amp;-NQ&quot;&amp;YY;5ZL+?__ 02@$UTC2K^+     $E%3D2N0F&quot;&
 			<HINT pin='9' net='121'/>
 		</SYMBOL>
 		<NOCONNECT pos='134.00000,62.00000'/>
-		<SYMBOL id='6' pos='22.00000,66.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+		<SYMBOL id='3' pos='22.00000,66.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='J1' show='1' pos='-5.00000,-25.60000'/>
 			<FIELD type='0' description='Name' value='' show='1' pos='1.00000,-24.00000'/>
 			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
@@ -1559,7 +1564,7 @@ J&#039;8NDC,AV+)**&amp;-NQ&quot;&amp;YY;5ZL+?__ 02@$UTC2K^+     $E%3D2N0F&quot;&
 			<HINT pin='7' net='170'/>
 			<HINT pin='8' net='122'/>
 		</SYMBOL>
-		<SYMBOL id='6' pos='52.00000,66.00000' part='0' rotate='4' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+		<SYMBOL id='3' pos='52.00000,66.00000' part='0' rotate='4' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='J2' show='1' pos='-5.00000,-25.60000'/>
 			<FIELD type='0' description='Name' value='' show='1' pos='1.00000,-24.00000'/>
 			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
@@ -1574,10 +1579,10 @@ J&#039;8NDC,AV+)**&amp;-NQ&quot;&amp;YY;5ZL+?__ 02@$UTC2K^+     $E%3D2N0F&quot;&
 			<HINT pin='7' net='178'/>
 			<HINT pin='8' net='1'/>
 		</SYMBOL>
-		<METAFILE a='20.00000,28.00000' b='45.40000,66.00000' id='9'/>
-		<WIRE style='3' a='14.00000,63.00000' b='2.00000,63.00000'/>
-		<WIRE style='3' a='2.00000,63.00000' b='2.00000,6.00000'/>
-		<WIRE style='2' a='52.00000,63.00000' b='52.00000,76.00000'/>
+		<METAFILE a='20.00000,28.00000' b='45.40000,66.00000' id='1'/>
+		<WIRE style='2' a='14.00000,63.00000' b='2.00000,63.00000'/>
+		<WIRE style='2' a='2.00000,63.00000' b='2.00000,6.00000'/>
+		<WIRE style='0' a='52.00000,63.00000' b='52.00000,76.00000'/>
 		<SYMBOL id='1' pos='56.00000,72.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='R2' show='1' pos='1.00000,-5.60000'/>
 			<FIELD type='0' description='Name' value='10K' show='1' pos='1.00000,-8.00000'/>
@@ -1587,16 +1592,16 @@ J&#039;8NDC,AV+)**&amp;-NQ&quot;&amp;YY;5ZL+?__ 02@$UTC2K^+     $E%3D2N0F&quot;&
 			<HINT pin='1' net='178'/>
 			<HINT pin='2' net='1'/>
 		</SYMBOL>
-		<WIRE style='2' a='54.00000,72.00000' b='54.00000,76.00000'/>
-		<WIRE style='2' a='52.00000,76.00000' b='54.00000,76.00000'/>
-		<WIRE style='2' a='80.00000,53.00000' b='74.00000,53.00000'/>
-		<WIRE style='2' a='74.00000,53.00000' b='74.00000,76.00000'/>
-		<WIRE style='2' a='54.00000,76.00000' b='74.00000,76.00000'/>
-		<WIRE style='7' a='14.00000,42.00000' b='8.00000,42.00000'/>
-		<WIRE style='7' a='8.00000,42.00000' b='8.00000,70.00000'/>
-		<WIRE style='7' a='8.00000,70.00000' b='76.00000,70.00000'/>
-		<WIRE style='7' a='80.00000,56.00000' b='76.00000,56.00000'/>
-		<WIRE style='7' a='76.00000,56.00000' b='76.00000,70.00000'/>
+		<WIRE style='0' a='54.00000,72.00000' b='54.00000,76.00000'/>
+		<WIRE style='0' a='52.00000,76.00000' b='54.00000,76.00000'/>
+		<WIRE style='0' a='80.00000,53.00000' b='74.00000,53.00000'/>
+		<WIRE style='0' a='74.00000,53.00000' b='74.00000,76.00000'/>
+		<WIRE style='0' a='54.00000,76.00000' b='74.00000,76.00000'/>
+		<WIRE style='5' a='14.00000,42.00000' b='8.00000,42.00000'/>
+		<WIRE style='5' a='8.00000,42.00000' b='8.00000,70.00000'/>
+		<WIRE style='5' a='8.00000,70.00000' b='76.00000,70.00000'/>
+		<WIRE style='5' a='80.00000,56.00000' b='76.00000,56.00000'/>
+		<WIRE style='5' a='76.00000,56.00000' b='76.00000,70.00000'/>
 		<SYMBOL id='1' pos='8.00000,30.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='R1' show='1' pos='1.00000,-5.60000'/>
 			<FIELD type='0' description='Name' value='10K' show='1' pos='1.00000,-8.00000'/>
@@ -1607,8 +1612,8 @@ J&#039;8NDC,AV+)**&amp;-NQ&quot;&amp;YY;5ZL+?__ 02@$UTC2K^+     $E%3D2N0F&quot;&
 			<HINT pin='2' net='166'/>
 		</SYMBOL>
 		<WIRE a='6.00000,48.00000' b='14.00000,48.00000'/>
-		<WIRE style='3' a='6.00000,20.00000' b='6.00000,6.00000'/>
-		<WIRE style='3' a='2.00000,6.00000' b='6.00000,6.00000'/>
+		<WIRE style='2' a='6.00000,20.00000' b='6.00000,6.00000'/>
+		<WIRE style='2' a='2.00000,6.00000' b='6.00000,6.00000'/>
 		<SYMBOL id='1' pos='66.00000,50.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='R3' show='1' pos='1.00000,-5.60000'/>
 			<FIELD type='0' description='Name' value='10K' show='1' pos='1.00000,-8.00000'/>
@@ -1620,32 +1625,32 @@ J&#039;8NDC,AV+)**&amp;-NQ&quot;&amp;YY;5ZL+?__ 02@$UTC2K^+     $E%3D2N0F&quot;&
 		</SYMBOL>
 		<WIRE a='64.00000,50.00000' b='64.00000,57.00000'/>
 		<WIRE a='64.00000,57.00000' b='52.00000,57.00000'/>
-		<WIRE style='3' a='64.00000,40.00000' b='64.00000,6.00000'/>
-		<WIRE style='3' a='6.00000,6.00000' b='64.00000,6.00000'/>
-		<WIRE style='6' a='52.00000,42.00000' b='58.00000,42.00000'/>
-		<WIRE style='6' a='58.00000,42.00000' b='58.00000,8.00000'/>
-		<WIRE style='6' a='134.00000,56.00000' b='142.00000,56.00000'/>
-		<WIRE style='6' a='142.00000,56.00000' b='142.00000,8.00000'/>
-		<WIRE style='6' a='142.00000,8.00000' b='58.00000,8.00000'/>
-		<WIRE style='5' a='52.00000,45.00000' b='60.00000,45.00000'/>
-		<WIRE style='5' a='60.00000,45.00000' b='60.00000,10.00000'/>
-		<WIRE style='5' a='134.00000,53.00000' b='140.00000,53.00000'/>
-		<WIRE style='5' a='140.00000,53.00000' b='140.00000,10.00000'/>
-		<WIRE style='5' a='140.00000,10.00000' b='60.00000,10.00000'/>
+		<WIRE style='2' a='64.00000,40.00000' b='64.00000,6.00000'/>
+		<WIRE style='2' a='6.00000,6.00000' b='64.00000,6.00000'/>
+		<WIRE style='4' a='52.00000,42.00000' b='58.00000,42.00000'/>
+		<WIRE style='4' a='58.00000,42.00000' b='58.00000,8.00000'/>
+		<WIRE style='4' a='134.00000,56.00000' b='142.00000,56.00000'/>
+		<WIRE style='4' a='142.00000,56.00000' b='142.00000,8.00000'/>
+		<WIRE style='4' a='142.00000,8.00000' b='58.00000,8.00000'/>
+		<WIRE style='3' a='52.00000,45.00000' b='60.00000,45.00000'/>
+		<WIRE style='3' a='60.00000,45.00000' b='60.00000,10.00000'/>
+		<WIRE style='3' a='134.00000,53.00000' b='140.00000,53.00000'/>
+		<WIRE style='3' a='140.00000,53.00000' b='140.00000,10.00000'/>
+		<WIRE style='3' a='140.00000,10.00000' b='60.00000,10.00000'/>
 		<NOCONNECT pos='52.00000,48.00000'/>
 		<NOCONNECT pos='52.00000,51.00000'/>
-		<WIRE style='8' a='52.00000,54.00000' b='72.00000,54.00000'/>
-		<WIRE style='8' a='134.00000,29.00000' b='138.00000,29.00000'/>
-		<WIRE style='8' a='138.00000,29.00000' b='138.00000,12.00000'/>
-		<WIRE style='8' a='72.00000,12.00000' b='72.00000,54.00000'/>
-		<TEXT pos='2.00000,4.00000' direction='3' font='3' color='000000'>ESP-12E Programmer using NodeMCU</TEXT>
-		<WIRE style='3' a='134.00000,35.00000' b='148.00000,35.00000'/>
-		<WIRE style='3' a='148.00000,35.00000' b='148.00000,6.00000'/>
-		<WIRE style='3' a='64.00000,6.00000' b='148.00000,6.00000'/>
+		<WIRE style='6' a='52.00000,54.00000' b='72.00000,54.00000'/>
+		<WIRE style='6' a='134.00000,29.00000' b='138.00000,29.00000'/>
+		<WIRE style='6' a='138.00000,29.00000' b='138.00000,12.00000'/>
+		<WIRE style='6' a='72.00000,12.00000' b='72.00000,54.00000'/>
+		<TEXT pos='2.00000,4.00000' direction='3' font='4' color='000000'>ESP-12E Programmer using NodeMCU</TEXT>
+		<WIRE style='2' a='134.00000,35.00000' b='148.00000,35.00000'/>
+		<WIRE style='2' a='148.00000,35.00000' b='148.00000,6.00000'/>
+		<WIRE style='2' a='64.00000,6.00000' b='148.00000,6.00000'/>
 		<WIRE a='6.00000,30.00000' b='6.00000,48.00000'/>
 		<WIRE a='52.00000,60.00000' b='54.00000,60.00000'/>
 		<WIRE a='54.00000,60.00000' b='54.00000,62.00000'/>
-		<WIRE style='2' a='74.00000,76.00000' b='78.00000,76.00000'/>
+		<WIRE style='0' a='74.00000,76.00000' b='78.00000,76.00000'/>
 		<NOCONNECT pos='134.00000,17.00000'/>
 		<NOCONNECT pos='134.00000,20.00000'/>
 		<NOCONNECT pos='134.00000,23.00000'/>
@@ -1676,15 +1681,15 @@ J&#039;8NDC,AV+)**&amp;-NQ&quot;&amp;YY;5ZL+?__ 02@$UTC2K^+     $E%3D2N0F&quot;&
 		<NOCONNECT pos='80.00000,44.00000'/>
 		<NOCONNECT pos='80.00000,47.00000'/>
 		<NOCONNECT pos='80.00000,50.00000'/>
-		<METAFILE a='86.00000,12.00000' b='128.20000,70.00000' id='17'/>
-		<WIRE style='8' a='72.00000,12.00000' b='138.00000,12.00000'/>
+		<METAFILE a='86.00000,12.00000' b='128.20000,70.00000' id='2'/>
+		<WIRE style='6' a='72.00000,12.00000' b='138.00000,12.00000'/>
 		<JUNCTION pos='6.00000,6.00000'/>
 		<JUNCTION pos='64.00000,6.00000'/>
 		<JUNCTION pos='54.00000,76.00000'/>
 		<JUNCTION pos='74.00000,76.00000'/>
-		<WIRE style='2' a='78.00000,76.00000' b='78.00000,59.00000'/>
-		<WIRE style='2' a='78.00000,59.00000' b='80.00000,59.00000'/>
+		<WIRE style='0' a='78.00000,76.00000' b='78.00000,59.00000'/>
+		<WIRE style='0' a='78.00000,59.00000' b='80.00000,59.00000'/>
 		<POWER pos='54.00000,76.00000' which='0' direction='1'></POWER>
-		<LABEL pos='148.00000,34.00000' direction='1' font='0' color='208000' style='0'>3.3v OUT of NodeMCU</LABEL>
+		<LABEL pos='148.00000,34.00000' direction='1' font='3' color='208000' style='0'>3.3v OUT of NodeMCU</LABEL>
 	</TinyCAD>
 </TinyCADSheets>
