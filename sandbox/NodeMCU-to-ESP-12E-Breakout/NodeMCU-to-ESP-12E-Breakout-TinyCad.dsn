@@ -1536,7 +1536,7 @@ H^1XNS%-R SN_R@Z:&#039;W0&#039;V7@&amp;_Q^&quot;HWY@;2&#039;S60    !)14Y$KD)@@@
 		<WIRE a='164.08830,49.94536' b='164.08830,50.00000'/>
 		<SYMBOL id='2' pos='118.00000,78.00000' part='0' rotate='1' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='J3' show='1' pos='-5.14005,3.38036'/>
-			<FIELD type='0' description='Name' value='' show='1' pos='-5.00000,-52.00000'/>
+			<FIELD type='0' description='Name' value='Remove header pin 16' show='1' pos='-7.00000,-52.00000'/>
 			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
 			<FIELD type='2' description='$$SPICE_EPILOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
 			<FIELD type='1' description='Package' value='SIP16' show='0' pos='1.00000,-43.20000'/>
@@ -1559,7 +1559,7 @@ H^1XNS%-R SN_R@Z:&#039;W0&#039;V7@&amp;_Q^&quot;HWY@;2&#039;S60    !)14Y$KD)@@@
 		</SYMBOL>
 		<SYMBOL id='2' pos='164.00000,78.00000' part='0' rotate='5' can_scale='0' show_power='1' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='J4' show='1' pos='-5.07003,3.73049'/>
-			<FIELD type='0' description='Name' value='' show='1' pos='-9.00000,-52.00000'/>
+			<FIELD type='0' description='Name' value='Remove header pin 16' show='1' pos='-21.00000,-52.00000'/>
 			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
 			<FIELD type='2' description='$$SPICE_EPILOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
 			<FIELD type='1' description='Package' value='SIP16' show='0' pos='1.00000,-43.20000'/>
