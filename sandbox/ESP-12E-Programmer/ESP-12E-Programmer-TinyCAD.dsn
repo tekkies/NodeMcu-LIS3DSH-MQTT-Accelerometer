@@ -937,8 +937,8 @@ L&lt;JJ&quot;!EZ^:EZOE:N54Q4T$ ^;]]7*U?X_\[9^NHN;J1X     245.1*Y&quot;8((
 			<COLOR_NOTETEXT_LINE>FF0000</COLOR_NOTETEXT_LINE>
 			<COLOR_NOTETEXT_TEXT>FF0000</COLOR_NOTETEXT_TEXT>
 		</OPTIONS>
-		<WIRE a='172.08830,81.94536' b='172.08830,82.00000'/>
-		<SYMBOL id='4' pos='136.00000,110.00000' part='0' rotate='1' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+		<WIRE a='118.08830,53.94536' b='118.08830,54.00000'/>
+		<SYMBOL id='4' pos='82.00000,82.00000' part='0' rotate='1' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='J2' show='1' pos='-5.14005,3.38036'/>
 			<FIELD type='0' description='Name' value='' show='1' pos='-5.00000,-52.00000'/>
 			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
@@ -961,7 +961,7 @@ L&lt;JJ&quot;!EZ^:EZOE:N54Q4T$ ^;]]7*U?X_\[9^NHN;J1X     245.1*Y&quot;8((
 			<HINT pin='8' net='104'/>
 			<HINT pin='9' net='105'/>
 		</SYMBOL>
-		<SYMBOL id='4' pos='170.00000,110.00000' part='0' rotate='5' can_scale='0' show_power='1' scale_x='1.00000' scale_y='1.00000'>
+		<SYMBOL id='4' pos='116.00000,82.00000' part='0' rotate='5' can_scale='0' show_power='1' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='J3' show='1' pos='-5.07003,3.73049'/>
 			<FIELD type='0' description='Name' value='' show='1' pos='-9.00000,-52.00000'/>
 			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
@@ -984,12 +984,12 @@ L&lt;JJ&quot;!EZ^:EZOE:N54Q4T$ ^;]]7*U?X_\[9^NHN;J1X     245.1*Y&quot;8((
 			<HINT pin='8' net='120'/>
 			<HINT pin='9' net='121'/>
 		</SYMBOL>
-		<NOCONNECT pos='170.00000,108.00000'/>
-		<NOCONNECT pos='170.00000,105.00000'/>
-		<NOCONNECT pos='170.00000,102.00000'/>
-		<NOCONNECT pos='170.00000,99.00000'/>
-		<METAFILE a='134.00000,58.00000' b='163.40000,116.00000' id='4'/>
-		<SYMBOL id='6' pos='54.00000,112.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+		<NOCONNECT pos='116.00000,80.00000'/>
+		<NOCONNECT pos='116.00000,77.00000'/>
+		<NOCONNECT pos='116.00000,74.00000'/>
+		<NOCONNECT pos='116.00000,71.00000'/>
+		<METAFILE a='80.00000,30.00000' b='109.40000,88.00000' id='4'/>
+		<SYMBOL id='6' pos='24.00000,84.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='J?' show='0' pos='1.00000,-21.60000'/>
 			<FIELD type='0' description='Name' value='' show='1' pos='1.00000,-24.00000'/>
 			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
@@ -1004,7 +1004,7 @@ L&lt;JJ&quot;!EZ^:EZOE:N54Q4T$ ^;]]7*U?X_\[9^NHN;J1X     245.1*Y&quot;8((
 			<HINT pin='7' net='170'/>
 			<HINT pin='8' net='122'/>
 		</SYMBOL>
-		<SYMBOL id='6' pos='78.00000,112.00000' part='0' rotate='4' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+		<SYMBOL id='6' pos='48.00000,84.00000' part='0' rotate='4' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='J?' show='1' pos='1.00000,-21.60000'/>
 			<FIELD type='0' description='Name' value='' show='1' pos='1.00000,-24.00000'/>
 			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
@@ -1019,18 +1019,13 @@ L&lt;JJ&quot;!EZ^:EZOE:N54Q4T$ ^;]]7*U?X_\[9^NHN;J1X     245.1*Y&quot;8((
 			<HINT pin='7' net='178'/>
 			<HINT pin='8' net='100'/>
 		</SYMBOL>
-		<METAFILE a='52.00000,74.00000' b='71.40000,112.00000' id='9'/>
-		<WIRE style='2' a='180.00000,136.00000' b='240.00000,136.00000'/>
-		<WIRE style='2' a='170.00000,105.00000' b='180.00000,105.00000'/>
-		<WIRE style='2' a='180.00000,105.00000' b='180.00000,136.00000'/>
-		<JUNCTION pos='180.00000,136.00000'/>
-		<WIRE style='2' a='118.00000,136.00000' b='180.00000,136.00000'/>
-		<WIRE style='3' a='46.00000,109.00000' b='28.00000,109.00000'/>
-		<WIRE style='3' a='28.00000,109.00000' b='28.00000,52.00000'/>
-		<WIRE style='2' a='78.00000,109.00000' b='78.00000,136.00000'/>
-		<JUNCTION pos='78.00000,136.00000'/>
-		<WIRE style='2' a='12.00000,136.00000' b='78.00000,136.00000'/>
-		<SYMBOL id='1' pos='82.00000,132.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+		<METAFILE a='22.00000,46.00000' b='41.40000,84.00000' id='9'/>
+		<WIRE style='2' a='116.00000,77.00000' b='126.00000,77.00000'/>
+		<WIRE style='3' a='16.00000,81.00000' b='4.00000,81.00000'/>
+		<WIRE style='3' a='4.00000,81.00000' b='4.00000,24.00000'/>
+		<WIRE style='2' a='48.00000,81.00000' b='48.00000,94.00000'/>
+		<WIRE style='2' a='4.00000,94.00000' b='48.00000,94.00000'/>
+		<SYMBOL id='1' pos='52.00000,90.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='R1' show='1' pos='1.00000,-5.60000'/>
 			<FIELD type='0' description='Name' value='10K' show='1' pos='1.00000,-8.00000'/>
 			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
@@ -1039,21 +1034,17 @@ L&lt;JJ&quot;!EZ^:EZOE:N54Q4T$ ^;]]7*U?X_\[9^NHN;J1X     245.1*Y&quot;8((
 			<HINT pin='1' net='178'/>
 			<HINT pin='2' net='100'/>
 		</SYMBOL>
-		<WIRE a='78.00000,106.00000' b='80.00000,106.00000'/>
-		<WIRE a='80.00000,106.00000' b='80.00000,122.00000'/>
-		<WIRE style='2' a='80.00000,132.00000' b='80.00000,136.00000'/>
-		<JUNCTION pos='80.00000,136.00000'/>
-		<WIRE style='2' a='78.00000,136.00000' b='80.00000,136.00000'/>
-		<WIRE style='2' a='128.00000,99.00000' b='118.00000,99.00000'/>
-		<WIRE style='2' a='118.00000,99.00000' b='118.00000,136.00000'/>
-		<JUNCTION pos='118.00000,136.00000'/>
-		<WIRE style='2' a='80.00000,136.00000' b='118.00000,136.00000'/>
-		<WIRE style='7' a='46.00000,88.00000' b='40.00000,88.00000'/>
-		<WIRE style='7' a='40.00000,88.00000' b='40.00000,118.00000'/>
-		<WIRE style='7' a='40.00000,118.00000' b='126.00000,118.00000'/>
-		<WIRE style='7' a='128.00000,102.00000' b='126.00000,102.00000'/>
-		<WIRE style='7' a='126.00000,102.00000' b='126.00000,118.00000'/>
-		<SYMBOL id='1' pos='36.00000,76.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+		<WIRE style='2' a='50.00000,90.00000' b='50.00000,94.00000'/>
+		<WIRE style='2' a='48.00000,94.00000' b='50.00000,94.00000'/>
+		<WIRE style='2' a='74.00000,71.00000' b='70.00000,71.00000'/>
+		<WIRE style='2' a='70.00000,71.00000' b='70.00000,94.00000'/>
+		<WIRE style='2' a='50.00000,94.00000' b='70.00000,94.00000'/>
+		<WIRE style='7' a='16.00000,60.00000' b='10.00000,60.00000'/>
+		<WIRE style='7' a='10.00000,60.00000' b='10.00000,88.00000'/>
+		<WIRE style='7' a='10.00000,88.00000' b='72.00000,88.00000'/>
+		<WIRE style='7' a='74.00000,74.00000' b='72.00000,74.00000'/>
+		<WIRE style='7' a='72.00000,74.00000' b='72.00000,88.00000'/>
+		<SYMBOL id='1' pos='10.00000,48.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='R1' show='1' pos='1.00000,-5.60000'/>
 			<FIELD type='0' description='Name' value='10K' show='1' pos='1.00000,-8.00000'/>
 			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
@@ -1062,11 +1053,10 @@ L&lt;JJ&quot;!EZ^:EZOE:N54Q4T$ ^;]]7*U?X_\[9^NHN;J1X     245.1*Y&quot;8((
 			<HINT pin='1' net='122'/>
 			<HINT pin='2' net='166'/>
 		</SYMBOL>
-		<WIRE a='34.00000,76.00000' b='34.00000,94.00000'/>
-		<WIRE a='34.00000,94.00000' b='46.00000,94.00000'/>
-		<WIRE style='3' a='34.00000,66.00000' b='34.00000,52.00000'/>
-		<WIRE style='3' a='28.00000,52.00000' b='34.00000,52.00000'/>
-		<SYMBOL id='1' pos='92.00000,96.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+		<WIRE a='8.00000,66.00000' b='16.00000,66.00000'/>
+		<WIRE style='3' a='8.00000,38.00000' b='8.00000,24.00000'/>
+		<WIRE style='3' a='4.00000,24.00000' b='8.00000,24.00000'/>
+		<SYMBOL id='1' pos='62.00000,68.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='R1' show='1' pos='1.00000,-5.60000'/>
 			<FIELD type='0' description='Name' value='10K' show='1' pos='1.00000,-8.00000'/>
 			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
@@ -1075,32 +1065,40 @@ L&lt;JJ&quot;!EZ^:EZOE:N54Q4T$ ^;]]7*U?X_\[9^NHN;J1X     245.1*Y&quot;8((
 			<HINT pin='1' net='122'/>
 			<HINT pin='2' net='177'/>
 		</SYMBOL>
-		<WIRE a='90.00000,96.00000' b='90.00000,103.00000'/>
-		<WIRE a='90.00000,103.00000' b='78.00000,103.00000'/>
-		<WIRE style='3' a='90.00000,86.00000' b='90.00000,52.00000'/>
-		<WIRE style='3' a='34.00000,52.00000' b='90.00000,52.00000'/>
-		<WIRE style='6' a='78.00000,88.00000' b='84.00000,88.00000'/>
-		<WIRE style='6' a='84.00000,88.00000' b='84.00000,54.00000'/>
-		<WIRE style='6' a='170.00000,102.00000' b='180.00000,102.00000'/>
-		<WIRE style='6' a='180.00000,102.00000' b='180.00000,54.00000'/>
-		<WIRE style='6' a='180.00000,54.00000' b='84.00000,54.00000'/>
-		<WIRE style='5' a='78.00000,91.00000' b='86.00000,91.00000'/>
-		<WIRE style='5' a='86.00000,91.00000' b='86.00000,56.00000'/>
-		<WIRE style='5' a='170.00000,99.00000' b='178.00000,99.00000'/>
-		<WIRE style='5' a='178.00000,99.00000' b='178.00000,56.00000'/>
-		<WIRE style='5' a='178.00000,56.00000' b='86.00000,56.00000'/>
-		<NOCONNECT pos='78.00000,94.00000'/>
-		<NOCONNECT pos='78.00000,97.00000'/>
-		<WIRE style='8' a='78.00000,100.00000' b='104.00000,100.00000'/>
-		<WIRE style='8' a='170.00000,75.00000' b='174.00000,75.00000'/>
-		<WIRE style='8' a='174.00000,75.00000' b='174.00000,58.00000'/>
-		<WIRE style='8' a='174.00000,58.00000' b='104.00000,58.00000'/>
-		<WIRE style='8' a='104.00000,58.00000' b='104.00000,100.00000'/>
-		<TEXT pos='60.00000,64.00000' direction='3' font='3' color='000000'>CHECK WIRING!</TEXT>
-		<JUNCTION pos='90.00000,52.00000'/>
-		<JUNCTION pos='34.00000,52.00000'/>
-		<WIRE style='3' a='170.00000,81.00000' b='182.00000,81.00000'/>
-		<WIRE style='3' a='182.00000,81.00000' b='182.00000,52.00000'/>
-		<WIRE style='3' a='90.00000,52.00000' b='182.00000,52.00000'/>
+		<WIRE a='60.00000,68.00000' b='60.00000,75.00000'/>
+		<WIRE a='60.00000,75.00000' b='48.00000,75.00000'/>
+		<WIRE style='3' a='60.00000,58.00000' b='60.00000,24.00000'/>
+		<WIRE style='3' a='8.00000,24.00000' b='60.00000,24.00000'/>
+		<WIRE style='6' a='48.00000,60.00000' b='54.00000,60.00000'/>
+		<WIRE style='6' a='54.00000,60.00000' b='54.00000,26.00000'/>
+		<WIRE style='6' a='116.00000,74.00000' b='126.00000,74.00000'/>
+		<WIRE style='6' a='126.00000,74.00000' b='126.00000,26.00000'/>
+		<WIRE style='6' a='126.00000,26.00000' b='54.00000,26.00000'/>
+		<WIRE style='5' a='48.00000,63.00000' b='56.00000,63.00000'/>
+		<WIRE style='5' a='56.00000,63.00000' b='56.00000,28.00000'/>
+		<WIRE style='5' a='116.00000,71.00000' b='124.00000,71.00000'/>
+		<WIRE style='5' a='124.00000,71.00000' b='124.00000,28.00000'/>
+		<WIRE style='5' a='124.00000,28.00000' b='56.00000,28.00000'/>
+		<NOCONNECT pos='48.00000,66.00000'/>
+		<NOCONNECT pos='48.00000,69.00000'/>
+		<WIRE style='8' a='48.00000,72.00000' b='68.00000,72.00000'/>
+		<WIRE style='8' a='116.00000,47.00000' b='120.00000,47.00000'/>
+		<WIRE style='8' a='120.00000,47.00000' b='120.00000,30.00000'/>
+		<WIRE style='8' a='120.00000,30.00000' b='68.00000,30.00000'/>
+		<WIRE style='8' a='68.00000,30.00000' b='68.00000,72.00000'/>
+		<TEXT pos='4.00000,20.00000' direction='3' font='3' color='000000'>ESP-12E Programmer using NodeMCU</TEXT>
+		<WIRE style='3' a='116.00000,53.00000' b='128.00000,53.00000'/>
+		<WIRE style='3' a='128.00000,53.00000' b='128.00000,24.00000'/>
+		<WIRE style='2' a='126.00000,77.00000' b='126.00000,94.00000'/>
+		<WIRE style='2' a='70.00000,94.00000' b='126.00000,94.00000'/>
+		<WIRE style='3' a='60.00000,24.00000' b='128.00000,24.00000'/>
+		<WIRE a='8.00000,48.00000' b='8.00000,66.00000'/>
+		<JUNCTION pos='8.00000,24.00000'/>
+		<JUNCTION pos='48.00000,94.00000'/>
+		<JUNCTION pos='60.00000,24.00000'/>
+		<JUNCTION pos='50.00000,94.00000'/>
+		<JUNCTION pos='70.00000,94.00000'/>
+		<WIRE a='48.00000,78.00000' b='50.00000,78.00000'/>
+		<WIRE a='50.00000,78.00000' b='50.00000,80.00000'/>
 	</TinyCAD>
 </TinyCADSheets>
