@@ -7,7 +7,7 @@ download the executable.-->
 	<TinyCAD>
 		<NAME>Sheet 1</NAME>
 		<DETAILS>
-			<Size width='1485' height='1050'/>
+			<Size width='950' height='550'/>
 			<GUIDES horiz='7' vert='5'/>
 			<TITLE>NodeMCU CJMCU-LIS3DSH</TITLE>
 			<AUTHOR></AUTHOR>
@@ -29,16 +29,6 @@ download the executable.-->
 			<CHARSET>0</CHARSET>
 			<FACENAME>Arial</FACENAME>
 		</FONT>
-		<FONT id='3'>
-			<HEIGHT>-13</HEIGHT>
-			<WIDTH>6</WIDTH>
-			<WEIGHT>400</WEIGHT>
-			<ITALIC>0</ITALIC>
-			<UNDERLINE>0</UNDERLINE>
-			<STRIKEOUT>0</STRIKEOUT>
-			<CHARSET>0</CHARSET>
-			<FACENAME>Arial</FACENAME>
-		</FONT>
 		<FONT id='4'>
 			<HEIGHT>-13</HEIGHT>
 			<WIDTH>6</WIDTH>
@@ -49,36 +39,6 @@ download the executable.-->
 			<CHARSET>0</CHARSET>
 			<FACENAME>Arial</FACENAME>
 		</FONT>
-		<STYLE id='0'>
-			<STYLE>0</STYLE>
-			<COLOR>000000</COLOR>
-			<THICKNESS>1</THICKNESS>
-		</STYLE>
-		<STYLE id='2'>
-			<STYLE>0</STYLE>
-			<COLOR>0000FF</COLOR>
-			<THICKNESS>1</THICKNESS>
-		</STYLE>
-		<STYLE id='3'>
-			<STYLE>0</STYLE>
-			<COLOR>008000</COLOR>
-			<THICKNESS>1</THICKNESS>
-		</STYLE>
-		<STYLE id='4'>
-			<STYLE>0</STYLE>
-			<COLOR>00BFBF</COLOR>
-			<THICKNESS>1</THICKNESS>
-		</STYLE>
-		<STYLE id='5'>
-			<STYLE>0</STYLE>
-			<COLOR>FF0080</COLOR>
-			<THICKNESS>1</THICKNESS>
-		</STYLE>
-		<STYLE id='6'>
-			<STYLE>0</STYLE>
-			<COLOR>326987</COLOR>
-			<THICKNESS>1</THICKNESS>
-		</STYLE>
 		<STYLE id='7'>
 			<STYLE>0</STYLE>
 			<COLOR>000000</COLOR>
@@ -1539,8 +1499,8 @@ H^1XNS%-R SN_R@Z:&#039;W0&#039;V7@&amp;_Q^&quot;HWY@;2&#039;S60    !)14Y$KD)@@@
 			<COLOR_NOTETEXT_LINE>FF0000</COLOR_NOTETEXT_LINE>
 			<COLOR_NOTETEXT_TEXT>FF0000</COLOR_NOTETEXT_TEXT>
 		</OPTIONS>
-		<WIRE a='214.08830,35.94536' b='214.08830,36.00000'/>
-		<SYMBOL id='2' pos='168.00000,64.00000' part='0' rotate='1' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+		<WIRE a='164.08830,49.94536' b='164.08830,50.00000'/>
+		<SYMBOL id='2' pos='118.00000,78.00000' part='0' rotate='1' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='J3' show='1' pos='-5.14005,3.38036'/>
 			<FIELD type='0' description='Name' value='' show='1' pos='-5.00000,-52.00000'/>
 			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
@@ -1563,7 +1523,7 @@ H^1XNS%-R SN_R@Z:&#039;W0&#039;V7@&amp;_Q^&quot;HWY@;2&#039;S60    !)14Y$KD)@@@
 			<HINT pin='8' net='104'/>
 			<HINT pin='9' net='105'/>
 		</SYMBOL>
-		<SYMBOL id='2' pos='214.00000,64.00000' part='0' rotate='5' can_scale='0' show_power='1' scale_x='1.00000' scale_y='1.00000'>
+		<SYMBOL id='2' pos='164.00000,78.00000' part='0' rotate='5' can_scale='0' show_power='1' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='J4' show='1' pos='-5.07003,3.73049'/>
 			<FIELD type='0' description='Name' value='' show='1' pos='-9.00000,-52.00000'/>
 			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
@@ -1586,7 +1546,6 @@ H^1XNS%-R SN_R@Z:&#039;W0&#039;V7@&amp;_Q^&quot;HWY@;2&#039;S60    !)14Y$KD)@@@
 			<HINT pin='8' net='120'/>
 			<HINT pin='9' net='121'/>
 		</SYMBOL>
-		<NOCONNECT pos='214.00000,62.00000'/>
 		<SYMBOL id='3' pos='22.00000,66.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='J1' show='1' pos='-5.00000,-25.60000'/>
 			<FIELD type='0' description='Name' value='' show='1' pos='1.00000,-24.00000'/>
@@ -1617,54 +1576,29 @@ H^1XNS%-R SN_R@Z:&#039;W0&#039;V7@&amp;_Q^&quot;HWY@;2&#039;S60    !)14Y$KD)@@@
 			<HINT pin='7' net='178'/>
 			<HINT pin='8' net='1'/>
 		</SYMBOL>
-		<WIRE style='0' a='160.00000,53.00000' b='154.00000,53.00000'/>
-		<WIRE style='0' a='154.00000,53.00000' b='154.00000,76.00000'/>
-		<WIRE style='5' a='160.00000,56.00000' b='156.00000,56.00000'/>
-		<WIRE style='5' a='156.00000,56.00000' b='156.00000,70.00000'/>
-		<WIRE style='4' a='214.00000,56.00000' b='222.00000,56.00000'/>
-		<WIRE style='4' a='222.00000,56.00000' b='222.00000,8.00000'/>
-		<WIRE style='3' a='214.00000,53.00000' b='220.00000,53.00000'/>
-		<WIRE style='3' a='220.00000,53.00000' b='220.00000,10.00000'/>
-		<WIRE style='6' a='214.00000,29.00000' b='218.00000,29.00000'/>
-		<WIRE style='6' a='218.00000,29.00000' b='218.00000,12.00000'/>
 		<TEXT pos='2.00000,4.00000' direction='3' font='4' color='000000'>NodeMCU to ESP-12E Breakout</TEXT>
-		<WIRE style='2' a='214.00000,35.00000' b='228.00000,35.00000'/>
-		<WIRE style='2' a='228.00000,35.00000' b='228.00000,6.00000'/>
-		<WIRE style='0' a='154.00000,76.00000' b='158.00000,76.00000'/>
-		<NOCONNECT pos='214.00000,17.00000'/>
-		<NOCONNECT pos='214.00000,20.00000'/>
-		<NOCONNECT pos='214.00000,23.00000'/>
-		<NOCONNECT pos='214.00000,26.00000'/>
-		<NOCONNECT pos='214.00000,32.00000'/>
-		<NOCONNECT pos='214.00000,38.00000'/>
-		<NOCONNECT pos='214.00000,41.00000'/>
-		<NOCONNECT pos='214.00000,44.00000'/>
-		<NOCONNECT pos='214.00000,47.00000'/>
-		<NOCONNECT pos='214.00000,50.00000'/>
-		<NOCONNECT pos='214.00000,62.00000'/>
-		<NOCONNECT pos='214.00000,59.00000'/>
-		<NOCONNECT pos='14.00000,45.00000'/>
-		<NOCONNECT pos='14.00000,51.00000'/>
-		<NOCONNECT pos='14.00000,54.00000'/>
-		<NOCONNECT pos='14.00000,57.00000'/>
-		<NOCONNECT pos='14.00000,60.00000'/>
-		<NOCONNECT pos='160.00000,17.00000'/>
-		<NOCONNECT pos='160.00000,62.00000'/>
-		<NOCONNECT pos='160.00000,20.00000'/>
-		<NOCONNECT pos='160.00000,23.00000'/>
-		<NOCONNECT pos='160.00000,26.00000'/>
-		<NOCONNECT pos='160.00000,29.00000'/>
-		<NOCONNECT pos='160.00000,32.00000'/>
-		<NOCONNECT pos='160.00000,35.00000'/>
-		<NOCONNECT pos='160.00000,38.00000'/>
-		<NOCONNECT pos='160.00000,41.00000'/>
-		<NOCONNECT pos='160.00000,44.00000'/>
-		<NOCONNECT pos='160.00000,47.00000'/>
-		<NOCONNECT pos='160.00000,50.00000'/>
-		<METAFILE a='166.00000,12.00000' b='208.20000,70.00000' id='2'/>
-		<WIRE style='0' a='158.00000,76.00000' b='158.00000,59.00000'/>
-		<WIRE style='0' a='158.00000,59.00000' b='160.00000,59.00000'/>
-		<LABEL pos='228.00000,34.00000' direction='1' font='3' color='208000' style='0'>3.3v OUT of NodeMCU</LABEL>
+		<METAFILE a='116.00000,26.00000' b='158.20000,84.00000' id='2'/>
 		<METAFILE a='20.00000,34.00000' b='68.60000,76.80000' id='3'/>
+		<WIRE a='14.00000,42.00000' b='14.00000,26.00000'/>
+		<WIRE a='14.00000,26.00000' b='84.00000,26.00000'/>
+		<WIRE a='110.00000,70.00000' b='84.00000,70.00000'/>
+		<WIRE a='84.00000,70.00000' b='84.00000,26.00000'/>
+		<WIRE a='14.00000,45.00000' b='12.00000,45.00000'/>
+		<WIRE a='12.00000,45.00000' b='12.00000,24.00000'/>
+		<WIRE a='12.00000,24.00000' b='86.00000,24.00000'/>
+		<WIRE a='110.00000,34.00000' b='86.00000,34.00000'/>
+		<WIRE a='86.00000,34.00000' b='86.00000,24.00000'/>
+		<WIRE a='14.00000,48.00000' b='10.00000,48.00000'/>
+		<WIRE a='10.00000,48.00000' b='10.00000,22.00000'/>
+		<WIRE a='10.00000,22.00000' b='88.00000,22.00000'/>
+		<WIRE a='110.00000,67.00000' b='88.00000,67.00000'/>
+		<WIRE a='88.00000,67.00000' b='88.00000,22.00000'/>
+		<WIRE a='14.00000,51.00000' b='8.00000,51.00000'/>
+		<WIRE a='8.00000,51.00000' b='8.00000,20.00000'/>
+		<WIRE a='8.00000,20.00000' b='168.00000,20.00000'/>
+		<WIRE a='168.00000,20.00000' b='168.00000,34.00000'/>
+		<WIRE a='168.00000,34.00000' b='164.00000,34.00000'/>
+		<NOCONNECT pos='110.00000,31.00000'/>
+		<NOCONNECT pos='164.00000,31.00000'/>
 	</TinyCAD>
 </TinyCADSheets>
