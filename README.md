@@ -18,20 +18,17 @@ Periodically polls LIS3DSH accelerometer ove SPI and pubishes to MQTT Broker
 - [_] Fix the memory leak when running with 0 sleep (workaround: sleep for 1 second)
 - [_] Light sensor on LIS3DH ADC
 
-## Design
+![Stripboard Layout (v1.0)](doc/Assembled-Board.jpg)
+
+## NodeMCU v2
 
 ### Circuit
-![Circuit Diagram](hardware/Circuit-Diagram-TinyCAD.png)
+![Circuit Diagram](hardware/NodeMCU-V2/Circuit-Diagram-TinyCAD.png)
 
-### Layout
+### Stripboard Design
 
-v1.0 Stripboard
-![Stripboard Layout](doc/Assembled-Board.jpg)
+![Stripboard Layout](hardware/NodeMCU-V2/Stripboard-Layout.VeeCAD.png)
 
-Stripboard Design
-
-![Stripboard Layout](hardware/Stripboard-Layout.VeeCAD.png)
-
-Connect 4x AA batteries to J1, + to the top, - to the bottom.
+Connect **4x AA** batteries to J1, + to the top, - to the bottom.
 
 
