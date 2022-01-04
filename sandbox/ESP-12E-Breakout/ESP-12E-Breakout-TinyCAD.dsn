@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--This file was written by TinyCAD 3.00.04 develop
+If you wish to view this file go to https://www.tinycad.net to
+download the executable.-->
+<TinyCADSheets>
+	<TinyCAD>
+		<NAME>Sheet 1</NAME>
+		<DETAILS>
+			<Size width='400' height='225'/>
+			<GUIDES horiz='7' vert='5'/>
+			<TITLE>NodeMCU CJMCU-LIS3DSH</TITLE>
+			<AUTHOR></AUTHOR>
+			<REVISION>1.0</REVISION>
+			<DOCNUMBER></DOCNUMBER>
+			<ORGANISATION></ORGANISATION>
+			<SHEETS>1 of 1</SHEETS>
+			<SHOWS>0</SHOWS>
+			<DATE></DATE>
+			<GRID spacing='100.00000' snap='1'/>
+		</DETAILS>
+		<FONT id='1'>
+			<HEIGHT>-10</HEIGHT>
+			<WIDTH>0</WIDTH>
+			<WEIGHT>400</WEIGHT>
+			<ITALIC>0</ITALIC>
+			<UNDERLINE>0</UNDERLINE>
+			<STRIKEOUT>0</STRIKEOUT>
+			<CHARSET>0</CHARSET>
+			<FACENAME>Arial</FACENAME>
+		</FONT>
+		<FONT id='4'>
+			<HEIGHT>-13</HEIGHT>
+			<WIDTH>6</WIDTH>
+			<WEIGHT>400</WEIGHT>
+			<ITALIC>0</ITALIC>
+			<UNDERLINE>0</UNDERLINE>
+			<STRIKEOUT>0</STRIKEOUT>
+			<CHARSET>0</CHARSET>
+			<FACENAME>Arial</FACENAME>
+		</FONT>
+		<STYLE id='8'>
+			<STYLE>0</STYLE>
+			<COLOR>000000</COLOR>
+			<THICKNESS>1</THICKNESS>
+		</STYLE>
+		<FILL id='0'>
+			<INDEX>-1</INDEX>
+			<COLOR>000000</COLOR>
+		</FILL>
+		<IMAGE id='1' type='PNG'>
+			<UUENCODE size='9584'>
+MB5!.1PT*&amp;@H    -24A$4@   2P   (*&quot; ,   &quot;NOH+Q   # %!,5$4/  # 
+M0$    #@L+#?CX\/#P&quot;PL+&quot;OKZ^@H*&quot;/8 # H%^_D  ?&#039;Q^P@ &quot;?GY^_D%^_
+MD$]/, &quot;??P!?7U^PD$^0;P&quot;0D)&quot;/&lt;$^_CP _/S]O;V^/CX\O&#039;P P,#!O3P!_
+M;T] 0$!P&lt;&#039;&quot;?@$^?@%^0@%^/?U^0?T^0?U_/;V_/8&amp;&quot;/;P# GU]00 &quot;0&lt;$]O
+M4 !/3T]0/P O( !@3P&quot; 8 &quot;OD%^@CU]?3P!04% P(  @(&quot;!03T\P+P _+P&quot;_
+MO[_/H%______\/!//P&quot;OCT^PCT]@8&amp;!P7P! , #_[^^ &lt;%]P;U]_;U]@8%]O
+M8%]_?W]@4$_P\/#O[^^ 7P!_7P!_8  O+R_PT-#PW]_PX.#@X.&quot; @(&quot;O?P&quot; 
+M;T]P8$]_8$]O8$^0&lt; #OP,#?W]\0$  @&#039;P#0T- 0#P&quot;@?P!P4 &quot;_GU]@7T_/
+MS\_ P,&quot;O@ &quot;?&lt;  ?$  0$! @$ !?4$^PCP /#P_ GT]?0 !04$\         
+M                                                            
+M                                                            
+M                                                            
+M                                                            
+M                                                            
+M                                                            
+M                                                            
+M                                                            
+M                                                          &quot;N
+MC&#039;]0    #W1%6&#039;14:71L90!-;VYA($QI&lt;V&amp;UY#JY    %W1%6&#039;1!=71H;W( 
+M3&amp;5O;F%R9&amp;\@1&amp;%6:6YC:;J4WJ     @&gt;E18=$1E&lt;V-R:7!T:6]N   (F;/)
+MR&lt;]+5RA)K2BQ P 8)000!T7%20  ( !)1$%4&gt;)SMG8V?F\Q]X&#039;V;1L!IX&gt;(E
+MD%GA547O+M&gt;C6Z2&#039;Z47&gt;/NO+[5.A&gt;^G1QQFKJ5&#039;:4M=^AL0&gt;O!&gt;VY.^_&amp;?3&amp;
+M2J#5&gt;-=V;&#039;[?CZV5T ##5S/#P+SPZ/39+YNP&gt;XU?/6_E:H^^;UQI+ZU&lt;[=&amp;&#039;
+M;:^=@&quot;P)0)8$($L&quot;D&quot;4!R)( 9$D LB0 61* + E E@0@2P*0)0&#039;(D@!D20&quot;R
+M)&quot;AEN29P &amp;XI:W@$&#039;, 09!T.R)( 9$D LB1X&quot;%D_O&#039;YZ6?+T]8;EHLMOWU&gt;#
+MOO[V&lt;B?H-^M%CRHAWS^IV6A]T!^_+[]\\NWED]&lt;/P?L?/IZL&#039;ZX(P24D7+-:
+MA,EYU&lt;#Y&gt;G$EZ(OEHN!U)6A1L]&#039;U5DGP327H9;#\DE3#?CC^U&lt;&gt;3]9IT]Z!K
+ME:!/\;Z@=%H):NT+V&lt;T&gt;5[UF&gt;\-*PTBCK.$[D&#039;6;/;*,5R#K-GMD03;&lt;!F1)
+M +(D %D2@&quot;P)/HDLA/0U.5HNK)=5&amp;[1&gt;5B7D)FB]+)3K#P$-/X4LYJVQV$H6
+MKI5%-T$S?9^LZD8W0&gt;MEZ8GW$+PH/H&amp;LW)M&gt;KGCLU:7IM2P]7(&gt;\[-.]LK)-
+MR,M@%;1&gt;%AU=/@1/JY==&#039;TT6WEPTO];VRF+]NF.ME655%HY601MD7=[G..X&amp;
+M9$D LB0 61* + E E@0@2P*0)0&#039;(D@!D20&quot;R) !9$H L&quot;4&quot;6!&quot;!+ I E &lt;B2
+M8/A(&gt;0FR#F3X:/ ,9!T(9$,)0)8$($L&quot;D&quot;4!R)( 9$D LB0 61* + E E@0@
+M2P*0)0&#039;(D@!D20&quot;R) !9$H L&quot;4&quot;6!&quot;!+ I E &lt;B2 &amp;1) +(D %D2@&quot;P)0)8$
+M#SE500MD/=Q4!2V0!=GP8$&quot;6!&quot;!+ I E &lt;B2 &amp;1) +(D %D2@&quot;P)0)8$($L&quot;
+MD&quot;4!R)( 9$D LB0 61* + E E@0@2P*0)0&#039;(D@!D2?#19&gt;GD_8;+M&lt;):68\K
+M09.]LNBH$G0]Q^07+RM/B@W^ZF!K9;&amp;P$G2UL%X6(Y6@&gt;#4GZA&lt;O&quot;^ET \OW
+MR4*L$G05LE[6K:!L/87NESY503VULFJIEU7/)YBJX./V=?BZ9&#039;WD; BR;@&amp;R
+M) !9$H L&quot;4&quot;6!&quot;!+@EI9[P-K667,*G/X6]ER&amp;:X\CFM*5DNMZD,%5FO[E5U=
+MAG5!DY-RV4D2/KG/&lt;=S-QY+UXZ?G?BKP@ZL-HZ!&lt;E@;3RF3^_^_Q&lt;FG_O!)T
+M%7)432WOI\4R:%$)6O07&gt;RHNFQX?]T!\+%E?)2!+ I E &lt;B2 &amp;1) +(D %D2
+M@&quot;P)0)8$($L&quot;D&quot;4!R)( 9$D LB0 61* + E E@0@2X*/-57!5\G&#039;FJK@JP2R
+MH00ME74S.Y7A&gt;+%62V4=3VP)G.%UN59+99TIWTOP,IZ5:SVLK-&lt;_?%Z^(%EH
+M;GU&gt;R,%]&#039;3Z_K,\.&#039;8&amp;L@P%9$H L&quot;4&quot;6!&quot;!+ I E &lt;B2X N0]3[-T1+]\Y)=
+MW1W;SRSK7PLK*[O 9M6^MI^#+Z &amp;_R4&quot;LB0 61* + E E@0@2P*0)&lt;&amp;%JTI@
+MC!&lt;M%BV5=7TZEF%V4Z[54ED?QO&quot;1P9E][FA\&amp;0P&gt;S3B?.Q9?&quot;*&gt;0#0\&#039;RBP)
+M0)8$($L&quot;D&quot;6!A&quot;RI3CI?&#039; \KZZ87?&lt;6XUP\JZUKM?,6HQR#K8$&quot;6!&quot;!+ I E
+M &lt;B2 &amp;1) +(DD)#UAV^:&gt;+*&gt;NZDMLEX_:93QAU+6/P9-%%=MDW55-,KXQU+6
+M3UDC5MMD&gt;?-&amp;%S\M9?U;8Y&lt;GE+5-5H8:9?P;R&quot;H!61+LR%KUSUN_!5EK=F65
+MI52&gt;HR[*&lt;_ZN(JN&lt;7UWO=G6:L&lt;4,[LM)UELKBV+?3PDE#&amp;4&gt;\].0)/E*5NX1
+MC#5^[L,$4^H1@K.6RYI;_8)8S/&lt;L[+&amp;GF&quot;O)5K*8[WODRK,&quot;HG&amp;=7A&amp;T7E:W
+MZY%YMYL$5X3IEWE7QV0M*[40ZQ,2)$A/$&quot;*:CEI&gt;9BUEH?3*Z@I974O(^O._
+M+U-6D08!TW&amp;_SY-;E\MJ&gt;P&amp;_E$6#2YP+6&lt;@3LG[T#Z6L%/\B0/,L\7AR UE+
+M63R/85Y8Z9=,/R&#039;:)ALFNE&lt;P+YDSKT @2V!AAFB?,DSF4\\BA*YED:3+&quot;HQ%
+M &gt;_SE.6!K&quot;Y-=(1YA8%J65#\@KM:5QVR&gt;1=13&lt;^(C[FGC&quot;*0M:K&quot;\_^Y+FJG
+MZTJIJ*DBAG)6UD;+K]HN:Q&gt;XW%D LB0 61* + DD9/U9XR0&lt;&#039;FF;K-!KE/%G
+MI:S?7S;RM&amp;VROFEV\7MH-RR!1E8)0)8$($L&quot;D&quot;4!R)( 9$D LB0 61* + E 
+ME@0@2P*0)0&#039;(D@!D27&quot;@+/4ER#I8UN# QS* +,B&amp;2T&quot;6!!*R_M1O(BC:)FL4
+M-,KXTU+6=[01K6VR&lt;-;HXCMH-RR!1E8)0)8$($N&quot;W:[=8F  TG74S?6\?%^1
+ME8M/C-*Y+D87E&quot;,(6BT+&lt;SS*/(9HPD+RPJ/Y1A;U:+&gt;K$2(Z!C*M&#039;%#0:EE%
+MZ)&amp; Y(%U@C%[&amp;I)^&gt;+*6A;QIV.T&amp;Q L+K1OX%OZ%UW)9%#&#039;&lt;[R;!E.CZ98XJ
+M@P:ZE!1^W@VRG%G%O,ARG=)VRSHO_&quot;#-NKE_Y:%-/_@_^;60Y1&#039;2SU! NXA.
+MDV#&gt;1:CMV9#@P-&gt;[\_ZT.FB@E(6(3P)_(&gt;MQ)F3EK.6RJ*[Y&lt;X2Y&amp;,HNF4XQ
+MW@P:X*GN&quot;A4G2$\*QO.KGN%VR^+IAOK^O!&quot;#!M@E]OQT/2H,DRRGY\E5BM/ 
+M0OT^)OVDW;(PXYG,]Y(&lt;42_K]WU,T4I6QFL1&gt;7(BZA:9SJL1&amp;&amp;=ZNV6)X0&quot;(
+M,E$I9?I\,5AU*4LOA[?J;#F&quot;E9\+\Y972N%RIQF0)0&#039;(D@!D22 A&quot;VXK5VXK
+M-[OX[HXIH;YIWY10S2X64T(-?]S(H[;)&gt;M3L MH-%QS8;CB$YOL.= R1 IKO
+M)0!9$H L&quot;4&quot;6!&quot;!+ I E &lt;B2 &amp;1) +(D %D2@&quot;P)0)8$($L&quot;D&quot;4!R)) 0M9O
+M&amp;OO)]ULW:*#H-\KXS1VM.QENFRP8-&#039; GT,@J &lt;B2 &amp;1)4&quot;,KGXO^5XNA 4AG
+M;-T/7GQ@.M+%E*\ZR&quot;I=99AH#&#039;F$D&quot;37+&lt;V:KZ&lt;+)E=75P4*,X3F!&amp;0)&lt;)&#039;B
+M8)3[ &gt;F//&quot;_P\7HB:CT-DR1#04$1#4&quot;62%BII^L,(_Z&#039;IFD:I)MG6+ 4TSE#
+MQ13/LP)D&lt;&gt;9^AJA%&lt;C_UL._Y/L&amp;BM_*/_F&lt;I*TT2B@*?&gt;&quot;&quot;K/&#039;#J9WD6GNL\
+M&amp;Q+,L)&gt;$8M# ?UT\EF&#039;DIQ@%F99Z(&amp;N1#:V&lt;9=\R/Q,6:+X88;&#039;,AIZ8UCR@
+ME%R!K/+ &lt;4 \_^E25HJ]=#/&quot;PO&lt;]S\IY^6Z!K,61E\\@RI 86&lt;A3%G[AL=L/
+M*&lt;HQZS)- UDE.A4/7&amp;#E@  DGG1UJU+*&gt;*5T/1P,9.VROMQ9/FAM&amp;Y!5)ZL!
+MD 6R=@!9$LC(0DWDK9.5Z(TR%K+^&gt;=3(M&amp;VRILTN_OF.00./VC=HH&#039;G4 +0;
+M+H!&amp;5@E E@0@2P*0)0&#039;(D@!D20&quot;R) !9$H L&quot;4&quot;6!&quot;!+ I EP8&amp;RWGS_&quot;60I
+MJF$8JO)@Q_;@&#039;&quot;CKN&#039;,O68I:BW(KB.&amp;XD\G$=;9\[:Y[D,Z:&lt;$K-!AIB5G\8
+MAZ:LY_&gt;2Y9Y=U]$S-I&#039;NG5XOMW%SVJMLQ9C&lt;7N?B;.@&gt;D&#039;R5X=&amp;I&lt;WN1T3L5
+M!WL]&amp;SL;6_9%;&lt;PF]Y%USS++G=6&amp;GJQD*?&#039;X[&#039;JSD;.QNSX&lt;V[R]S@W7-7:-
+MVMU4Z,VV9*G1&lt;+F+ZXO!&gt;L&lt;=Y_JH#O,SRNKMEZ7$PZ6(ZYO%9DZCE:UM625G
+MO?VVE/CLYK8LPQV4&amp;SXNY1RO;3DWM3&amp;[MZQ_&quot;AH9&#039;2#K&gt;+##*C_9PM7%&lt;.(*
+M)H,+_FFVRBJEK-EFG=.9.+R9NZ_@4NPA#U25I42G(@8]OOW&gt;F!_RS2JG&quot;UDW
+MISLQZ]TA:]3LXI]*67_#FJ#&gt; ;).HQWLQ1&amp;K/&gt;%J&#039;&quot;_65:.Q2(=#&gt;R/K9NRN
+MU^$R190&#039;\1Y9I?Q;LL22XV&amp;97!5GR#=P&#039;&amp;UD7?1V8N;4;G&lt;C2Z.-,O[FODUA
+M0M:X\=AB_JM?5PIUPQ4Y)5;6LJZK1;JBBJ314 0O! ROMV69/+6.[=4QB^]-
+M&gt;RUK=F&lt;)N%IQTVZ8W]$4=H]&amp;UOVRHN.CZT$UPH;(1&lt;MBI905W&lt;ITACC85&lt;K;
+MP8C&amp;BV.JR%(&amp;-T=GE9/&amp;0&quot;3T\JV0=79HY?#3M$COE:7P7&#039;AQ*Z$H,;&lt;Q6!QK
+MC2Q&gt;$^%&#039;&amp;-5OS&#039;9/;WCUX&#039;:999^MDU*)&gt;7UTO&quot;B6OC19ZF3GT%6&gt;:V:+4JE.
+MEBB!+FKSH1*+ZMK%L&#039;=1E:6X_&amp;/UE,&quot;_OEFL?U]92%\\9T#712&lt;LT&lt;GHX\HR
+M=F4I9S&lt;W&gt;V0)O&lt;&gt;U9W=U(,Z5PUB9W9)E\J.LGA%$TGP062CS&quot;Y(CKQ_X%O]X
+MDFV&gt;-) G:4ITY/E^Z&quot;$&gt;D(HYO37V -GP&gt;.M;8WU14B=+V2MKYAK*;5D=U;#C
+M:J&#039;(X_,P*&lt;M+L47\/$PQZ5N(A7C=31(EV+,PSDF8&gt;&#039;W*$M]#M&amp;\1BNY9P+O7
+M1S=G&lt;4/%J4Z6P9==-,B:34059$L67Z!4-\%3VH.467F*Q;SF*/58YI/&lt;*PA;
+M]8/70ZPC2O(PZ;(&quot;4UQH.BXR&lt;G)?6:+J&lt;#/8OH!&gt;4B?+X676K+;&gt;J$2+*Z$=
+M6;&lt;/FJ]_YBXV=2]9S,\0KV4B&#039;],DU2@IRI15]H//THS7J704&gt;CDM/*ICC?6#
+M(KQWRN+7RD?E];-=8ZM.EMC&lt;WEKI&#039;;+$^L/%MQ]:SUH/&amp;M&quot;]XK&#039;N7Q6%K_&gt;]
+ME*RS89)F3 M&amp;&gt;CHMBI37RKBLH&amp;&quot;IE1\D:^#86ZS#.J?ENK/3X;CG; FKD66+
+M4MS&lt;FQSVRC)XY&gt;*HM]AD68./&amp;F-VARS=3Q!B4^9;&gt;9ZCT6@ZU5:RYBDOP[)+
+M/20G5#R/0=.8G^8$LX-D78RW61=3BK.\2+\Y/AU/W+B:PK9E*;S2*2H6[CY7
+M&gt;V6IDTTMKI1U/=R)V8&amp;R$$XUBURN1EC0U%^/&quot;D.89)DUTL/%\P6X+-T+,M\[
+M+&amp;7MLKF(49S%O::2X]-)15=Y;6C&amp;J]_&lt;B7LB7=R8317X.V6I_(+AZ,*M7$C7
+MQ.Q 65VJ$4)PKBV&gt;$M/-$KWR*!E^54UR+5M\926(]87,&gt;\OB\7#-X=GQ*N;7
+M ^?6+9J;]5VY18B;T[TEUCY92GPAKLSWWZ(Y6%8WI]F\NQPTP+.EOJF4\N*=
+M(3%D8%DC$V_+!?&gt;7U1&#039;7S\.+]7?KG[[V?M9QM.\.S5Y9L8C*;)TN[RNKK+1W
+MJQ&lt;_FQK\[IB!,NPALH;&amp;7??2%5YW=%&gt;W3%&gt;W_W9EW5R8=:?-@V0IL;A&amp;O]B&lt;
+M1&lt;JSH7/@7?X_@FO#V_&#039;AI=*D/#DN[ZB4LLXV13 O_QUC&gt;3&quot;J$V\X1%;IBN?A
+MC8PO[4)Z!\,=7XN;6.4A+0MX9T7UM.Y4[G3/;C&lt;)U&lt;I2XX$H#ZO7H5^\+*[K
+M[&amp;:5M.HJI&gt;LCE9.E1*)L/[M5(&#039;UALA0[CK8O#)7X;&#039;5[[N%DJ3WQ$YS&gt;WM;&#039;
+MDO4STDAP#UE&amp;;SC8J34IPU6]&lt;Y\LPS77W+Z]52-+=451.(QOQ_ #905AHXN?
+M/4136*.L\?H&gt;;X7Q(;(4HW*)&lt;ON;&#039;5EJ=&quot;;.&amp;ENN/E36&#039;H:/W#&lt;?399BUMWV
+M/$A6,[NW:(2K2EUWQ1&lt;FJR,NU89;ZZFB2:&amp;L#3R0+&#039;$&gt;Y&#039;71G&gt;U\#%D?,1MV
+M1/OG;+)[$\8L+TD&gt;1I9A&#039;A_=#&amp;KJLE^:+&amp;-2WB8Q*G&lt;61.O[\::&gt;=7]9XJ;[
+MH.YF[!^IK&amp;%CGR-QI_3H&gt;F+SSTI&#039;X1&lt;]HN*PNCOW(+(,&lt;2]V[-3LN_YRI^&amp;&quot;
+MY]/)JNGKL/2ANN7EX/5@$CF&amp;$YE&quot;U&gt;T6Z7O*4B:B&gt;\/L]LXWMY6O=_LZC&amp;LO
+MI3]A+YKC&#039;2Z6%W1&amp;K[SV/YZ=G@Y.SR[*F\S5NP[WEB5JHT&lt;WMW&gt;^:=TYNMZ)
+MV:R^.&gt;1S=CFZ656OC.CLUJV2F[-HM:&amp;&#039;D&amp;74W8&gt;IR-JEH:&#039;MTW1F.YW5LKY5
+MH$:]X6S9KTQT-EN[XL7_;-;83M8L:S&quot;;C=&gt;R[+I]]YJ_FLU.:]N[/XTLIS&gt;I
+MI5+M5N/)&gt;#@4!=G8C-1;RV^%.Q&quot;^PTWW0*-NWU&#039;S5Y-)K_9.[!]7UVY^)OP*
+M&gt;BM#/W@!R)( 9$D LB0 61* + E E@02LGXW;&gt;2R;;*&gt;-KOX72GK)WD3&gt;M(V
+M619KE/$3F&amp;RL!&amp;9FDP!D20&quot;R) !9$M0-&amp;B IUI$5IL1&quot;R&quot;/9IC.;GGF&gt;Q5&quot;F
+M&gt;5Z&quot;1!]*&#039;IQF&gt;HME901;F&quot;!NC/B9A7$Y&#039;_RB3VE&amp;&quot;$F]/&quot;Q(&amp;C&quot;=IEX7(7)(
+M-\FOA-T.N&quot;EAB*:Y&amp;#00I(5%L9BU^]?_0TQ$&#039;6HYF@=Z:&quot;$6X&quot;R=:CQUC8H6
+MRQ*#!D37T=1&quot;U&quot;=3UK7$?/#_[E_*00,B\^4HQ&quot;P[]YB.M:X&gt;M#IE43]C&gt;&#039;3%
+M^J.@\-G54E:9LI(TTS-,\K0(0Z*+00.ZU\?] X:C?&quot;74#1K(6?(M\S&amp;E&lt;S2B
+MR%H_:8&quot;F%I?UC9[ZGB7*=DUCJ&gt;^?)^V5A7B)GEG3Y:&quot;!T,OP&gt;H0%^A6&gt;,WJE
+MD]6@ 4_W2&#039;!UP&#039;&quot;4KX2:00.D[P=^CLLG#61AGYQL!@VDT\LIR5&gt;R/&#039;$VS$B+
+MRRQ^_/H\1UU]\:0!G&gt;6500.,S&lt;7SKU;C&quot;&lt;J1KOH!@P:^$NJ&amp;_2X&amp;#:#5!ZC!
+MKX#+&#039;0E E@0@2P()63_1FV!6VV3QZY&lt;F%K&gt;5?XX;\=LFJ]_LXN?0%%8&quot;[882
+M@&quot;P)0)8$($L&quot;D&quot;4!R)( 9$D LB0 61* + E E@0@2P*0)0&#039;(DN#3C+[_2@!9
+M$D VE !D22 CZU\;^:%MLGYH=K&amp;0]1UM(L-MDX6S1AG?0;MA&quot;32R2@&quot;R) !9
+M$DC)RJGG63K*-,W+1#_X&gt;1&lt;E7JO[P2.Z&amp;!G@&quot;2-Y)F2LNDF&gt;X)&quot;D%B(!27V6
+M4V(A&amp;A&quot;_Q1UPNY0;&quot;344&quot;B,T(:0R:*&quot;&lt;/+\0$U$O^\&#039;K&#039;D&#039;I 1-1?R74#!K 
+M#-&#039;S/,VZS$^#$^YC)&gt;LD3&lt;03B5&quot;8(#%Y/B.:^.1;[4U9S%^,#$@SD&lt;=TQ,H1
+M%N63!D0_&gt;(N0/ TP29GH!]]%2#OD20-?&quot;;5/&amp;N&quot;93_?[I1%=PW3U# N:)GKV
+MJ[(?O&quot;&lt;Z?FM:-[?2)&amp;]O &lt;]3EIZ1)ZR?&lt;B-(]_!F5)AXJ &quot;CCRN3YR-Z^8+F
+M[4U9B(B1 :M! ]8YGF^&gt;NY/UI].I7Y&#039;%@O=/+WFIWU99/!]R(T&amp;^D#5Z\G2*
+MJ_W@.9M^\+Q$F\_G&gt;GM3ULI(^:0!(8/I4(-? I&lt;[$H L&quot;4&quot;6!&quot;!+ @E9/VU\
+M9NN\?8,&amp;YHTR?GK&#039;H($7[1LT0.X8-/#7[QMI7^M.LXN_?O3F.;0;&#039;MQN&gt;-P!
+M60?+&gt;O,]R(+F&gt;RE E@0@2P*0)0&#039;(D@!D20&quot;R) !9$H L&quot;4&quot;6!&quot;!+ I E &lt;B2
+M &amp;1) +(DD)#UA]&gt;-O&amp;^;K/?-+OZP:+#0FL!IVV3YN%&#039;&amp;SZ&#039;=L 0:624 61* 
+M+ GD!@TP2FF.Q&quot;M%7&lt;1T,8&#039;^O*5]2O.YD%$JF?-/7(98LNG,1L/S\R)!X71T
+M%&gt;B($0^Q\Z*E4YPC&amp;A2C44;#R]$H8(AR&amp;30X]Y/UH &amp;&quot;=9T&amp;&gt;NCEM(^S]+&amp;6
+M9UCWLU;*FI,PSS&#039;VR(L\/Z=9&lt;(X1)G0SMS)-$Y3/+11J+&quot;N\.4TUI#.O:*&gt;L
+M+,R0?B*&amp;H##ZF#(OQ2@M4F_.9?W)KQ&gt;#!O),PWGH&gt;SB=(Z1IO&amp;S7BG;.!V^%
+M%%F:YX4!E\&amp;S(&lt;9(PQKQ5K*R-&amp;%&gt;\)JE@1C04_:#YP5&lt;7VMEUVZ&gt;&lt;A )KL+P
+MG!!^MIMS62=ZY4D#&gt;8KYJ?!;\&lt;&quot;/&lt;DYO3=,]CQ=DK(VR:$AXCNJ&#039;!)&lt;NA*RT
+M^E@&amp;E!$_]&lt;/*Y/F(%FF0M3(;HLSWTT&quot;SL%&gt;Z8%A#7IB2K#(X,TD2BBA;R)HS
+ME&quot;=96P=GYIF5)(PM9&gt;3S.6)90F&#039;0P JXW)$ 9$D LB0 61+(/&amp;D &#039;F![^ -L
+M?T8:&quot;=HF*P@;7?RLE/5WEXT\;9NLI\TN_@[:#4N@D54&quot;D&quot;4!R)( 9$D LB0 
+M61* + E E@0@2P*0)0&#039;(D@!D20&quot;R)#A0UEN8JJ #4Q5( 5,52 !EE@02LG[_
+M32.OVR;K=;.+WY&gt;R?I,VX1=MDU7XC3)^ ^V&amp;)=#(*L&#039;&#039;DZ6(MZK&quot;WQAW1$&amp;1
+MBC&#039;?KJ)LUE$;?Q[^S2)4&amp;8$RW*V8&amp;!W;V-[U_KA^D&quot;R$JG^V9*G+&amp;!@.WW=L
+MB)?]1Q_?(7,[QHYJ&amp;(Z].CK&#039;:0IH\X&quot;+-2+^4JX15^0HKM*+MV6IC5LKO]V=
+MU&#039;57VJKG&#039;_\*&quot;70]%S-[Z_K*6E66XXJ?GA^%R__T;&#039;$\&#039;;&amp; _U_^T,KJ94&#039;/
+M.3AI\4THJA/W8G=UF&amp;KD[FQ6A.)_G5[DEDL,DR^,XH6L=3#5=$Q[$:_..G)&lt;
+MUG+MZN+R*V57EE&quot;0BVG&gt;2R^B[1ZMNW9CS+HZ\6A8%&#039;[63?I%0?1=6?$P,DS3
+M-9R)/3%Z41P9$]4U)XYBFF:9SLQQ[(@%XL&gt;/E&lt;B9.$YT6%&#039;G3$PSLGOF()H,
+MS$G&#039;517;=4_-B4A R\V:CLU?3&#039;-HJ&#039;R)J?3XC@S^QW!CPU5-E6_&quot;5:*)&amp;:L\
+MDJ=N;^S:/+*J,3$G0HDQL&lt;7:9L^()^.&gt;K9KFV!&amp;1M8V&gt;R3_&gt;EH687Q2!EP&lt;^
+MZV98OQJ-SKWU1-19F&#039;59,2&lt;X.[%([GLTP4F-K)[3F[BFXPQZACH91X8QC&quot;9\
+MB7W:$T[4B6WS0S1L4_SX$&lt;\*YL0],&amp;U-N(F&gt;8[J3N.&lt;ZIFH:2LSW9(NDJ9BK
+MS&lt;;\!S+M2&gt;S$&lt;6_BF&#039;S/\&lt;&quot;-U6C,]S*T71Z5&gt;&amp;RZMN&#039;$D1GQ[?1ZKLG?NF-&#039;
+M511[[(QM&#039;I]&gt;S&#039;]!LQ?W##-V)ZX[X1\&lt;8UM6B#/J878U3?*$Z)?\ UF/L!#=
+ME$\*5&amp;0\(R:TH-V&lt;TKIL: _=:.+$L[&amp;J3,XBU1CRWZ[GVCU^+%S6D/]^O:BC
+MG)595&lt;@:FGM+B@U#_E/PXX]=AQ^]:8RY+)-GM4CDKH&#039;245V&gt;\P&gt;1:]N]CAOQ
+M@^,NQGS/T&gt;DP4J+3B=T9.I-)U(LBU^6J5*[$=50&gt;61X],^)Z&#039;&lt;,9.Q.%+W3=
+M*.9IRXT[O7AB1I&#039;I\&quot;7;*2N_I$C/O/E5$%*+R\J[.A:]E7_T#Z* QQK5&quot;.*6
+M&gt;&amp;ZU@OFFI+\MRQE/7&quot;YKT(MYRN*_X9 G89ZJ&#039;&#039;? ?SQUK&quot;A&lt;EJ(.&gt;&#039;G@]%0S
+M%C_^82F+VXF$K%X&lt;.3R%CFU#) Z5FU/4H:H8KLO_1CQY]3I1-+%5[F7&lt;XXED
+M$)DJ-^(J0Z?&#039;_W&quot;+XTG/[2QE]7BZX5(G=AS9I2R^\&lt;@=FCP[1Y$R$&lt;Y&lt;EYL=
+M1]NRGNHHPQZ]L@(/E[*Z9=?N/Q&gt;/9&gt;@FXAD@&quot;UDTX[)0SFIDF3UWR!,U%W%F
+M])QX8@]%9NC9IS%?R L0_G[&quot;7TPU-IRA&gt;\9_-6=R6-+BT1]R60Z/O9!E3B8\
+M0YVY8]OF&quot;6VUV:JLL3%T39YC.T*P8=H#E6=#,Q[RU[6L,K+QF/^2_!&lt;SUK)X
+M&gt;39T[0&amp;/G\NWREVZO1I9N3&lt;J\-4)]D&gt;EK$H_^*ZNC5+4#30]S]*&lt;YT;Q?(L=
+M68IM*TYL*+P*X:BVRO\YBN&#039;P-&amp;4[CEBH\O&gt;J$3MJQU!Y0)L&#039;4(S#:@\.+[-&lt;
+ME6_&gt;YJO:8DNV*&#039;OLY6:-&lt;K/BO=TQ#)O78N)RS^5&#039;1^R%1\!VRA4-ODN5K\ #
+MB&lt;@J8G%&#039;G+E%8!&amp;4UT[X;F*&gt;U,JM*K;8S9:L$6:Z)V0Q?)D*65FJ;2;/MP)N
+M)R-BC K2,$][-65666\09S=E&lt;&gt;(M7\K*:?FRK(0NWXMEZY/SW;)X:&gt;.LM[NH
+M(VPVNZH$=Y;?B8^;&#039;:UJ V5P=;&#039;;Y;[+R*[75):1X&lt;6]R-CB#+Z*_78!GX78
+M(X27WHCZ1)_R#[R^L*Z44DMDP800?HID_*NLILSZB-C&lt;U2&gt;]GE(C7FI5/F[7
+MLZP7!%/D,82R)&quot;&lt;A_P#7ABL&gt;^-KPAI&gt;&lt;7R^3ZP&gt;5=73V57/TL+): LB2 &amp;1)
+M&lt;*&gt;LOVR&lt;7)_X=V_^ZV+/DP;^LI3UNVDCWW[NR&#039;]JGC:[^-W![8; T?&quot;1^P9D
+M-7%S?7S!.5Y6PH:/(I#5P,W%Z;@7.7$T&amp;9Z5%?S#F^\K7/9WRK[I#SN!_)U 
+MHT?;@9[NEJ;%=IBC][_:.&gt;WL!OHA/&quot;#0^W0GT*CQ*&amp;]F8W&amp;]^NQ9QX@G@XN;
+M#Y1UY&gt;G;%.]W ED[@?P?;P&gt;:4K8=B.SL[LE\.\Q\-]#[;#L0#7&lt;&quot;?9/L!&amp;H\
+MVW-7D?KNS9M7K]Z\5;BMXP^4-4IVJB#!CJQ1MA,HW$E^5_I.K0;O&#039;F*^&#039;2;?
+M#?2&gt;;0=BNT:_H3N!TIU 2XZ&#039;D?KVY?.7KUZ]?/[,B2&gt;G-R&quot;K4=99SWC[_/G;
+MCJ(\&gt;VN(-HX+D-4DZW@8/WOY\IUJV[:A.D9&#039;=4\_7%9.,RJF;TLR?8\L7&lt;RZ
+MH=-&lt;9WMDY7PC#&quot;&amp;64=0@JYRQ@W^)=+&#039;+C.FULI@(,F&gt;KT/6R4)XE)_EB0WSG
+MC;)FIO&#039;FY=OR#K;C.,]&gt;/7.&amp;&#039;RH+H82D),MIZ(L&#039;*#?*2L*DBY*49E:S+$1Q
+MFF+&amp;K!&quot;+HZV3Q&lt;1&lt;,&quot;?&lt;IY4A1HA%ZV2)J9SXZI@RST]?4%0O*\_&quot;-,UHEB!*
+MYGMDG;G*JY&lt;=1WW[5G%LY&lt;WW;XS)!\NB(X]B/RN(&gt;&amp;V6A2\)0L%E9I%F6=0G
+MC%XEQ/&gt;LHD%6VL\8&#039;B&#039;F/]9T&#039;&amp;2^5BM+F^(N*@K+*S(6A+1&gt;5G:NZ:2/7[Q@
+MCT6C&gt;Z.LT_C9JS&gt;J_98G*4=Y^^K[5XK[H;+R,&amp;1(G[.@2,1C&lt;)ME35-VERP-
+M\SQ(=8)U&gt;E4KZPGK\Z2L9XAZJ&lt;:&quot;+.=5JIU 7)9WF:*L&quot;%+B\3289K6RD-7G
+M&gt;9!F+W[1)PSMD35PWKUZ:QAO.[;][/GWO_SER\Z&#039;RRJP+GI,G)&quot;06&amp;R/K()H
+M-)SNE84UE&amp;-BD=##TUI9KVEPHF&gt;8Y#I]H;&amp;&quot;(M(@:^JSU/&gt;#E.\9I4FM+-U+
+MNZ)M-)Q&gt;I?F^ GZP2%F*;7=&gt;O7SU&lt;IFRWG).#U%4\9#D 9&gt;5,T8S+PSW9&lt;-0
+M*TA2[)&gt;%\YP4J8;#]&#039;%]RJ)!IF?I%4,,[Y4U(MXY&quot;?M&quot;5MX@*Q&gt;R^!D@/,?G
+M=%_*.HTZKUXIO&amp;Q7&gt;4X499;:.QKL7($&lt; &quot;^SL$_S#%L!RRG!&gt;V3A;%KH_;VR
+M/&#039;ZBT&#039;&#039;(&quot;UVOOLQZHON6GM/10A9_&#039;]:769YO%&lt;6+D!!N/VO*AED_SQEY\0*+
+MS+&amp;O@.^I;U[RRJC][%W&#039;L=]\_]8VC\X&gt;O&gt;%(IRSF0C^7   !M4E$0524\[(A
+M&quot;%EZG@;]?2D+9\4YVB^+%]V^/\68;REM*.&quot;](/ +&#039;I;+RJU16GCULLC\$G/K
+MV&lt;@/^159?0%/^P4IB/&lt;&quot;H_EYMD?6\=A^]LR(1&lt;NXXW2&gt;OWP6#7C*^K!Z%J*6
+ME_&quot;?VM(\NJ?J,)_K](27WHSNJ3JP3/,RQC*QP7I9.K4T2\S,.^&gt;GE80&#039;;JAG
+MY6(^-3T_\;1,;Z@Z\(AK&quot;=/G\R[BE;MF6=&gt;GKFW81D&lt;Q#.7=R^=OC=[L&#039;C5X
+MG9452L;0GDIIV9NP?-U7@T=\(XMI&gt;9MJ\$A?/(-&gt;;&quot;QGJ+X&amp;C\J&gt;&gt;B((FZ/&amp;
+M&amp;CP_B2]&quot;E5MKOMR9F:YC/WOU]MV[-R^?OU&amp;BX3%&lt;[C3*NCDS(^/=RY(W2FS.
+MX$*Z61;/B&amp;:L/N-UA7&lt;=(QK//O1^5CMD&#039;1V?C7NQH:IVW!O.Q)UED+7G.*]G
+MIT-S,C&amp;&#039;9^(^*&lt;C:*VN;A:RRR_3A_)__]M^W^5]_NQ/HKW8&quot;_9&gt;=0/_[M_]^
+M.]!_W-G=W_[%=IC?U@3Z#SN!_M-.H/^[$Z??_F&gt;)XW9+6&lt;!A@&quot;P)0)8$($N&quot;
+L&lt;JJ&quot;!EZ^:EZOE:N54Q4T$ ^;]]7*U?X_\[9^NHN;J1X     245.1*Y&quot;8(( 
+</UUENCODE>
+		</IMAGE>
+		<SYMBOLDEF id='1'>
+			<NAME type='0'>Resistor_0.25</NAME>
+			<REF type='0'>R?</REF>
+			<DESCRIPTION>0.25 Watt</DESCRIPTION>
+			<PPP>1</PPP>
+			<GUID></GUID>
+			<FIELD>
+				<NAME>$$SPICE_PROLOG_PRIORITY</NAME>
+				<DEFAULT>5</DEFAULT>
+				<FT>000002</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>$$SPICE_EPILOG_PRIORITY</NAME>
+				<DEFAULT>5</DEFAULT>
+				<FT>000002</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Package</NAME>
+				<DEFAULT>AX3_1N</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<REF_POINT power='0' part='0' pos='23.00000,31.00000'/>
+			<TinyCAD>
+				<PIN pos='21.00000,21.00000' which='0' elec='4' direction='1' part='0' number='1' show='0' length='15' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='21.00000,31.00000' which='0' elec='4' direction='0' part='0' number='2' show='0' length='15' number_pos='0' centre_name='0'></PIN>
+				<RECTANGLE a='20.00000,24.00000' b='22.00000,28.00000' style='8' fill='0'/>
+			</TinyCAD>
+		</SYMBOLDEF>
+		<SYMBOLDEF id='3'>
+			<NAME type='0'>Conn_8</NAME>
+			<REF type='0'>J?</REF>
+			<DESCRIPTION>Connector 8 pin</DESCRIPTION>
+			<PPP>1</PPP>
+			<GUID></GUID>
+			<FIELD>
+				<NAME>$$SPICE_PROLOG_PRIORITY</NAME>
+				<DEFAULT>5</DEFAULT>
+				<FT>000002</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>$$SPICE_EPILOG_PRIORITY</NAME>
+				<DEFAULT>5</DEFAULT>
+				<FT>000002</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<FIELD>
+				<NAME>Package</NAME>
+				<DEFAULT>SIP8</DEFAULT>
+				<FT>000001</FT>
+				<VALUE></VALUE>
+				<POS>0.00000,0.00000</POS>
+			</FIELD>
+			<REF_POINT power='0' part='0' pos='28.00000,46.00000'/>
+			<TinyCAD>
+				<RECTANGLE a='24.00000,20.00000' b='28.00000,45.00000' style='8' fill='0'/>
+				<PIN pos='20.00000,22.00000' which='0' elec='0' direction='3' part='0' number='1' show='3' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='20.00000,25.00000' which='0' elec='0' direction='3' part='0' number='2' show='3' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='20.00000,28.00000' which='0' elec='0' direction='3' part='0' number='3' show='3' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='20.00000,31.00000' which='0' elec='0' direction='3' part='0' number='4' show='3' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='20.00000,34.00000' which='0' elec='0' direction='3' part='0' number='5' show='3' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='20.00000,37.00000' which='0' elec='0' direction='3' part='0' number='6' show='3' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='20.00000,40.00000' which='0' elec='0' direction='3' part='0' number='7' show='3' length='30' number_pos='0' centre_name='0'></PIN>
+				<PIN pos='20.00000,43.00000' which='0' elec='0' direction='3' part='0' number='8' show='3' length='30' number_pos='0' centre_name='0'></PIN>
+			</TinyCAD>
+		</SYMBOLDEF>
+		<OPTIONS>
+			<GRID>1</GRID>
+			<UNITS>0</UNITS>
+			<COLOR_WIRE>FF0000</COLOR_WIRE>
+			<COLOR_BUS>0000FF</COLOR_BUS>
+			<COLOR_JUNCTION>000000</COLOR_JUNCTION>
+			<COLOR_NOCONNECT>000000</COLOR_NOCONNECT>
+			<COLOR_LABEL>208000</COLOR_LABEL>
+			<COLOR_POWER>000000</COLOR_POWER>
+			<COLOR_PIN>4040C0</COLOR_PIN>
+			<COLOR_HIDDEN_PIN>208020</COLOR_HIDDEN_PIN>
+			<COLOR_BACKGROUND>FFFFFF</COLOR_BACKGROUND>
+			<COLOR_NOTETEXT_FILL>AFFFFF</COLOR_NOTETEXT_FILL>
+			<COLOR_NOTETEXT_LINE>FF0000</COLOR_NOTETEXT_LINE>
+			<COLOR_NOTETEXT_TEXT>FF0000</COLOR_NOTETEXT_TEXT>
+		</OPTIONS>
+		<SYMBOL id='3' pos='28.00000,42.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+			<FIELD type='0' description='Ref' value='J1' show='1' pos='-5.00000,-25.60000'/>
+			<FIELD type='0' description='Name' value='' show='1' pos='1.00000,-24.00000'/>
+			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
+			<FIELD type='2' description='$$SPICE_EPILOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
+			<FIELD type='1' description='Package' value='SIP8' show='0' pos='1.00000,-19.20000'/>
+			<HINT pin='1' net='99'/>
+			<HINT pin='2' net='165'/>
+			<HINT pin='3' net='166'/>
+			<HINT pin='4' net='167'/>
+			<HINT pin='5' net='168'/>
+			<HINT pin='6' net='169'/>
+			<HINT pin='7' net='170'/>
+			<HINT pin='8' net='122'/>
+		</SYMBOL>
+		<SYMBOL id='3' pos='58.00000,42.00000' part='0' rotate='4' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+			<FIELD type='0' description='Ref' value='J2' show='1' pos='-5.00000,-25.60000'/>
+			<FIELD type='0' description='Name' value='' show='1' pos='1.00000,-24.00000'/>
+			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
+			<FIELD type='2' description='$$SPICE_EPILOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
+			<FIELD type='1' description='Package' value='SIP8' show='0' pos='1.00000,-19.20000'/>
+			<HINT pin='1' net='115'/>
+			<HINT pin='2' net='116'/>
+			<HINT pin='3' net='174'/>
+			<HINT pin='4' net='175'/>
+			<HINT pin='5' net='124'/>
+			<HINT pin='6' net='177'/>
+			<HINT pin='7' net='178'/>
+			<HINT pin='8' net='1'/>
+		</SYMBOL>
+		<METAFILE a='26.00000,4.00000' b='51.40000,42.00000' id='1'/>
+		<SYMBOL id='1' pos='74.00000,38.00000' part='0' rotate='5' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+			<FIELD type='0' description='Ref' value='R2' show='1' pos='1.00000,-5.60000'/>
+			<FIELD type='0' description='Name' value='10K' show='1' pos='1.00000,-8.00000'/>
+			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
+			<FIELD type='2' description='$$SPICE_EPILOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
+			<FIELD type='1' description='Package' value='AX3_1N' show='0' pos='1.00000,-3.20000'/>
+			<HINT pin='1' net='1'/>
+			<HINT pin='2' net='178'/>
+		</SYMBOL>
+		<SYMBOL id='1' pos='8.00000,38.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+			<FIELD type='0' description='Ref' value='R1' show='1' pos='-7.00000,-1.60000'/>
+			<FIELD type='0' description='Name' value='10K' show='1' pos='-7.00000,-8.00000'/>
+			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
+			<FIELD type='2' description='$$SPICE_EPILOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
+			<FIELD type='1' description='Package' value='AX3_1N' show='0' pos='1.00000,-3.20000'/>
+			<HINT pin='1' net='166'/>
+			<HINT pin='2' net='122'/>
+		</SYMBOL>
+		<TEXT pos='2.00000,4.00000' direction='3' font='4' color='000000'>ESP-12E-Breakout-TinyCAD.dsn</TEXT>
+		<SYMBOL id='3' pos='18.00000,42.00000' part='0' rotate='4' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+			<FIELD type='0' description='Ref' value='J3' show='1' pos='-7.00000,-27.60000'/>
+			<FIELD type='0' description='Name' value='' show='1' pos='1.00000,-24.00000'/>
+			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
+			<FIELD type='2' description='$$SPICE_EPILOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
+			<FIELD type='1' description='Package' value='SIP8' show='0' pos='1.00000,-19.20000'/>
+			<HINT pin='1' net='99'/>
+			<HINT pin='2' net='165'/>
+			<HINT pin='3' net='166'/>
+			<HINT pin='4' net='167'/>
+			<HINT pin='5' net='168'/>
+			<HINT pin='6' net='169'/>
+			<HINT pin='7' net='170'/>
+			<HINT pin='8' net='122'/>
+		</SYMBOL>
+		<SYMBOL id='3' pos='68.00000,42.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+			<FIELD type='0' description='Ref' value='J4' show='1' pos='1.00000,-21.60000'/>
+			<FIELD type='0' description='Name' value='' show='1' pos='1.00000,-24.00000'/>
+			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
+			<FIELD type='2' description='$$SPICE_EPILOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
+			<FIELD type='1' description='Package' value='SIP8' show='0' pos='1.00000,-19.20000'/>
+			<HINT pin='1' net='115'/>
+			<HINT pin='2' net='116'/>
+			<HINT pin='3' net='174'/>
+			<HINT pin='4' net='175'/>
+			<HINT pin='5' net='124'/>
+			<HINT pin='6' net='177'/>
+			<HINT pin='7' net='178'/>
+			<HINT pin='8' net='1'/>
+		</SYMBOL>
+		<WIRE a='20.00000,24.00000' b='18.00000,24.00000'/>
+		<WIRE a='20.00000,18.00000' b='18.00000,18.00000'/>
+		<WIRE a='20.00000,21.00000' b='18.00000,21.00000'/>
+		<WIRE a='18.00000,27.00000' b='20.00000,27.00000'/>
+		<WIRE a='20.00000,30.00000' b='18.00000,30.00000'/>
+		<WIRE a='18.00000,33.00000' b='20.00000,33.00000'/>
+		<WIRE a='20.00000,36.00000' b='18.00000,36.00000'/>
+		<WIRE a='6.00000,24.00000' b='18.00000,24.00000'/>
+		<WIRE a='6.00000,24.00000' b='6.00000,28.00000'/>
+		<WIRE a='20.00000,39.00000' b='18.00000,39.00000'/>
+		<WIRE a='18.00000,39.00000' b='6.00000,39.00000'/>
+		<WIRE a='6.00000,39.00000' b='6.00000,38.00000'/>
+		<WIRE a='58.00000,18.00000' b='60.00000,18.00000'/>
+		<WIRE a='58.00000,21.00000' b='60.00000,21.00000'/>
+		<WIRE a='58.00000,24.00000' b='60.00000,24.00000'/>
+		<WIRE a='58.00000,27.00000' b='60.00000,27.00000'/>
+		<WIRE a='58.00000,30.00000' b='60.00000,30.00000'/>
+		<WIRE a='58.00000,33.00000' b='60.00000,33.00000'/>
+		<WIRE a='60.00000,36.00000' b='58.00000,36.00000'/>
+		<WIRE a='70.00000,36.00000' b='60.00000,36.00000'/>
+		<WIRE a='72.00000,28.00000' b='70.00000,28.00000'/>
+		<WIRE a='70.00000,28.00000' b='70.00000,36.00000'/>
+		<WIRE a='60.00000,39.00000' b='72.00000,39.00000'/>
+		<WIRE a='72.00000,39.00000' b='72.00000,38.00000'/>
+		<WIRE a='58.00000,39.00000' b='60.00000,39.00000'/>
+		<JUNCTION pos='18.00000,24.00000'/>
+		<JUNCTION pos='18.00000,39.00000'/>
+		<JUNCTION pos='60.00000,39.00000'/>
+		<JUNCTION pos='60.00000,36.00000'/>
+	</TinyCAD>
+</TinyCADSheets>
