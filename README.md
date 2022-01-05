@@ -15,8 +15,9 @@ Periodically polls LIS3DSH accelerometer ove SPI and pubishes to MQTT Broker
 
 
 ## ToDo
-- [_] Fix the memory leak when running with 0 sleep (workaround: sleep for 1 second)
-- [_] Light sensor on LIS3DH ADC
+- [ ] ESP-12E version with 30μA deep-sleep current
+- [ ] Fix the memory leak when running with 0 sleep (workaround: sleep for 1 second)
+- [ ] Light sensor on LIS3DH ADC
 
 ![Stripboard Layout (v1.0)](doc/Assembled-Board.jpg)
 
