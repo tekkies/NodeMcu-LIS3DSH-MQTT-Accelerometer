@@ -48,7 +48,7 @@ download the executable.-->
 			<INDEX>-1</INDEX>
 			<COLOR>000000</COLOR>
 		</FILL>
-		<IMAGE id='2' type='PNG'>
+		<IMAGE id='1' type='PNG'>
 			<UUENCODE size='546049'>
 MB5!.1PT*&amp;@H    -24A$4@   RX   =K&quot; ,   !CMQA5   # %!,5$4/%B8C
 M)R\//T8/&#039;T0_5E\B-T\ /U]??Y\P+R]A7U,S/T^EEZ]&quot;/T4_+S(/0$\ 0&amp; _
@@ -12187,7 +12187,7 @@ M:A5@%G7!YD8S*V/6!7SE.S 7XNE4Q\T*D(UIF*LG&gt;7@;&amp;%0E=8X971?@\@^6
 34_,H(&gt;*_#P    !)14Y$KD)@@@  
 </UUENCODE>
 		</IMAGE>
-		<IMAGE id='4' type='PNG'>
+		<IMAGE id='2' type='PNG'>
 			<UUENCODE size='22655'>
 MB5!.1PT*&amp;@H    -24A$4@   A4   0+&quot; ,    +-JN=   # %!,5$4    /
 M#P&quot;PL+&quot;OKZ^_O[_ D #____P\/#O[^_@X.#?W]_0T-#/S\_ D$# P,&quot;_D &quot;?
@@ -12969,14 +12969,14 @@ MK !4P I !:P 5) VN\EI?I./O:,N*!^R&lt;?8+;/+QH8U&lt;T?#Y32[Y6F_[S?]_
 		</SYMBOL>
 		<WIRE a='108.00000,41.95720' b='108.00000,42.00000'/>
 		<WIRE a='108.00000,43.96312' b='108.00000,44.00000'/>
-		<METAFILE a='131.47866,28.94836' b='148.43580,61.28826' id='2'/>
+		<METAFILE a='131.47866,28.94836' b='148.43580,61.28826' id='1'/>
 		<WIRE a='102.08830,37.94536' b='102.08830,38.00000'/>
 		<WIRE a='113.97032,29.61443' b='114.00000,29.61443'/>
 		<WIRE a='22.00000,42.00000' b='30.00000,42.00000'/>
 		<WIRE a='6.00000,42.00000' b='6.00000,44.00000'/>
 		<SYMBOL id='4' pos='66.00000,66.00000' part='0' rotate='1' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='J2' show='1' pos='-5.14005,3.38036'/>
-			<FIELD type='0' description='Name' value='Conn_16' show='1' pos='-5.00000,-52.00000'/>
+			<FIELD type='0' description='Name' value='Remove header pin 16' show='1' pos='-9.00000,-52.00000'/>
 			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
 			<FIELD type='2' description='$$SPICE_EPILOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
 			<FIELD type='1' description='Package' value='SIP16' show='0' pos='1.00000,-43.20000'/>
@@ -12999,7 +12999,7 @@ MK !4P I !:P 5) VN\EI?I./O:,N*!^R&lt;?8+;/+QH8U&lt;T?#Y32[Y6F_[S?]_
 		</SYMBOL>
 		<SYMBOL id='4' pos='100.00000,66.00000' part='0' rotate='5' can_scale='0' show_power='1' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='J3' show='1' pos='-5.07003,3.73049'/>
-			<FIELD type='0' description='Name' value='Conn_16' show='1' pos='-9.00000,-52.00000'/>
+			<FIELD type='0' description='Name' value='Remove header pin 16' show='1' pos='-19.00000,-52.00000'/>
 			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
 			<FIELD type='2' description='$$SPICE_EPILOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
 			<FIELD type='1' description='Package' value='SIP16' show='0' pos='1.00000,-43.20000'/>
@@ -13022,7 +13022,7 @@ MK !4P I !:P 5) VN\EI?I./O:,N*!^R&lt;?8+;/+QH8U&lt;T?#Y32[Y6F_[S?]_
 		</SYMBOL>
 		<SYMBOL id='5' pos='136.00000,66.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='J4' show='1' pos='-4.25192,-38.64184'/>
-			<FIELD type='0' description='Name' value='CJMCU- LIS3DSH' show='1' pos='-0.61059,-2.45776'/>
+			<FIELD type='0' description='Name' value='Remove header pin 12' show='1' pos='-2.61059,-2.45776'/>
 			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
 			<FIELD type='2' description='$$SPICE_EPILOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
 			<FIELD type='1' description='Package' value='SIP12' show='0' pos='1.00000,-31.20000'/>
@@ -13123,7 +13123,7 @@ MK !4P I !:P 5) VN\EI?I./O:,N*!^R&lt;?8+;/+QH8U&lt;T?#Y32[Y6F_[S?]_
 		<WIRE a='52.00000,6.00000' b='108.00000,6.00000'/>
 		<TEXT pos='6.00000,80.00000' direction='3' font='3' color='000000'>https://github.com/tekkies/NodeMcu-LIS3DSH-MQTT-Accelerometer</TEXT>
 		<TEXT pos='4.00000,6.00000' direction='3' font='3' color='000000'>v2.0 for OEM NodeMCU</TEXT>
-		<METAFILE a='64.00000,14.00000' b='93.40000,72.00000' id='4'/>
+		<METAFILE a='64.00000,14.00000' b='93.40000,72.00000' id='2'/>
 		<JUNCTION pos='108.00000,6.00000'/>
 	</TinyCAD>
 </TinyCADSheets>
