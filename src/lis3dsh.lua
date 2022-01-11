@@ -187,7 +187,8 @@ function waitForWiFi()
         return
     end
     if(wifi.sta.status() == wifi.STA_GOTIP) then
-        state=postMqtt     
+        state=postMqtt
+        appendJsonValue("wifiConnectTime", tmr.now()/1000)
     end
     queueNextState()
 end
@@ -217,16 +218,12 @@ end
 function sleepNow()
     jsonData = "{"
     setLed(false)
-    if(isOnBatteryPower()) then
-        if(SLEEP_SECONDS==0) then
-            queueState(init)
-        else
-            print2("Battery detected, going to sleep...")
-            local us = SLEEP_SECONDS*1000*1000
-            node.dsleep(us, 1, nil)
-        end
+    if(SLEEP_SECONDS==0) then
+        queueState(init)
     else
-        print2("No battery detected, do not sleep")
+        print2("Going to sleep...")
+        local us = SLEEP_SECONDS*1000*1000
+        node.dsleep(us, 1, nil)
     end
 end
 
