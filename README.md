@@ -32,4 +32,16 @@ Periodically polls LIS3DSH accelerometer ove SPI and pubishes to MQTT Broker
 
 Connect **4x AA** batteries to J1, + to the top, - to the bottom.
 
+## Tips
 
+## First Time NodeMCU?
+
+See my [Getting Started](https://gist.github.com/tekkies/1f49c744080a6ece0effd3dc23099825) guide
+
+### Firmware
+
+You will need appropriate firmware installed on the NodeMCU. See comments at the top of [lis3dsh.lua](src/lis3dsh.lua) for a download link.
+
+### WiFi Connection
+
+See [Setting up Wifi (DHCP)](https://gist.github.com/tekkies/1f49c744080a6ece0effd3dc23099825#setting-up-wifi-dhcp)
