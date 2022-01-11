@@ -3,7 +3,7 @@
   --adc, bit, file, gpio, mqtt, net, node, rtctime, spi, tmr, uart, wifi, tls, float
 
 dofile("constants.lua");
-dofile("DEVICE-INFO.lua");
+dofile("DEVICE-CONFIG.lua");
 
 
 --State
