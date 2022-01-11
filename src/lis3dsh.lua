@@ -189,6 +189,7 @@ function waitForWiFi()
     if(wifi.sta.status() == wifi.STA_GOTIP) then
         state=postMqtt
         appendJsonValue("wifiConnectTime", tmr.now()/1000)
+
     end
     queueNextState()
 end
@@ -221,7 +222,7 @@ function sleepNow()
     if(SLEEP_SECONDS==0) then
         queueState(init)
     else
-        print2("Going to sleep...")
+        print2("Starting sleep at " .. tmr.now()/1000 .. "ms")
         local us = SLEEP_SECONDS*1000*1000
         node.dsleep(us, 1, nil)
     end

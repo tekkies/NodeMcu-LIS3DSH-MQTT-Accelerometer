@@ -53,4 +53,5 @@ See [Setting up Wifi (DHCP)](https://gist.github.com/tekkies/1f49c744080a6ece0ef
 * From deep-sleep, DHCP takes 1.7-1.8 seconds
 * From power-on DHCP takes 4.1-4.5 seconds
 * Fromdeep-sleep, Static ip takes 800-855ms
+  * Device completes all tasksad goes back to sleep in 904-920ms
 * From power-on, Static ip takes 3.6 seconds
