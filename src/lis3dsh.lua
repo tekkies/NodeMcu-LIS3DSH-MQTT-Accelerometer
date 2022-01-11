@@ -89,12 +89,6 @@ function flashCallback()
     tmr.create():alarm(300, tmr.ALARM_SINGLE, flashCallback)
 end
 
-function getBatteryVolts()
-    local rawBattery = adc.read(0)
-    print2("Battery raw=" .. rawBattery)
-    return rawBattery * BATTERY_CALIBRATION
-end
-
 function appendJsonValue(key, value)
     --jsonData = jsonData .. "a"
     if(#jsonData ~= 1) then
@@ -103,10 +97,6 @@ function appendJsonValue(key, value)
     jsonData = jsonData .. '"'  .. key .. '":"' .. value .. '"' 
 end
 
-
-function isOnBatteryPower()
-    return getBatteryVolts() > 1.0;
-end
 
 function queueState(newState)
     state = newState
@@ -121,7 +111,7 @@ end
 function init()
     epochStartTime = tmr.now()
     dofile("config.lua");
-    appendJsonValue("battery", getBatteryVolts())
+    appendJsonValue("batterymV", adc.readvdd33(0))
     
     if(USE_LED) then
         setLed(true)
@@ -131,7 +121,7 @@ function init()
 end
 
 function initAdc()
-    if adc.force_init_mode(adc.INIT_ADC)
+    if adc.force_init_mode(adc.INIT_VDD33)
     then
       node.restart()
       return -- don't bother continuing, the restart is scheduled
