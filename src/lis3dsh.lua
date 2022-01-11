@@ -89,12 +89,16 @@ function flashCallback()
     tmr.create():alarm(300, tmr.ALARM_SINGLE, flashCallback)
 end
 
+function appendJsonString(key, value)
+    appendJsonValue(key, '"'..value..'"')
+end
+
 function appendJsonValue(key, value)
     --jsonData = jsonData .. "a"
     if(#jsonData ~= 1) then
         jsonData = jsonData .. ','
     end
-    jsonData = jsonData .. '"'  .. key .. '":"' .. value .. '"' 
+    jsonData = jsonData .. '"'  .. key .. '":' .. value .. '' 
 end
 
 
