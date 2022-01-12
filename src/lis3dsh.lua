@@ -183,7 +183,7 @@ function waitForWiFi()
     if(wifi.sta.status() == wifi.STA_GOTIP) then
         state=postMqtt
         appendJsonValue("wifiConnectTime", tmr.now()/1000)
-
+        appendJsonValue("rssi", wifi.sta.getrssi())
     end
     queueNextState()
 end
