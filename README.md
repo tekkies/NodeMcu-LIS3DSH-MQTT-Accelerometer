@@ -4,26 +4,22 @@ Periodically polls LIS3DSH accelerometer ove SPI and pubishes to MQTT Broker
 
 * **Currently only Y and Z Axis** (My X-axis sensor is not working - replacement LIS3DSH on order)
 * **Deep sleep** between timed samples
+  * <30uA With [NodeMCU V2 Ultra-Low Power Mod ](https://github.com/tekkies/NodeMCU-V2-ulta-low-power-mod)
 * **Wake** on motion by **interrupt**
-* Battery level sensor
+* NodeMCu V2 board layout
 * Written in LUA
 * Event-based so **kind to WiFi processes**
-* Runs only once when battery disconnected (i.e. when debugging on USB)
 * LED Flash codes for PANIC situations (See [src/constants.lua](src/constants.lua))
+* Power plug situated by USB to prevent USB and battery connection simultaneously
 
-![MQTT Explorer Chart](doc/MQTT-Explorer-Chart.png)
-
+![Assembled Board](doc/Assembled-Board.jpg) ![MQTT Explorer Chart](doc/MQTT-Explorer-Chart.png) 
 
 ## ToDo
-- [ ] ESP-12E version with 30μA deep-sleep current
 - [ ] Fix the memory leak when running with 0 sleep (workaround: sleep for 1 second)
-- [ ] Light sensor on LIS3DH ADC
 
-![Stripboard Layout (v1.0)](doc/Assembled-Board.jpg)
-
-## NodeMCU v2
 
 ### Circuit
+
 ![Circuit Diagram](hardware/NodeMCU-V2/Circuit-Diagram-TinyCAD.png)
 
 ### Stripboard Design
@@ -33,6 +29,8 @@ Periodically polls LIS3DSH accelerometer ove SPI and pubishes to MQTT Broker
 Connect **4x AA** batteries to J1, + to the top, - to the bottom.
 
 ## Tips
+
+* Disconnect the LIS3DSH and reboot - you have a few seconds during the panic flash code to execute `file.remove("init.lua")` so you can get in and reprogram.
 
 ## First Time NodeMCU?
 
