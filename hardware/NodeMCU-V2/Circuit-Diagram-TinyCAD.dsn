@@ -12695,7 +12695,7 @@ MK !4P I !:P 5) VN\EI?I./O:,N*!^R&lt;?8+;/+QH8U&lt;T?#Y32[Y6F_[S?]_
 4W+F8*__#Q$L     245.1*Y&quot;8(( 
 </UUENCODE>
 		</IMAGE>
-		<SYMBOLDEF id='2'>
+		<SYMBOLDEF id='1'>
 			<NAME type='0'>1N400x</NAME>
 			<REF type='0'>D?</REF>
 			<DESCRIPTION>1A Diode</DESCRIPTION>
@@ -12744,7 +12744,7 @@ MK !4P I !:P 5) VN\EI?I./O:,N*!^R&lt;?8+;/+QH8U&lt;T?#Y32[Y6F_[S?]_
 				</POLYGON>
 			</TinyCAD>
 		</SYMBOLDEF>
-		<SYMBOLDEF id='3'>
+		<SYMBOLDEF id='2'>
 			<NAME type='0'>Conn_16</NAME>
 			<REF type='0'>J?</REF>
 			<DESCRIPTION>Connector 16 pin</DESCRIPTION>
@@ -12793,7 +12793,7 @@ MK !4P I !:P 5) VN\EI?I./O:,N*!^R&lt;?8+;/+QH8U&lt;T?#Y32[Y6F_[S?]_
 				<PIN pos='20.00000,67.00000' which='0' elec='0' direction='3' part='0' number='16' show='3' length='30' number_pos='0' centre_name='0'></PIN>
 			</TinyCAD>
 		</SYMBOLDEF>
-		<SYMBOLDEF id='4'>
+		<SYMBOLDEF id='3'>
 			<NAME type='0'>Conn_12</NAME>
 			<REF type='0'>J?</REF>
 			<DESCRIPTION>Connector 12 pin</DESCRIPTION>
@@ -12837,7 +12837,7 @@ MK !4P I !:P 5) VN\EI?I./O:,N*!^R&lt;?8+;/+QH8U&lt;T?#Y32[Y6F_[S?]_
 				<PIN pos='28.00000,56.00000' which='0' elec='0' direction='3' part='0' number='12' show='3' length='25' number_pos='0' centre_name='0'></PIN>
 			</TinyCAD>
 		</SYMBOLDEF>
-		<SYMBOLDEF id='5'>
+		<SYMBOLDEF id='4'>
 			<NAME type='0'>Conn_4</NAME>
 			<REF type='0'>J?</REF>
 			<DESCRIPTION>Connector 4 Pin</DESCRIPTION>
@@ -12894,7 +12894,7 @@ MK !4P I !:P 5) VN\EI?I./O:,N*!^R&lt;?8+;/+QH8U&lt;T?#Y32[Y6F_[S?]_
 		<METAFILE a='97.47866,28.94836' b='114.43580,61.28826' id='1'/>
 		<WIRE a='68.08830,37.94536' b='68.08830,38.00000'/>
 		<WIRE a='79.97032,29.61443' b='80.00000,29.61443'/>
-		<SYMBOL id='3' pos='32.00000,66.00000' part='0' rotate='1' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+		<SYMBOL id='2' pos='32.00000,66.00000' part='0' rotate='1' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='J2' show='1' pos='-5.14005,3.38036'/>
 			<FIELD type='0' description='Name' value='Remove header pin 16' show='1' pos='-9.00000,-52.00000'/>
 			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
@@ -12917,7 +12917,7 @@ MK !4P I !:P 5) VN\EI?I./O:,N*!^R&lt;?8+;/+QH8U&lt;T?#Y32[Y6F_[S?]_
 			<HINT pin='8' net='104'/>
 			<HINT pin='9' net='105'/>
 		</SYMBOL>
-		<SYMBOL id='3' pos='66.00000,66.00000' part='0' rotate='5' can_scale='0' show_power='1' scale_x='1.00000' scale_y='1.00000'>
+		<SYMBOL id='2' pos='66.00000,66.00000' part='0' rotate='5' can_scale='0' show_power='1' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='J3' show='1' pos='-5.07003,3.73049'/>
 			<FIELD type='0' description='Name' value='Remove header pin 16' show='1' pos='-19.00000,-52.00000'/>
 			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
@@ -12940,7 +12940,7 @@ MK !4P I !:P 5) VN\EI?I./O:,N*!^R&lt;?8+;/+QH8U&lt;T?#Y32[Y6F_[S?]_
 			<HINT pin='8' net='120'/>
 			<HINT pin='9' net='121'/>
 		</SYMBOL>
-		<SYMBOL id='4' pos='102.00000,66.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+		<SYMBOL id='3' pos='102.00000,66.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='J4' show='1' pos='-4.25192,-38.64184'/>
 			<FIELD type='0' description='Name' value='Remove header pin 12' show='1' pos='-2.61059,-2.45776'/>
 			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
@@ -13005,7 +13005,7 @@ MK !4P I !:P 5) VN\EI?I./O:,N*!^R&lt;?8+;/+QH8U&lt;T?#Y32[Y6F_[S?]_
 		<NOCONNECT pos='94.00000,57.00000'/>
 		<NOCONNECT pos='94.00000,60.00000'/>
 		<NOCONNECT pos='94.00000,63.00000'/>
-		<SYMBOL id='2' pos='76.00000,22.00000' part='0' rotate='4' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+		<SYMBOL id='1' pos='76.00000,22.00000' part='0' rotate='4' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='D2' show='1' pos='1.00000,-5.60000'/>
 			<FIELD type='0' description='Name' value='1N400x' show='1' pos='1.00000,-8.00000'/>
 			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
@@ -13014,7 +13014,7 @@ MK !4P I !:P 5) VN\EI?I./O:,N*!^R&lt;?8+;/+QH8U&lt;T?#Y32[Y6F_[S?]_
 			<HINT pin='1' net='153'/>
 			<HINT pin='2' net='99'/>
 		</SYMBOL>
-		<SYMBOL id='2' pos='90.00000,22.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+		<SYMBOL id='1' pos='90.00000,22.00000' part='0' rotate='0' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='D3' show='1' pos='1.00000,-5.60000'/>
 			<FIELD type='0' description='Name' value='1N400x' show='1' pos='1.00000,-8.00000'/>
 			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
@@ -13039,9 +13039,9 @@ MK !4P I !:P 5) VN\EI?I./O:,N*!^R&lt;?8+;/+QH8U&lt;T?#Y32[Y6F_[S?]_
 		<WIRE a='20.00000,64.00000' b='20.00000,74.00000'/>
 		<NOCONNECT pos='24.00000,22.00000'/>
 		<JUNCTION pos='74.00000,6.00000'/>
-		<SYMBOL id='5' pos='16.00000,74.00000' part='0' rotate='2' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
+		<SYMBOL id='4' pos='16.00000,74.00000' part='0' rotate='2' can_scale='0' show_power='0' scale_x='1.00000' scale_y='1.00000'>
 			<FIELD type='0' description='Ref' value='J1' show='1' pos='-14.00000,4.00000'/>
-			<FIELD type='0' description='Name' value='2.5-3.6V' show='1' pos='-8.00000,4.00000'/>
+			<FIELD type='0' description='Name' value='' show='0' pos='-8.00000,4.00000'/>
 			<FIELD type='2' description='$$SPICE_PROLOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
 			<FIELD type='2' description='$$SPICE_EPILOG_PRIORITY' value='5' show='0' pos='0.00000,0.00000'/>
 			<FIELD type='1' description='Package' value='SIP4' show='0' pos='-14.00000,4.40000'/>

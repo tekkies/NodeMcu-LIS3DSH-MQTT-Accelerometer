@@ -5,6 +5,7 @@ Periodically polls LIS3DSH accelerometer ove SPI and pubishes to MQTT Broker
 * **Currently only Y and Z Axis** (My X-axis sensor is not working - replacement LIS3DSH on order)
 * **Deep sleep** between timed samples
   * <30uA With [NodeMCU V2 Ultra-Low Power Mod ](https://github.com/tekkies/NodeMCU-V2-ulta-low-power-mod)
+* Power by 2xAA Cells or 4.5-10V or USB
 * **Wake** on motion by **interrupt**
 * NodeMCu V2 board layout
 * Written in LUA
