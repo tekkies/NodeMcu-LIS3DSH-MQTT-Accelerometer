@@ -3,7 +3,7 @@
   --adc, bit, file, gpio, mqtt, net, node, rtctime, spi, tmr, uart, wifi, tls, float
 
 dofile("constants.lua");
-dofile("DEVICE-INFO.lua");
+dofile("DEVICE-CONFIG.lua");
 
 
 --State
@@ -89,10 +89,8 @@ function flashCallback()
     tmr.create():alarm(300, tmr.ALARM_SINGLE, flashCallback)
 end
 
-function getBatteryVolts()
-    local rawBattery = adc.read(0)
-    print2("Battery raw=" .. rawBattery)
-    return rawBattery * BATTERY_CALIBRATION
+function appendJsonString(key, value)
+    appendJsonValue(key, '"'..value..'"')
 end
 
 function appendJsonValue(key, value)
@@ -100,13 +98,9 @@ function appendJsonValue(key, value)
     if(#jsonData ~= 1) then
         jsonData = jsonData .. ','
     end
-    jsonData = jsonData .. '"'  .. key .. '":"' .. value .. '"' 
+    jsonData = jsonData .. '"'  .. key .. '":' .. value .. '' 
 end
 
-
-function isOnBatteryPower()
-    return getBatteryVolts() > 1.0;
-end
 
 function queueState(newState)
     state = newState
@@ -121,7 +115,7 @@ end
 function init()
     epochStartTime = tmr.now()
     dofile("config.lua");
-    appendJsonValue("battery", getBatteryVolts())
+    appendJsonValue("batterymV", adc.readvdd33(0))
     
     if(USE_LED) then
         setLed(true)
@@ -131,7 +125,7 @@ function init()
 end
 
 function initAdc()
-    if adc.force_init_mode(adc.INIT_ADC)
+    if adc.force_init_mode(adc.INIT_VDD33)
     then
       node.restart()
       return -- don't bother continuing, the restart is scheduled
@@ -187,7 +181,9 @@ function waitForWiFi()
         return
     end
     if(wifi.sta.status() == wifi.STA_GOTIP) then
-        state=postMqtt     
+        state=postMqtt
+        appendJsonValue("wifiConnectTime", tmr.now()/1000)
+        appendJsonValue("rssi", wifi.sta.getrssi())
     end
     queueNextState()
 end
@@ -217,16 +213,12 @@ end
 function sleepNow()
     jsonData = "{"
     setLed(false)
-    if(isOnBatteryPower()) then
-        if(SLEEP_SECONDS==0) then
-            queueState(init)
-        else
-            print2("Battery detected, going to sleep...")
-            local us = SLEEP_SECONDS*1000*1000
-            node.dsleep(us, 1, nil)
-        end
+    if(SLEEP_SECONDS==0) then
+        queueState(init)
     else
-        print2("No battery detected, do not sleep")
+        print2("Starting sleep at " .. tmr.now()/1000 .. "ms")
+        local us = SLEEP_SECONDS*1000*1000
+        node.dsleep(us, 1, nil)
     end
 end
 
