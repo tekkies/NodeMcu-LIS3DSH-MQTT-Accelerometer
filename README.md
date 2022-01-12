@@ -27,8 +27,6 @@ Periodically polls LIS3DSH accelerometer ove SPI and pubishes to MQTT Broker
 
 ![Stripboard Layout](hardware/NodeMCU-V2/Stripboard-Layout.VeeCAD.png)
 
-Connect **4x AA** batteries to J1, + to the top, - to the bottom.
-
 ## Tips
 
 * Disconnect the LIS3DSH and reboot - you have a few seconds during the panic flash code to execute `file.remove("init.lua")` so you can get in and reprogram.
