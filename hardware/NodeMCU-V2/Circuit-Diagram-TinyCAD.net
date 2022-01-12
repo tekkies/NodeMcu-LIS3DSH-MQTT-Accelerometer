@@ -1,31 +1,7 @@
 [
-R2
-AX3_1N
-100k
-
-
-
-]
-[
-R1
-AX3_1N
-690k
-
-
-
-]
-[
 J1
 SIP2
-Battery
-
-
-
-]
-[
-D1
-AX3_1
-1N400x
+2.5-3.6V
 
 
 
@@ -33,7 +9,7 @@ AX3_1
 [
 J2
 SIP16
-Conn_16
+Remove header pin 16
 
 
 
@@ -41,7 +17,7 @@ Conn_16
 [
 J3
 SIP16
-Conn_16
+Remove header pin 16
 
 
 
@@ -49,7 +25,7 @@ Conn_16
 [
 J4
 SIP12
-CJMCU- LIS3DSH
+Remove header pin 12
 
 
 
@@ -71,33 +47,20 @@ AX3_1
 
 ]
 (
-TCPOWERBAR
-J2-2
-R2-2
-J1-2
-)
-(
 N000003
 J1-1
-D1-2
-R1-1
+J3-1
 )
 (
-N000085
-J2-1
-D1-1
+N000001
+J2-2
+J1-2
 )
 (
 N000099
 J2-3
 D2-2
 D3-2
-)
-(
-N000057
-J2-15
-R2-1
-R1-2
 )
 (
 N000117
