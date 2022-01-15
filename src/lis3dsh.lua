@@ -8,22 +8,22 @@ PANIC_NO_LIS3DH = 4
 PANIC_NO_WIFI = 5
 PANIC_MQTT_FAIL = 6
 
-LIS3DSH_CS_X = 0x13
-LIS3DSH_STAT = 0x18
-LIS3DSH_CTRL_REG1 = 0x21
-LIS3DSH_CTRL_REG2 = 0x22
-LIS3DSH_CTRL_REG3 = 0x23
-LIS3DSH_CTRL_REG4 = 0x20
-LIS3DSH_CTRL_REG5 = 0x24
-LIS3DSH_STATUS = 0x27
-  LIS3DSH_STATUS_YDA =  1
-LIS3DSH_OUT_X_L = 0x28
-LIS3DSH_ST2_1 = 0x60
-LIS3DSH_THRS1_2 = 0x77
-LIS3DSH_MASK2_B = 0x79
-LIS3DSH_MASK2_A = 0x7A
-LIS3DSH_SETT2 = 0x7B
-LIS3DSH_OUTS2 = 0x7F
+CS_X = 0x13
+STAT = 0x18
+CTRL_REG1 = 0x21
+CTRL_REG2 = 0x22
+CTRL_REG3 = 0x23
+CTRL_REG4 = 0x20
+CTRL_REG5 = 0x24
+STATUS = 0x27
+  STATUS_YDA =  1
+OUT_X_L = 0x28
+ST2_1 = 0x60
+THRS1_2 = 0x77
+MASK2_B = 0x79
+MASK2_A = 0x7A
+SETT2 = 0x7B
+OUTS2 = 0x7F
 
 
 --State
@@ -156,19 +156,19 @@ end
 
 function configureWake()
   if(xH ~= 0xFFFF) then
-     writeLis3dsh(LIS3DSH_CS_X, xH)
-     writeLis3dsh(LIS3DSH_CS_X+1, yH)
-     writeLis3dsh(LIS3DSH_CS_X+2, zH)
+     writeLis3dsh(CS_X, xH)
+     writeLis3dsh(CS_X+1, yH)
+     writeLis3dsh(CS_X+2, zH)
   end
-  writeLis3dsh(LIS3DSH_CTRL_REG3, 0x28) --data ready signal not connected, interrupt signals active LOW, interrupt signal pulsed, INT1/DRDY signal enabled, vector filter disabled, no soft reset
-  writeLis3dsh(LIS3DSH_CTRL_REG5, 0x00) --2g scale, 800hz filter
-  writeLis3dsh(LIS3DSH_THRS1_2, WAKE_SENSITIVITY)
-  writeLis3dsh(LIS3DSH_ST2_1, 0x05) --NOP | Any/triggered axis greater than THRS1
-  writeLis3dsh(LIS3DSH_ST2_1+1, 0x11) --CONT - trigger interrupt & restart machine
-  writeLis3dsh(LIS3DSH_MASK2_B, 0x3F) --XYZ
-  writeLis3dsh(LIS3DSH_MASK2_A, 0x3F) --XYZ
-  writeLis3dsh(LIS3DSH_SETT2, 0x19) --Raw input, constant shift, program flow can be modified by STOP and CONT commands
-  writeLis3dsh(LIS3DSH_CTRL_REG2, 0x01) --No Hyst, Interrupt 1, SM2 Enable
+  writeLis3dsh(CTRL_REG3, 0x28) --data ready signal not connected, interrupt signals active LOW, interrupt signal pulsed, INT1/DRDY signal enabled, vector filter disabled, no soft reset
+  writeLis3dsh(CTRL_REG5, 0x00) --2g scale, 800hz filter
+  writeLis3dsh(THRS1_2, WAKE_SENSITIVITY)
+  writeLis3dsh(ST2_1, 0x05) --NOP | Any/triggered axis greater than THRS1
+  writeLis3dsh(ST2_1+1, 0x11) --CONT - trigger interrupt & restart machine
+  writeLis3dsh(MASK2_B, 0x3F) --XYZ
+  writeLis3dsh(MASK2_A, 0x3F) --XYZ
+  writeLis3dsh(SETT2, 0x19) --Raw input, constant shift, program flow can be modified by STOP and CONT commands
+  writeLis3dsh(CTRL_REG2, 0x08+ 0x01) --No Hyst, Interrupt 2, SM2 Enable
 end
 
 function initAccel()
@@ -180,16 +180,16 @@ function initAccel()
     flash(PANIC_NO_LIS3DH)
     return
   end
-  wakeReason = readLis3dsh(LIS3DSH_OUTS2)
-  writeLis3dsh(LIS3DSH_CTRL_REG2, 0x00) --disable SM2
+  wakeReason = readLis3dsh(OUTS2)
+  writeLis3dsh(CTRL_REG2, 0x00) --disable SM2
   appendJsonString("wakeReason",string.format("0x%02x",wakeReason))
-  writeLis3dsh(LIS3DSH_CTRL_REG4,0x00) --Stop sampling
+  writeLis3dsh(CTRL_REG4,0x00) --Stop sampling
   queueState(waitForWiFi)
 end
 
 function readLis3dshXyz()
-    if(bit.isset(readLis3dsh(LIS3DSH_STATUS), LIS3DSH_STATUS_YDA)) then
-        spi.transaction(1, 0, 0, 8, 0x80 + LIS3DSH_OUT_X_L, 0,0,48)
+    if(bit.isset(readLis3dsh(STATUS), STATUS_YDA)) then
+        spi.transaction(1, 0, 0, 8, 0x80 + OUT_X_L, 0,0,48)
         xH = spi.get_miso(1,1*8,8,1)
         yH = spi.get_miso(1,3*8,8,1)
         zH = spi.get_miso(1,5*8,8,1)
@@ -207,7 +207,7 @@ function waitForWiFi()
     return
   end
   if(wifi.sta.status() == wifi.STA_GOTIP) then
-    writeLis3dsh(LIS3DSH_CTRL_REG4, 0x10 + 0x00 + 0x06) --data rate: 3Hz, No Block data update, XYZ
+    writeLis3dsh(CTRL_REG4, 0x10 + 0x00 + 0x06) --data rate: 3Hz, No Block data update, XYZ
     state=readLis3dshXyz
     appendJsonValue("rssi", wifi.sta.getrssi())
   end
