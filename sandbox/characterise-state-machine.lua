@@ -193,7 +193,7 @@ function trace()
         y = twosToSigned((spi.get_miso(1,16,8,1)+yH*256))/16384.0
         z = twosToSigned((spi.get_miso(1,32,8,1)+zH*256))/16384.0
 
-        y = twosToSigned((spi.get_miso(1,0*8,8,1)+spi.get_miso(1,1*8,8,1)*256))/16350.0
+        --y = twosToSigned((spi.get_miso(1,0*8,8,1)+spi.get_miso(1,1*8,8,1)*256))/16350.0
         print2(string.format("0x%02x 0x%02x %.2f %.2f %.2f", status, smStatus, x, y, z))
     end
     if(smStatus > 0) then
