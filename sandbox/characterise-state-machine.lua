@@ -151,7 +151,7 @@ function setupLis3dhInterruptStateMachine()
     
     writeLis3dsh(LIS3DSH_CTRL_REG5, 0x00) 
     
-    writeLis3dsh(LIS3DSH_THRS1_1, 64) --threshold
+    writeLis3dsh(LIS3DSH_THRS1_1, 40) --threshold
     
     writeLis3dsh(LIS3DSH_ST1_1, 0x05) --NOP | Any/triggered axis greater than THRS1
     
@@ -189,7 +189,7 @@ function trace()
         print2(string.format("0x%02x 0x%02x %.2f", status, smStatus, y))
     end
     if(smStatus > 0) then
-        return
+       -- return
     end
     
     queueNextState()
