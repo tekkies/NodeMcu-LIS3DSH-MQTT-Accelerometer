@@ -143,7 +143,7 @@ function init()
 end
 
 function setupLis3dhInterruptStateMachine()
-    --writeLis3dsh(LIS3DSH_CTRL_REG1, 0x01) Interrupt 1
+    --writeLis3dsh(LIS3DSH_CTRL_REG2, 0x01) --Interrupt 1
     writeLis3dsh(LIS3DSH_CTRL_REG2, 0x08 + 0x01) --Interrupt 2
     
     writeLis3dsh(LIS3DSH_CTRL_REG3, 0x28) --data ready signal not connected, interrupt signals active LOW, interrupt signal pulsed, INT1/DRDY signal enabled, vector filter disabled, no soft reset
