@@ -5,6 +5,7 @@
 dofile("DEVICE-CONFIG.lua");
 
 
+LIS3DSH_CS_Y = 0x14
 LIS3DSH_STAT = 0x18
 LIS3DSH_CTRL_REG1 = 0x21
 LIS3DSH_CTRL_REG2 = 0x22
@@ -14,6 +15,7 @@ LIS3DSH_CTRL_REG5 = 0x24
 LIS3DSH_STATUS = 0x27
     LIS3DSH_STATUS_YDA =  1
 LIS3DSH_OUT_Y_L = 0x2A
+LIS3DSH_OUT_Y_H = 0x2B
 LIS3DSH_ST2_1 = 0x60
 LIS3DSH_THRS1_2 = 0x77
 LIS3DSH_MASK2_B = 0x79
@@ -37,7 +39,7 @@ function readLis3dsh(address)
 end
 
 function writeLis3dsh(address, value)
-    print2(string.format("0x%02x", address))
+    --print2(string.format("0x%02x", address))
     spi.set_mosi(1, 0, 8, value)
     spi.transaction(1, 0, 0, 8, address, 8,0,0)
 end
@@ -143,27 +145,18 @@ function init()
 end
 
 function setupLis3dhInterruptStateMachine()
-    --writeLis3dsh(LIS3DSH_CTRL_REG2, 0x01) --Interrupt 1
-    writeLis3dsh(LIS3DSH_CTRL_REG2, 0x08 + 0x01) --Interrupt 2
-    
+    resetShift()
+    --writeLis3dsh(LIS3DSH_CTRL_REG2, 0x01) --Interrupt 1, SM2 Enable
+    writeLis3dsh(LIS3DSH_CTRL_REG2, 0x08 + 0x01) --Interrupt 2, EM2 Enable
     writeLis3dsh(LIS3DSH_CTRL_REG3, 0x28) --data ready signal not connected, interrupt signals active LOW, interrupt signal pulsed, INT1/DRDY signal enabled, vector filter disabled, no soft reset
-    
     writeLis3dsh(LIS3DSH_CTRL_REG4, 0x10 + 0x00 + 0x02) --Y, data rate: 3Hz, Block data update: continuous
-    
     writeLis3dsh(LIS3DSH_CTRL_REG5, 0x00) --2g scale, 800hz filter
-    
-    writeLis3dsh(LIS3DSH_THRS1_2, 1) --threshold
-    
+    writeLis3dsh(LIS3DSH_THRS1_2, 20) --threshold
     writeLis3dsh(LIS3DSH_ST2_1, 0x05) --NOP | Any/triggered axis greater than THRS1
-    
     writeLis3dsh(LIS3DSH_ST2_1+1, 0x11) --Continue
-    
-    --writeLis3dsh(LIS3DSH_MASK1_B, 0x3C) --YZ
-    --writeLis3dsh(LIS3DSH_MASK1_A, 0x3C) --YZ
     writeLis3dsh(LIS3DSH_MASK2_B, 0x30) --Y
     writeLis3dsh(LIS3DSH_MASK2_A, 0x30) --Y
-    
-    writeLis3dsh(LIS3DSH_SETT2, 0x11) --DIFF input, DIFF eabled, program flow can be modified by STOP and CONT commands
+    writeLis3dsh(LIS3DSH_SETT2, 0x19) --Diff input, constant shift, program flow can be modified by STOP and CONT commands
 end
 
 
@@ -180,6 +173,12 @@ function initAccel()
     queueState(trace)
 end
 
+function resetShift()
+   local yH = readLis3dsh(LIS3DSH_OUT_Y_H)
+   print2("New Y shift: " .. yH)
+   writeLis3dsh(LIS3DSH_CS_Y, yH)
+end
+
 
 function trace()
     local status = readLis3dsh(LIS3DSH_STATUS)
@@ -190,7 +189,8 @@ function trace()
         print2(string.format("0x%02x 0x%02x %.2f", status, smStatus, y))
     end
     if(smStatus > 0) then
-       -- return
+       -- set new shift
+       resetShift()
     end
     
     queueNextState()
