@@ -2,8 +2,28 @@
 --Firmware: https://drive.google.com/file/d/1bj2EzizW73LsHUNW7XQAOsKIsnVfJMvn/view?usp=sharing
   --adc, bit, file, gpio, mqtt, net, node, rtctime, spi, tmr, uart, wifi, tls, float
 
-dofile("constants.lua");
 dofile("DEVICE-CONFIG.lua");
+
+PANIC_NO_LIS3DH = 4
+PANIC_NO_WIFI = 5
+PANIC_MQTT_FAIL = 6
+
+LIS3DSH_CS_Y = 0x14
+LIS3DSH_STAT = 0x18
+LIS3DSH_CTRL_REG1 = 0x21
+LIS3DSH_CTRL_REG2 = 0x22
+LIS3DSH_CTRL_REG3 = 0x23
+LIS3DSH_CTRL_REG4 = 0x20
+LIS3DSH_CTRL_REG5 = 0x24
+LIS3DSH_STATUS = 0x27
+    LIS3DSH_STATUS_YDA =  1
+LIS3DSH_OUT_X_L = 0x28
+LIS3DSH_ST2_1 = 0x60
+LIS3DSH_THRS1_2 = 0x77
+LIS3DSH_MASK2_B = 0x79
+LIS3DSH_MASK2_A = 0x7A
+LIS3DSH_SETT2 = 0x7B
+LIS3DSH_OUTS2 = 0x7F
 
 
 --State
@@ -134,16 +154,16 @@ function initAdc()
 end
 
 function setupLis3dhInterruptStateMachine()
-    writeLis3dsh(LIS3DSH_CTRL_REG1, 0x01) --hysteresis: 0, Interrupt Pin: INT1, State-Machin1: Enable
+    writeLis3dsh(LIS3DSH_CTRL_REG2, 0x08 + 0x01) --Interrupt 2, SM2 Enable
     writeLis3dsh(LIS3DSH_CTRL_REG3, 0x28) --data ready signal not connected, interrupt signals active LOW, interrupt signal pulsed, INT1/DRDY signal enabled, vector filter disabled, no soft reset
-    writeLis3dsh(LIS3DSH_CTRL_REG4, 0x10 + 0x00 + 0x06) --DISABLE X, enable Y&Z, data rate: 3Hz, Block data update: continuous
-    writeLis3dsh(LIS3DSH_CTRL_REG5, 0x00) 
-    writeLis3dsh(LIS3DSH_THRS1_1, WAKE_SENSITIVITY)
-    writeLis3dsh(LIS3DSH_ST1_1, 0x05) --NOP | Any/triggered axis greater than THRS1
-    writeLis3dsh(LIS3DSH_ST1_2, 0x11) --Timer 1 | Timer 1
-    writeLis3dsh(LIS3DSH_MASK1_B, 0x3C) --YZ
-    writeLis3dsh(LIS3DSH_MASK1_A, 0x3C) --YZ
-    writeLis3dsh(LIS3DSH_SETT1, 0x01) --Setting of threshold, peak detection and flags for SM1 motion-detection operation.
+    writeLis3dsh(LIS3DSH_CTRL_REG4, 0x10 + 0x00 + 0x02) --Y, data rate: 3Hz, Block data update: continuous
+    writeLis3dsh(LIS3DSH_CTRL_REG5, 0x00) --2g scale, 800hz filter
+    writeLis3dsh(LIS3DSH_THRS1_2, 5) --threshold
+    writeLis3dsh(LIS3DSH_ST2_1, 0x05) --NOP | Any/triggered axis greater than THRS1
+    writeLis3dsh(LIS3DSH_ST2_1+1, 0x11) --CONT - trigger interrupt & restart machine
+    writeLis3dsh(LIS3DSH_MASK2_B, 0x30) --Y
+    writeLis3dsh(LIS3DSH_MASK2_A, 0x30) --Y
+    writeLis3dsh(LIS3DSH_SETT2, 0x19) --Raw input, constant shift, program flow can be modified by STOP and CONT commands
 end
 
 
@@ -156,6 +176,10 @@ function initAccel()
         flash(PANIC_NO_LIS3DH)
         return
     end
+    wakeReason = readLis3dsh(LIS3DSH_OUTS2)
+    appendJsonString("wakeReason",string.format("0x%02x",wakeReason))
+    writeLis3dsh(LIS3DSH_CTRL_REG4,0x00) --Stop sampling
+
     if(SLEEP_SECONDS>0) then
         setupLis3dhInterruptStateMachine()
     else
@@ -165,8 +189,8 @@ function initAccel()
 end
 
 function readLis3dshXyz()
-    if(bit.isset(readLis3dsh(ACC_REG_STATUS), ACC_REG_STATUS_YDA)) then
-        spi.transaction(1, 0, 0, 8, 0x80 + ACC_REG_OUT_X_L, 0,0,48)
+    if(bit.isset(readLis3dsh(LIS3DSH_STATUS), LIS3DSH_STATUS_YDA)) then
+        spi.transaction(1, 0, 0, 8, 0x80 + LIS3DSH_OUT_X_L, 0,0,48)
         appendJsonValue("x", twosToSigned((spi.get_miso(1,0*8,8,1)+spi.get_miso(1,1*8,8,1)*256))/16350.0)
         appendJsonValue("y", twosToSigned((spi.get_miso(1,2*8,8,1)+spi.get_miso(1,3*8,8,1)*256))/16350.0)
         appendJsonValue("z", twosToSigned((spi.get_miso(1,4*8,8,1)+spi.get_miso(1,5*8,8,1)*256))/16350.0)

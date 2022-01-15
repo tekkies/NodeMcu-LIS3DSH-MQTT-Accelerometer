@@ -152,7 +152,7 @@ function setupLis3dhInterruptStateMachine()
     writeLis3dsh(LIS3DSH_CTRL_REG5, 0x00) --2g scale, 800hz filter
     writeLis3dsh(LIS3DSH_THRS1_2, 5) --threshold
     writeLis3dsh(LIS3DSH_ST2_1, 0x05) --NOP | Any/triggered axis greater than THRS1
-    writeLis3dsh(LIS3DSH_ST2_1+1, 0x11) --Continue
+    writeLis3dsh(LIS3DSH_ST2_1+1, 0x11) --CONT - trigger interrupt & restart machine
     writeLis3dsh(LIS3DSH_MASK2_B, 0x30) --Y
     writeLis3dsh(LIS3DSH_MASK2_A, 0x30) --Y
     writeLis3dsh(LIS3DSH_SETT2, 0x19) --Raw input, constant shift, program flow can be modified by STOP and CONT commands
