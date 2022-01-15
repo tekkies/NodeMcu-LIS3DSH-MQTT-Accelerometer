@@ -25,7 +25,6 @@ MASK2_A = 0x7A
 SETT2 = 0x7B
 OUTS2 = 0x7F
 
-
 --State
 state = nil
 epochStartTime = tmr.now()
@@ -165,8 +164,8 @@ function configureWake()
   write(THRS1_2, WAKE_SENSITIVITY)
   write(ST2_1, 0x05) --NOP | Any/triggered axis greater than THRS1
   write(ST2_1+1, 0x11) --CONT - trigger interrupt & restart machine
-  write(MASK2_B, 0x3F) --XYZ
-  write(MASK2_A, 0x3F) --XYZ
+  write(MASK2_B, 0x3C) --YZ
+  write(MASK2_A, 0x3C) --YZ
   write(SETT2, 0x19) --Raw input, constant shift, program flow can be modified by STOP and CONT commands
   write(CTRL_REG2, 0x01) --No Hyst, Interrupt 2, SM2 Enable
 end
@@ -207,7 +206,7 @@ function waitForWiFi()
     return
   end
   if(wifi.sta.status() == wifi.STA_GOTIP) then
-    write(CTRL_REG4, 0x10 + 0x00 + 0x06) --data rate: 3Hz, No Block data update, XYZ
+    write(CTRL_REG4, 0x16) --data rate: 3Hz, No Block data update, YZ
     state=readXyz
     appendJsonValue("rssi", wifi.sta.getrssi())
   end
@@ -250,7 +249,6 @@ function sleepNow()
     end
 end
 
-----------------------------------------
 mqttClient = mqtt.Client(MQTT_CLIENTID, 120)
 mqttClient:on("offline", mqttOffline)
 queueState(init)
