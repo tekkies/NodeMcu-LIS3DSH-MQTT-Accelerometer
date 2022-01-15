@@ -174,16 +174,13 @@ function initAccel()
 end
 
 function resetShift()
+    writeLis3dsh(LIS3DSH_CTRL_REG2, 0x08 + 0x00) --Interrupt 2, SM2 Disable
+   
    local yH = readLis3dsh(LIS3DSH_OUT_Y_H)
    print2("New Y shift: " .. yH)
    writeLis3dsh(LIS3DSH_CS_Y, yH)
-
-    writeLis3dsh(LIS3DSH_CTRL_REG4, 0x00) --Disable Accel
-    writeLis3dsh(LIS3DSH_CTRL_REG2, 0x08 + 0x00) --Interrupt 2, SM2 Disable
-    writeLis3dsh(LIS3DSH_CTRL_REG4, 0x10 + 0x00 + 0x02) --Y, data rate: 3Hz, Block data update: continuous
-    writeLis3dsh(LIS3DSH_CTRL_REG2, 0x08 + 0x01) --Interrupt 2, SM2 Enable
-
-   
+   writeLis3dsh(LIS3DSH_CTRL_REG2, 0x08 + 0x01) --Interrupt 2, SM2 Enable
+  
 end
 
 
