@@ -19,6 +19,7 @@ LIS3DSH_THRS1_1 = 0x57
 LIS3DSH_MASK1_B = 0x59      
 LIS3DSH_MASK1_A = 0x5A      
 LIS3DSH_SETT1 = 0x5B    
+LIS3DSH_OUTS1 = 0x5F
 
 
 
@@ -125,7 +126,7 @@ function queueState(newState)
 end
 
 function queueNextState()
-    print1(costlyGetStateName())
+    --print1(costlyGetStateName())
     node.task.post(state)
 end
 
@@ -142,12 +143,12 @@ end
 
 function setupLis3dhInterruptStateMachine()
     --writeLis3dsh(LIS3DSH_CTRL_REG1, 0x01) Interrupt 1
-    writeLis3dsh(LIS3DSH_CTRL_REG1, 0x80 + 0x01) --Interrupt 2
+    writeLis3dsh(LIS3DSH_CTRL_REG1, 0x08 + 0x01) --Interrupt 2
     writeLis3dsh(LIS3DSH_CTRL_REG3, 0x28) --data ready signal not connected, interrupt signals active LOW, interrupt signal pulsed, INT1/DRDY signal enabled, vector filter disabled, no soft reset
     writeLis3dsh(LIS3DSH_CTRL_REG4, 0x10 + 0x00 + 0x06) --DISABLE X, enable Y&Z, data rate: 3Hz, Block data update: continuous
     writeLis3dsh(LIS3DSH_CTRL_REG5, 0x00) 
     
-    writeLis3dsh(LIS3DSH_THRS1_1, WAKE_SENSITIVITY) --threshold
+    writeLis3dsh(LIS3DSH_THRS1_1, 64) --threshold
     
     writeLis3dsh(LIS3DSH_ST1_1, 0x05) --NOP | Any/triggered axis greater than THRS1
     writeLis3dsh(LIS3DSH_ST1_2, 0x11) --Continue
@@ -173,13 +174,16 @@ end
 
 function trace()
     local status = readLis3dsh(LIS3DSH_STATUS)
-    spi.transaction(1, 0, 0, 8, 0x80 + LIS3DSH_OUT_Y_L, 0,0,16)
-    y = twosToSigned((spi.get_miso(1,0*8,8,1)+spi.get_miso(1,1*8,8,1)*256))/16350.0
-
-
-    --string.format("0x%02x", readLis3dsh(LIS3DSH_OUTS1))
+    local smStatus = readLis3dsh(LIS3DSH_OUTS1)
+    if(bit.isset(status, LIS3DSH_STATUS_YDA)) then
+        spi.transaction(1, 0, 0, 8, 0x80 + LIS3DSH_OUT_Y_L, 0,0,16)
+        y = twosToSigned((spi.get_miso(1,0*8,8,1)+spi.get_miso(1,1*8,8,1)*256))/16350.0
+        print2(string.format("0x%02x 0x%02x %.2f", status, smStatus, y))
+    end
+    if(smStatus > 0) then
+        return
+    end
     
-    print2(string.format("0x%02x %.2f", status, y))
     queueNextState()
 end
 
