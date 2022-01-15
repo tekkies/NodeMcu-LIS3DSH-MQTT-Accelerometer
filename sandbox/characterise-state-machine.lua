@@ -151,7 +151,7 @@ function setupLis3dhInterruptStateMachine()
     
     writeLis3dsh(LIS3DSH_CTRL_REG5, 0x00) 
     
-    writeLis3dsh(LIS3DSH_THRS1_1, 40) --threshold
+    writeLis3dsh(LIS3DSH_THRS1_1, 20) --threshold
     
     writeLis3dsh(LIS3DSH_ST1_1, 0x05) --NOP | Any/triggered axis greater than THRS1
     
