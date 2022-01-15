@@ -147,13 +147,13 @@ function setupLis3dhInterruptStateMachine()
     --resetShift()
     write(CTRL_REG2, 0x08 + 0x01) --Interrupt 2, SM2 Enable
     write(CTRL_REG3, 0x28) --data ready signal not connected, interrupt signals active LOW, interrupt signal pulsed, INT1/DRDY signal enabled, vector filter disabled, no soft reset
-    write(CTRL_REG4, 0x10 + 0x00 + 0x02) --Y, data rate: 3Hz, Block data update: continuous
+    write(CTRL_REG4, 0x10 + 0x00 + 0x06) --Y, data rate: 3Hz, Block data update: continuous
     write(CTRL_REG5, 0x00) --2g scale, 800hz filter
     write(THRS1_2, 5) --threshold
     write(ST2_1, 0x05) --NOP | Any/triggered axis greater than THRS1
     write(ST2_1+1, 0x11) --CONT - trigger interrupt & restart machine
-    write(MASK2_B, 0x30) --Y
-    write(MASK2_A, 0x30) --Y
+    write(MASK2_B, 0x3C) --Y
+    write(MASK2_A, 0x3C) --Y
     write(SETT2, 0x19) --Raw input, constant shift, program flow can be modified by STOP and CONT commands
 end
 
