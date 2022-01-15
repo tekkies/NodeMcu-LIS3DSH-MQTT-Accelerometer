@@ -15,7 +15,6 @@ LIS3DSH_STATUS = 0x27
     LIS3DSH_STATUS_YDA =  1
 LIS3DSH_OUT_Y_L = 0x2A
 LIS3DSH_ST2_1 = 0x60
-LIS3DSH_ST2_2 = 0x61
 LIS3DSH_THRS1_2 = 0x77
 LIS3DSH_MASK2_B = 0x79
 LIS3DSH_MASK2_A = 0x7A
@@ -157,14 +156,14 @@ function setupLis3dhInterruptStateMachine()
     
     writeLis3dsh(LIS3DSH_ST2_1, 0x05) --NOP | Any/triggered axis greater than THRS1
     
-    writeLis3dsh(LIS3DSH_ST2_2, 0x11) --Continue
+    writeLis3dsh(LIS3DSH_ST2_1+1, 0x11) --Continue
     
     --writeLis3dsh(LIS3DSH_MASK1_B, 0x3C) --YZ
     --writeLis3dsh(LIS3DSH_MASK1_A, 0x3C) --YZ
     writeLis3dsh(LIS3DSH_MASK2_B, 0x30) --Y
     writeLis3dsh(LIS3DSH_MASK2_A, 0x30) --Y
     
-    writeLis3dsh(LIS3DSH_SETT2, 0x01) --Setting of threshold, peak detection and flags for SM1 motion-detection operation.
+    writeLis3dsh(LIS3DSH_SETT2, 0x11) --DIFF input, DIFF eabled, program flow can be modified by STOP and CONT commands
 end
 
 
