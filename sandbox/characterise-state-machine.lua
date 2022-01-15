@@ -152,7 +152,7 @@ function setupLis3dhInterruptStateMachine()
     
     writeLis3dsh(LIS3DSH_CTRL_REG5, 0x00) --2g scale, 800hz filter
     
-    writeLis3dsh(LIS3DSH_THRS1_2, 20) --threshold
+    writeLis3dsh(LIS3DSH_THRS1_2, 1) --threshold
     
     writeLis3dsh(LIS3DSH_ST2_1, 0x05) --NOP | Any/triggered axis greater than THRS1
     
