@@ -156,7 +156,6 @@ end
 function setupLis3dhInterruptStateMachine()
     writeLis3dsh(LIS3DSH_CTRL_REG2, 0x08 + 0x01) --Interrupt 2, SM2 Enable
     writeLis3dsh(LIS3DSH_CTRL_REG3, 0x28) --data ready signal not connected, interrupt signals active LOW, interrupt signal pulsed, INT1/DRDY signal enabled, vector filter disabled, no soft reset
-    writeLis3dsh(LIS3DSH_CTRL_REG4, 0x10 + 0x00 + 0x02) --Y, data rate: 3Hz, Block data update: continuous
     writeLis3dsh(LIS3DSH_CTRL_REG5, 0x00) --2g scale, 800hz filter
     writeLis3dsh(LIS3DSH_THRS1_2, 5) --threshold
     writeLis3dsh(LIS3DSH_ST2_1, 0x05) --NOP | Any/triggered axis greater than THRS1
@@ -179,37 +178,31 @@ function initAccel()
     wakeReason = readLis3dsh(LIS3DSH_OUTS2)
     appendJsonString("wakeReason",string.format("0x%02x",wakeReason))
     writeLis3dsh(LIS3DSH_CTRL_REG4,0x00) --Stop sampling
-
-    if(SLEEP_SECONDS>0) then
-        setupLis3dhInterruptStateMachine()
-    else
-        writeLis3dsh(ACC_REG_CTRL_REG4, 0x10+0x08+0x06) --enable YZ, 3hz
-    end
-    queueState(readLis3dshXyz)
+    queueState(waitForWiFi)
 end
 
 function readLis3dshXyz()
     if(bit.isset(readLis3dsh(LIS3DSH_STATUS), LIS3DSH_STATUS_YDA)) then
         spi.transaction(1, 0, 0, 8, 0x80 + LIS3DSH_OUT_X_L, 0,0,48)
-        appendJsonValue("x", twosToSigned((spi.get_miso(1,0*8,8,1)+spi.get_miso(1,1*8,8,1)*256))/16350.0)
-        appendJsonValue("y", twosToSigned((spi.get_miso(1,2*8,8,1)+spi.get_miso(1,3*8,8,1)*256))/16350.0)
-        appendJsonValue("z", twosToSigned((spi.get_miso(1,4*8,8,1)+spi.get_miso(1,5*8,8,1)*256))/16350.0)
-        state=waitForWiFi        
+        appendJsonValue("x", twosToSigned((spi.get_miso(1,0*8,8,1)+spi.get_miso(1,1*8,8,1)*256))/16384.0)
+        appendJsonValue("y", twosToSigned((spi.get_miso(1,2*8,8,1)+spi.get_miso(1,3*8,8,1)*256))/16384.0)
+        appendJsonValue("z", twosToSigned((spi.get_miso(1,4*8,8,1)+spi.get_miso(1,5*8,8,1)*256))/16384.0)
+        state=postMqtt        
     end
     queueNextState()
 end
 
 function waitForWiFi()
-    if(epochSeconds() > 20) then
-        flash(PANIC_NO_WIFI)
-        return
-    end
-    if(wifi.sta.status() == wifi.STA_GOTIP) then
-        state=postMqtt
-        appendJsonValue("wifiConnectTime", tmr.now()/1000)
-        appendJsonValue("rssi", wifi.sta.getrssi())
-    end
-    queueNextState()
+  if(epochSeconds() > 20) then
+    flash(PANIC_NO_WIFI)
+    return
+  end
+  if(wifi.sta.status() == wifi.STA_GOTIP) then
+    writeLis3dsh(LIS3DSH_CTRL_REG4, 0x10 + 0x00 + 0x02) --Y, data rate: 3Hz, Block data update: continuous
+    state=readLis3dshXyz
+    appendJsonValue("rssi", wifi.sta.getrssi())
+  end
+  queueNextState()
 end
 
 
@@ -217,6 +210,7 @@ function postMqtt()
     mqttClient:connect(MQTT_BROKER, 1883, false, function(client)
       print2("connected")
       appendJsonValue("heap", node.heap())
+      appendJsonValue("upTimeMs", tmr.now()/1000)
       jsonData = jsonData .. '}'
       print2(jsonData)
       client:publish("/tekkies.co.uk/NodeMCU/".. DEVICE_NAME .. "/lis3dsh.lua", jsonData, 0, 0, function(client) 
