@@ -5,23 +5,22 @@
 dofile("DEVICE-CONFIG.lua");
 
 
-LIS3DSH_CS_Y = 0x14
-LIS3DSH_STAT = 0x18
-LIS3DSH_CTRL_REG1 = 0x21
-LIS3DSH_CTRL_REG2 = 0x22
-LIS3DSH_CTRL_REG3 = 0x23
-LIS3DSH_CTRL_REG4 = 0x20
-LIS3DSH_CTRL_REG5 = 0x24
-LIS3DSH_STATUS = 0x27
-    LIS3DSH_STATUS_YDA =  1
-LIS3DSH_OUT_Y_L = 0x2A
-LIS3DSH_OUT_Y_H = 0x2B
-LIS3DSH_ST2_1 = 0x60
-LIS3DSH_THRS1_2 = 0x77
-LIS3DSH_MASK2_B = 0x79
-LIS3DSH_MASK2_A = 0x7A
-LIS3DSH_SETT2 = 0x7B
-LIS3DSH_OUTS2 = 0x7F
+CS_X = 0x13
+STAT = 0x18
+CTRL_REG1 = 0x21
+CTRL_REG2 = 0x22
+CTRL_REG3 = 0x23
+CTRL_REG4 = 0x20
+CTRL_REG5 = 0x24
+STATUS = 0x27
+  STATUS_YDA =  1
+OUT_X_L = 0x28
+ST2_1 = 0x60
+THRS1_2 = 0x77
+MASK2_B = 0x79
+MASK2_A = 0x7A
+SETT2 = 0x7B
+OUTS2 = 0x7F
 
 
 
@@ -33,13 +32,13 @@ flashCounter = 0
 flashReason = 0
 jsonData = '{'
 
-function readLis3dsh(address)
+function read(address)
     spi.transaction(1, 0, 0, 8, 0x80 + address, 0,0,8)
     return spi.get_miso(1,0,8,1)
 end
 
-function writeLis3dsh(address, value)
-    --print2(string.format("0x%02x", address))
+function write(address, value)
+    --print2(string.format("0x%02x 0x%02x", address, value))
     spi.set_mosi(1, 0, 8, value)
     spi.transaction(1, 0, 0, 8, address, 8,0,0)
 end
@@ -145,24 +144,24 @@ function init()
 end
 
 function setupLis3dhInterruptStateMachine()
-    resetShift()
-    writeLis3dsh(LIS3DSH_CTRL_REG2, 0x08 + 0x01) --Interrupt 2, SM2 Enable
-    writeLis3dsh(LIS3DSH_CTRL_REG3, 0x28) --data ready signal not connected, interrupt signals active LOW, interrupt signal pulsed, INT1/DRDY signal enabled, vector filter disabled, no soft reset
-    writeLis3dsh(LIS3DSH_CTRL_REG4, 0x10 + 0x00 + 0x02) --Y, data rate: 3Hz, Block data update: continuous
-    writeLis3dsh(LIS3DSH_CTRL_REG5, 0x00) --2g scale, 800hz filter
-    writeLis3dsh(LIS3DSH_THRS1_2, 5) --threshold
-    writeLis3dsh(LIS3DSH_ST2_1, 0x05) --NOP | Any/triggered axis greater than THRS1
-    writeLis3dsh(LIS3DSH_ST2_1+1, 0x11) --CONT - trigger interrupt & restart machine
-    writeLis3dsh(LIS3DSH_MASK2_B, 0x30) --Y
-    writeLis3dsh(LIS3DSH_MASK2_A, 0x30) --Y
-    writeLis3dsh(LIS3DSH_SETT2, 0x19) --Raw input, constant shift, program flow can be modified by STOP and CONT commands
+    --resetShift()
+    write(CTRL_REG2, 0x08 + 0x01) --Interrupt 2, SM2 Enable
+    write(CTRL_REG3, 0x28) --data ready signal not connected, interrupt signals active LOW, interrupt signal pulsed, INT1/DRDY signal enabled, vector filter disabled, no soft reset
+    write(CTRL_REG4, 0x10 + 0x00 + 0x02) --Y, data rate: 3Hz, Block data update: continuous
+    write(CTRL_REG5, 0x00) --2g scale, 800hz filter
+    write(THRS1_2, 5) --threshold
+    write(ST2_1, 0x05) --NOP | Any/triggered axis greater than THRS1
+    write(ST2_1+1, 0x11) --CONT - trigger interrupt & restart machine
+    write(MASK2_B, 0x30) --Y
+    write(MASK2_A, 0x30) --Y
+    write(SETT2, 0x19) --Raw input, constant shift, program flow can be modified by STOP and CONT commands
 end
 
 
 function initAccel()
     spi.setup(1, spi.MASTER, spi.CPOL_HIGH, spi.CPHA_HIGH, 8, 255)
     --Check Accelerometer is present
-    whoAmI = readLis3dsh(0x0f)
+    whoAmI = read(0x0f)
     print2("Who_AM_I register (expect 3f): " .. string.format("%x", whoAmI))
     if (whoAmI ~= 0x3f) then
         flash(PANIC_NO_LIS3DH)
@@ -173,21 +172,29 @@ function initAccel()
 end
 
 function resetShift()
-   writeLis3dsh(LIS3DSH_CTRL_REG2, 0x08 + 0x00) --Interrupt 2, SM2 Disable
-   local yH = readLis3dsh(LIS3DSH_OUT_Y_H)
-   print2("New Y shift: " .. yH)
-   writeLis3dsh(LIS3DSH_CS_Y, yH)
-   writeLis3dsh(LIS3DSH_CTRL_REG2, 0x08 + 0x01) --Interrupt 2, SM2 Enable
+   write(CTRL_REG2, 0x08 + 0x00) --Interrupt 2, SM2 Disable
+   print2("resetShift")
+   write(CS_X, xH)
+   write(CS_X+1, yH)
+   write(CS_X+2, zH)
+   write(CTRL_REG2, 0x08 + 0x01) --Interrupt 2, SM2 Enable
 end
 
 
 function trace()
-    local status = readLis3dsh(LIS3DSH_STATUS)
-    local smStatus = readLis3dsh(LIS3DSH_OUTS2)
-    if(bit.isset(status, LIS3DSH_STATUS_YDA)) then
-        spi.transaction(1, 0, 0, 8, 0x80 + LIS3DSH_OUT_Y_L, 0,0,16)
+    local status = read(STATUS)
+    local smStatus = read(OUTS2)
+    if(bit.isset(status, STATUS_YDA)) then
+        spi.transaction(1, 0, 0, 8, 0x80 + OUT_X_L, 0,0,48)
+        xH = spi.get_miso(1,8,8,1)
+        yH = spi.get_miso(1,24,8,1)
+        zH = spi.get_miso(1,40,8,1)
+        x = twosToSigned((spi.get_miso(1,0,8,1)+xH*256))/16384.0
+        y = twosToSigned((spi.get_miso(1,16,8,1)+yH*256))/16384.0
+        z = twosToSigned((spi.get_miso(1,32,8,1)+zH*256))/16384.0
+
         y = twosToSigned((spi.get_miso(1,0*8,8,1)+spi.get_miso(1,1*8,8,1)*256))/16350.0
-        print2(string.format("0x%02x 0x%02x %.2f", status, smStatus, y))
+        print2(string.format("0x%02x 0x%02x %.2f %.2f %.2f", status, smStatus, x, y, z))
     end
     if(smStatus > 0) then
        -- set new shift
