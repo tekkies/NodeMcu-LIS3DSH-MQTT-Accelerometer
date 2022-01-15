@@ -6,20 +6,21 @@ dofile("DEVICE-CONFIG.lua");
 
 
 LIS3DSH_STAT = 0x18
-LIS3DSH_CTRL_REG1 = 0x21        
-LIS3DSH_CTRL_REG3 = 0x23        
-LIS3DSH_CTRL_REG4 = 0x20        
-LIS3DSH_CTRL_REG5 = 0x24        
+LIS3DSH_CTRL_REG1 = 0x21
+LIS3DSH_CTRL_REG2 = 0x22
+LIS3DSH_CTRL_REG3 = 0x23
+LIS3DSH_CTRL_REG4 = 0x20
+LIS3DSH_CTRL_REG5 = 0x24
 LIS3DSH_STATUS = 0x27
     LIS3DSH_STATUS_YDA =  1
 LIS3DSH_OUT_Y_L = 0x2A
-LIS3DSH_ST1_1 = 0x40        
-LIS3DSH_ST1_2 = 0x41        
-LIS3DSH_THRS1_1 = 0x57      
-LIS3DSH_MASK1_B = 0x59      
-LIS3DSH_MASK1_A = 0x5A      
-LIS3DSH_SETT1 = 0x5B    
-LIS3DSH_OUTS1 = 0x5F
+LIS3DSH_ST2_1 = 0x60
+LIS3DSH_ST2_2 = 0x61
+LIS3DSH_THRS1_2 = 0x77
+LIS3DSH_MASK2_B = 0x79
+LIS3DSH_MASK2_A = 0x7A
+LIS3DSH_SETT2 = 0x7B
+LIS3DSH_OUTS2 = 0x7F
 
 
 
@@ -37,6 +38,7 @@ function readLis3dsh(address)
 end
 
 function writeLis3dsh(address, value)
+    print2(string.format("0x%02x", address))
     spi.set_mosi(1, 0, 8, value)
     spi.transaction(1, 0, 0, 8, address, 8,0,0)
 end
@@ -143,26 +145,26 @@ end
 
 function setupLis3dhInterruptStateMachine()
     --writeLis3dsh(LIS3DSH_CTRL_REG1, 0x01) Interrupt 1
-    writeLis3dsh(LIS3DSH_CTRL_REG1, 0x08 + 0x01) --Interrupt 2
+    writeLis3dsh(LIS3DSH_CTRL_REG2, 0x08 + 0x01) --Interrupt 2
     
     writeLis3dsh(LIS3DSH_CTRL_REG3, 0x28) --data ready signal not connected, interrupt signals active LOW, interrupt signal pulsed, INT1/DRDY signal enabled, vector filter disabled, no soft reset
     
-    writeLis3dsh(LIS3DSH_CTRL_REG4, 0x10 + 0x00 + 0x06) --DISABLE X, enable Y&Z, data rate: 3Hz, Block data update: continuous
+    writeLis3dsh(LIS3DSH_CTRL_REG4, 0x10 + 0x00 + 0x02) --Y, data rate: 3Hz, Block data update: continuous
     
-    writeLis3dsh(LIS3DSH_CTRL_REG5, 0x00) 
+    writeLis3dsh(LIS3DSH_CTRL_REG5, 0x00) --2g scale, 800hz filter
     
-    writeLis3dsh(LIS3DSH_THRS1_1, 20) --threshold
+    writeLis3dsh(LIS3DSH_THRS1_2, 20) --threshold
     
-    writeLis3dsh(LIS3DSH_ST1_1, 0x05) --NOP | Any/triggered axis greater than THRS1
+    writeLis3dsh(LIS3DSH_ST2_1, 0x05) --NOP | Any/triggered axis greater than THRS1
     
-    writeLis3dsh(LIS3DSH_ST1_2, 0x11) --Continue
+    writeLis3dsh(LIS3DSH_ST2_2, 0x11) --Continue
     
     --writeLis3dsh(LIS3DSH_MASK1_B, 0x3C) --YZ
     --writeLis3dsh(LIS3DSH_MASK1_A, 0x3C) --YZ
-    writeLis3dsh(LIS3DSH_MASK1_B, 0x30) --Y
-    writeLis3dsh(LIS3DSH_MASK1_A, 0x30) --Y
+    writeLis3dsh(LIS3DSH_MASK2_B, 0x30) --Y
+    writeLis3dsh(LIS3DSH_MASK2_A, 0x30) --Y
     
-    writeLis3dsh(LIS3DSH_SETT1, 0x01) --Setting of threshold, peak detection and flags for SM1 motion-detection operation.
+    writeLis3dsh(LIS3DSH_SETT2, 0x01) --Setting of threshold, peak detection and flags for SM1 motion-detection operation.
 end
 
 
@@ -182,7 +184,7 @@ end
 
 function trace()
     local status = readLis3dsh(LIS3DSH_STATUS)
-    local smStatus = readLis3dsh(LIS3DSH_OUTS1)
+    local smStatus = readLis3dsh(LIS3DSH_OUTS2)
     if(bit.isset(status, LIS3DSH_STATUS_YDA)) then
         spi.transaction(1, 0, 0, 8, 0x80 + LIS3DSH_OUT_Y_L, 0,0,16)
         y = twosToSigned((spi.get_miso(1,0*8,8,1)+spi.get_miso(1,1*8,8,1)*256))/16350.0
