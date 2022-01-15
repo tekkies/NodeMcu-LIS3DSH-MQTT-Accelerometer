@@ -8,7 +8,7 @@ PANIC_NO_LIS3DH = 4
 PANIC_NO_WIFI = 5
 PANIC_MQTT_FAIL = 6
 
-LIS3DSH_CS_Y = 0x14
+LIS3DSH_CS_X = 0x13
 LIS3DSH_STAT = 0x18
 LIS3DSH_CTRL_REG1 = 0x21
 LIS3DSH_CTRL_REG2 = 0x22
@@ -32,6 +32,7 @@ epochStartTime = tmr.now()
 flashCounter = 0
 flashReason = 0
 jsonData = '{'
+xH = 0xFFFF
 
 function readLis3dsh(address)
     spi.transaction(1, 0, 0, 8, 0x80 + address, 0,0,8)
@@ -153,16 +154,22 @@ function initAdc()
     queueState(initAccel)
 end
 
-function setupLis3dhInterruptStateMachine()
-    writeLis3dsh(LIS3DSH_CTRL_REG2, 0x08 + 0x01) --Interrupt 2, SM2 Enable
+function configureWake()
+    if(xH ~= 0xFFFF) then
+       print2("Set shift")
+       writeLis3dsh(LIS3DSH_CS_X, xH)
+       writeLis3dsh(LIS3DSH_CS_X+1, yH)
+       writeLis3dsh(LIS3DSH_CS_X+2, zH)
+    end
     writeLis3dsh(LIS3DSH_CTRL_REG3, 0x28) --data ready signal not connected, interrupt signals active LOW, interrupt signal pulsed, INT1/DRDY signal enabled, vector filter disabled, no soft reset
     writeLis3dsh(LIS3DSH_CTRL_REG5, 0x00) --2g scale, 800hz filter
-    writeLis3dsh(LIS3DSH_THRS1_2, 5) --threshold
+    writeLis3dsh(LIS3DSH_THRS1_2, WAKE_SENSITIVITY)
     writeLis3dsh(LIS3DSH_ST2_1, 0x05) --NOP | Any/triggered axis greater than THRS1
     writeLis3dsh(LIS3DSH_ST2_1+1, 0x11) --CONT - trigger interrupt & restart machine
-    writeLis3dsh(LIS3DSH_MASK2_B, 0x30) --Y
-    writeLis3dsh(LIS3DSH_MASK2_A, 0x30) --Y
+    writeLis3dsh(LIS3DSH_MASK2_B, 0x3F) --XYZ
+    writeLis3dsh(LIS3DSH_MASK2_A, 0x3F) --XYZ
     writeLis3dsh(LIS3DSH_SETT2, 0x19) --Raw input, constant shift, program flow can be modified by STOP and CONT commands
+    writeLis3dsh(LIS3DSH_CTRL_REG2, 0x01) --No Hyst, Interrupt 1, SM2 Enable
 end
 
 
@@ -176,6 +183,7 @@ function initAccel()
         return
     end
     wakeReason = readLis3dsh(LIS3DSH_OUTS2)
+    writeLis3dsh(LIS3DSH_CTRL_REG2, 0x00) --disable SM2
     appendJsonString("wakeReason",string.format("0x%02x",wakeReason))
     writeLis3dsh(LIS3DSH_CTRL_REG4,0x00) --Stop sampling
     queueState(waitForWiFi)
@@ -184,9 +192,12 @@ end
 function readLis3dshXyz()
     if(bit.isset(readLis3dsh(LIS3DSH_STATUS), LIS3DSH_STATUS_YDA)) then
         spi.transaction(1, 0, 0, 8, 0x80 + LIS3DSH_OUT_X_L, 0,0,48)
-        appendJsonValue("x", twosToSigned((spi.get_miso(1,0*8,8,1)+spi.get_miso(1,1*8,8,1)*256))/16384.0)
-        appendJsonValue("y", twosToSigned((spi.get_miso(1,2*8,8,1)+spi.get_miso(1,3*8,8,1)*256))/16384.0)
-        appendJsonValue("z", twosToSigned((spi.get_miso(1,4*8,8,1)+spi.get_miso(1,5*8,8,1)*256))/16384.0)
+        xH = spi.get_miso(1,1*8,8,1)
+        yH = spi.get_miso(1,3*8,8,1)
+        zH = spi.get_miso(1,5*8,8,1)
+        appendJsonValue("x", twosToSigned((spi.get_miso(1,0*8,8,1)+xH*256))/16384.0)
+        appendJsonValue("y", twosToSigned((spi.get_miso(1,2*8,8,1)+yH*256))/16384.0)
+        appendJsonValue("z", twosToSigned((spi.get_miso(1,4*8,8,1)+zH*256))/16384.0)
         state=postMqtt        
     end
     queueNextState()
@@ -198,7 +209,7 @@ function waitForWiFi()
     return
   end
   if(wifi.sta.status() == wifi.STA_GOTIP) then
-    writeLis3dsh(LIS3DSH_CTRL_REG4, 0x10 + 0x00 + 0x02) --Y, data rate: 3Hz, Block data update: continuous
+    writeLis3dsh(LIS3DSH_CTRL_REG4, 0x10 + 0x00 + 0x06) --data rate: 3Hz, No Block data update, XYZ
     state=readLis3dshXyz
     appendJsonValue("rssi", wifi.sta.getrssi())
   end
@@ -234,6 +245,7 @@ function sleepNow()
     if(SLEEP_SECONDS==0) then
         queueState(init)
     else
+        configureWake()
         print2("Starting sleep at " .. tmr.now()/1000 .. "ms")
         local us = SLEEP_SECONDS*1000*1000
         node.dsleep(us, 1, nil)
