@@ -147,7 +147,7 @@ end
 function setupLis3dhInterruptStateMachine()
     resetShift()
     --writeLis3dsh(LIS3DSH_CTRL_REG2, 0x01) --Interrupt 1, SM2 Enable
-    writeLis3dsh(LIS3DSH_CTRL_REG2, 0x08 + 0x01) --Interrupt 2, EM2 Enable
+    writeLis3dsh(LIS3DSH_CTRL_REG2, 0x08 + 0x01) --Interrupt 2, SM2 Enable
     writeLis3dsh(LIS3DSH_CTRL_REG3, 0x28) --data ready signal not connected, interrupt signals active LOW, interrupt signal pulsed, INT1/DRDY signal enabled, vector filter disabled, no soft reset
     writeLis3dsh(LIS3DSH_CTRL_REG4, 0x10 + 0x00 + 0x02) --Y, data rate: 3Hz, Block data update: continuous
     writeLis3dsh(LIS3DSH_CTRL_REG5, 0x00) --2g scale, 800hz filter
@@ -156,7 +156,7 @@ function setupLis3dhInterruptStateMachine()
     writeLis3dsh(LIS3DSH_ST2_1+1, 0x11) --Continue
     writeLis3dsh(LIS3DSH_MASK2_B, 0x30) --Y
     writeLis3dsh(LIS3DSH_MASK2_A, 0x30) --Y
-    writeLis3dsh(LIS3DSH_SETT2, 0x19) --Diff input, constant shift, program flow can be modified by STOP and CONT commands
+    writeLis3dsh(LIS3DSH_SETT2, 0x19) --Raw input, constant shift, program flow can be modified by STOP and CONT commands
 end
 
 
@@ -177,6 +177,13 @@ function resetShift()
    local yH = readLis3dsh(LIS3DSH_OUT_Y_H)
    print2("New Y shift: " .. yH)
    writeLis3dsh(LIS3DSH_CS_Y, yH)
+
+    writeLis3dsh(LIS3DSH_CTRL_REG4, 0x00) --Disable Accel
+    writeLis3dsh(LIS3DSH_CTRL_REG2, 0x08 + 0x00) --Interrupt 2, SM2 Disable
+    writeLis3dsh(LIS3DSH_CTRL_REG4, 0x10 + 0x00 + 0x02) --Y, data rate: 3Hz, Block data update: continuous
+    writeLis3dsh(LIS3DSH_CTRL_REG2, 0x08 + 0x01) --Interrupt 2, SM2 Enable
+
+   
 end
 
 
