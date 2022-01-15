@@ -16,7 +16,7 @@ LIS3DSH_CTRL_REG3 = 0x23
 LIS3DSH_CTRL_REG4 = 0x20
 LIS3DSH_CTRL_REG5 = 0x24
 LIS3DSH_STATUS = 0x27
-    LIS3DSH_STATUS_YDA =  1
+  LIS3DSH_STATUS_YDA =  1
 LIS3DSH_OUT_X_L = 0x28
 LIS3DSH_ST2_1 = 0x60
 LIS3DSH_THRS1_2 = 0x77
@@ -35,47 +35,47 @@ jsonData = '{'
 xH = 0xFFFF
 
 function readLis3dsh(address)
-    spi.transaction(1, 0, 0, 8, 0x80 + address, 0,0,8)
-    return spi.get_miso(1,0,8,1)
+  spi.transaction(1, 0, 0, 8, 0x80 + address, 0,0,8)
+  return spi.get_miso(1,0,8,1)
 end
 
 function writeLis3dsh(address, value)
-    spi.set_mosi(1, 0, 8, value)
-    spi.transaction(1, 0, 0, 8, address, 8,0,0)
+  spi.set_mosi(1, 0, 8, value)
+  spi.transaction(1, 0, 0, 8, address, 8,0,0)
 end
 
 function costlyGetStateName()
-    for key,value in pairs(_G) do
-        if(state == value and key ~= "state") then
-            return key
-        end
+  for key,value in pairs(_G) do
+    if(state == value and key ~= "state") then
+      return key
     end
+  end
 end
 
 function twosToSigned(twos)
-    if(twos > 0x7fff) then
-        return twos - 0x10000
-    else
-        return twos
-    end    
+  if(twos > 0x7fff) then
+    return twos - 0x10000
+  else
+    return twos
+  end    
 end
 
 function print1(message)
-	if(ENABLE_PRINT) then
-		print(message)
-	end
+  if(ENABLE_PRINT) then
+	print(message)
+  end
 end
 
 function print2(message)
-    print1("    "..message)
+  print1("    "..message)
 end
 
 function uptimeSeconds()
-    return tmr.now()/1000000
+  return tmr.now()/1000000
 end
 
 function epochSeconds()
-    return (tmr.now() - epochStartTime)/1000000
+  return (tmr.now() - epochStartTime)/1000000
 end
 
 function setLed(ledState)
@@ -155,38 +155,36 @@ function initAdc()
 end
 
 function configureWake()
-    if(xH ~= 0xFFFF) then
-       print2("Set shift")
-       writeLis3dsh(LIS3DSH_CS_X, xH)
-       writeLis3dsh(LIS3DSH_CS_X+1, yH)
-       writeLis3dsh(LIS3DSH_CS_X+2, zH)
-    end
-    writeLis3dsh(LIS3DSH_CTRL_REG3, 0x28) --data ready signal not connected, interrupt signals active LOW, interrupt signal pulsed, INT1/DRDY signal enabled, vector filter disabled, no soft reset
-    writeLis3dsh(LIS3DSH_CTRL_REG5, 0x00) --2g scale, 800hz filter
-    writeLis3dsh(LIS3DSH_THRS1_2, WAKE_SENSITIVITY)
-    writeLis3dsh(LIS3DSH_ST2_1, 0x05) --NOP | Any/triggered axis greater than THRS1
-    writeLis3dsh(LIS3DSH_ST2_1+1, 0x11) --CONT - trigger interrupt & restart machine
-    writeLis3dsh(LIS3DSH_MASK2_B, 0x3F) --XYZ
-    writeLis3dsh(LIS3DSH_MASK2_A, 0x3F) --XYZ
-    writeLis3dsh(LIS3DSH_SETT2, 0x19) --Raw input, constant shift, program flow can be modified by STOP and CONT commands
-    writeLis3dsh(LIS3DSH_CTRL_REG2, 0x01) --No Hyst, Interrupt 1, SM2 Enable
+  if(xH ~= 0xFFFF) then
+     writeLis3dsh(LIS3DSH_CS_X, xH)
+     writeLis3dsh(LIS3DSH_CS_X+1, yH)
+     writeLis3dsh(LIS3DSH_CS_X+2, zH)
+  end
+  writeLis3dsh(LIS3DSH_CTRL_REG3, 0x28) --data ready signal not connected, interrupt signals active LOW, interrupt signal pulsed, INT1/DRDY signal enabled, vector filter disabled, no soft reset
+  writeLis3dsh(LIS3DSH_CTRL_REG5, 0x00) --2g scale, 800hz filter
+  writeLis3dsh(LIS3DSH_THRS1_2, WAKE_SENSITIVITY)
+  writeLis3dsh(LIS3DSH_ST2_1, 0x05) --NOP | Any/triggered axis greater than THRS1
+  writeLis3dsh(LIS3DSH_ST2_1+1, 0x11) --CONT - trigger interrupt & restart machine
+  writeLis3dsh(LIS3DSH_MASK2_B, 0x3F) --XYZ
+  writeLis3dsh(LIS3DSH_MASK2_A, 0x3F) --XYZ
+  writeLis3dsh(LIS3DSH_SETT2, 0x19) --Raw input, constant shift, program flow can be modified by STOP and CONT commands
+  writeLis3dsh(LIS3DSH_CTRL_REG2, 0x01) --No Hyst, Interrupt 1, SM2 Enable
 end
 
-
 function initAccel()
-    spi.setup(1, spi.MASTER, spi.CPOL_HIGH, spi.CPHA_HIGH, 8, 255)
-    --Check Accelerometer is present
-    whoAmI = readLis3dsh(0x0f)
-    print2("Who_AM_I register (expect 3f): " .. string.format("%x", whoAmI))
-    if (whoAmI ~= 0x3f) then
-        flash(PANIC_NO_LIS3DH)
-        return
-    end
-    wakeReason = readLis3dsh(LIS3DSH_OUTS2)
-    writeLis3dsh(LIS3DSH_CTRL_REG2, 0x00) --disable SM2
-    appendJsonString("wakeReason",string.format("0x%02x",wakeReason))
-    writeLis3dsh(LIS3DSH_CTRL_REG4,0x00) --Stop sampling
-    queueState(waitForWiFi)
+  spi.setup(1, spi.MASTER, spi.CPOL_HIGH, spi.CPHA_HIGH, 8, 255)
+  --Check Accelerometer is present
+  whoAmI = readLis3dsh(0x0f)
+  print2("Who_AM_I register (expect 3f): " .. string.format("%x", whoAmI))
+  if (whoAmI ~= 0x3f) then
+    flash(PANIC_NO_LIS3DH)
+    return
+  end
+  wakeReason = readLis3dsh(LIS3DSH_OUTS2)
+  writeLis3dsh(LIS3DSH_CTRL_REG2, 0x00) --disable SM2
+  appendJsonString("wakeReason",string.format("0x%02x",wakeReason))
+  writeLis3dsh(LIS3DSH_CTRL_REG4,0x00) --Stop sampling
+  queueState(waitForWiFi)
 end
 
 function readLis3dshXyz()
