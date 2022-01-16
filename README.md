@@ -1,10 +1,12 @@
 # NodeMcu-LIS3DSH-MQTT-Accelerometer
 
-Periodically polls LIS3DSH accelerometer ove SPI and pubishes to MQTT Broker
+Low poer, triggers MQTT post on movement detected by custom state machine in LIS3DSH 3-axis accelerometer.
 
 * **Currently only Y and Z Axis** (My X-axis sensor is not working - replacement LIS3DSH on order)
-* **Deep sleep** between timed samples
+* **Deep sleep** between samples
   * <30uA With [NodeMCU V2 Ultra-Low Power Mod ](https://github.com/tekkies/NodeMCU-V2-ulta-low-power-mod)
+  * Adjustable wake sensitivity
+  * Adjustable timed polling
 * Power by 2xAA Cells or 4.5-10V or USB
 * **Wake** on motion by **interrupt**
 * NodeMCu V2 board layout
@@ -12,12 +14,12 @@ Periodically polls LIS3DSH accelerometer ove SPI and pubishes to MQTT Broker
 * Event-based so **kind to WiFi processes**
 * LED Flash codes for PANIC situations (See [src/constants.lua](src/constants.lua))
 * Power plug situated by USB to prevent USB and battery connection simultaneously
+* With static IP, device wakes for typically 1.02 seconds to read LIS3DSH and post data to MQTT (measured by oscilloscope)
 
 ![Assembled Board](doc/Assembled-Board.jpg) ![MQTT Explorer Chart](doc/MQTT-Explorer-Chart.png) 
 
 ## ToDo
 - [ ] Fix the memory leak when running with 0 sleep (workaround: sleep for 1 second)
-
 
 ### Circuit
 
