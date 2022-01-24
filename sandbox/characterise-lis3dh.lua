@@ -25,6 +25,11 @@ MASK2_A = 0x7A
 SETT2 = 0x7B
 OUTS2 = 0x7F
 
+REFERENCE = 0x26
+INT1_CFG = 0x30
+INT1_SRC = 0x31
+INT1_THS = 0x32
+INT1_DURATION = 0x33
 
 
 
@@ -156,7 +161,17 @@ function initAccel()
         flash(PANIC_NO_LIS3DH)
         return
     end
-    write(CTRL_REG1, 47)
+    --https://drive.google.com/file/d/1Hp1i9k7oCuYCzNk2BPbp-OQtafosQcg2/edit?disco=AAAASojlPu8
+    write(CTRL_REG1, 0x27)
+    write(CTRL_REG2, 0x09)
+    write(CTRL_REG3, 0x40)
+    write(CTRL_REG4, 0x00)
+    write(CTRL_REG5, 0x08)
+    write(INT1_THS, 0x10)
+    write(INT1_DURATION, 0x00)
+    read(REFERENCE)
+    write(INT1_CFG, 0x2A)
+    
     
     queueState(trace)
 end
@@ -164,7 +179,7 @@ end
 
 function trace()
     local status = read(STATUS)
-    local smStatus = read(OUTS2)
+    local smStatus = read(INT1_SRC)
     if(bit.isset(status, STATUS_YDA)) then
         spi.transaction(1, 0, 0, 8, 0x80 + 0x40 + OUT_X_L, 0,0,48)
         xH = spi.get_miso(1,8,8,1)
