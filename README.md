@@ -1,6 +1,6 @@
 # NodeMcu-LIS3DSH-MQTT-Accelerometer
 
-Low poer, triggers MQTT post on movement detected by custom state machine in LIS3DSH 3-axis accelerometer.
+Low power, triggers MQTT post on movement detected by custom state machine in LIS3DSH 3-axis accelerometer.
 
 * **Currently only Y and Z Axis** (My X-axis sensor is not working - replacement LIS3DSH on order)
 * **Deep sleep** between samples
