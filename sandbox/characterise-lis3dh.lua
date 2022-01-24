@@ -170,7 +170,7 @@ function initAccel()
     write(INT1_THS, 0x04)
     write(INT1_DURATION, 0x00)
     read(REFERENCE)
-    write(INT1_CFG, 0x2A)
+    write(INT1_CFG, 0x7F)
     
     
     queueState(trace)
@@ -179,7 +179,7 @@ end
 
 function trace()
     local status = read(STATUS)
-    local smStatus = read(INT1_SRC)
+    local intStatus = read(INT1_SRC)
     if(bit.isset(status, STATUS_YDA)) then
         spi.transaction(1, 0, 0, 8, 0x80 + 0x40 + OUT_X_L, 0,0,48)
         xH = spi.get_miso(1,8,8,1)
@@ -190,7 +190,14 @@ function trace()
         z = twosToSigned((spi.get_miso(1,32,8,1)+zH*256))/16384.0
 
         --y = twosToSigned((spi.get_miso(1,0*8,8,1)+spi.get_miso(1,1*8,8,1)*256))/16350.0
-        print2(string.format("0x%02x 0x%02x %.2f %.2f %.2f", status, smStatus, x, y, z))
+        print2(string.format("0x%02x 0x%02x %.2f %.2f %.2f", status, intStatus, x, y, z))
+
+        if (intStatus > 0) then
+            print("reset")
+            read(REFERENCE)  --reset the reference
+        end
+
+        
     end
     
     queueNextState()
